@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Core\Configuration.fs" />
+        <Compile Include="Store\SQLite\Persistence.fs" />
+        <Compile Include="Exporters\SQLite\Persistence.fs" />
+        <Compile Include="Exporters\SQLite\Impl.fs" />
+        <Compile Include="ExternalProcesses\Common.fs" />
+        <Compile Include="ExternalProcesses\DotNet.fs" />
+        <Compile Include="ExternalProcesses\Git.fs" />
+        <Folder Include="Operations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
+      <PackageReference Include="Freql.Sqlite" Version="0.13.0" />
+      <PackageReference Include="fstoolbox" Version="0.11.0" />
+      <PackageReference Include="fstoolbox.processwrappers" Version="0.11.0" />
+    </ItemGroup>
+
+</Project>
