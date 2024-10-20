@@ -1,0 +1,77 @@
+[
+    {
+        "name": "fbenchmark",
+        "type": "sqlite",
+        "connectionString": "Data Source=.prototypes/fbenchmark_store.db",
+        "generatorProfiles": [
+            {
+                "name": "records",
+                "outputPath": "FBenchmark/Store/SQLite/Persistence.fs",
+                "namespace": "FBenchmark.Store.SQLite.Persistence",
+                "moduleName": "Records",
+                "includeJsonAttributes": true,
+                "nameSuffix": "Record",
+                "typeReplacements": [
+                    {
+                        "matchValue": "^reference",
+                        "matchType": "regex",
+                        "replacementValue": "Guid",
+                        "replacementInitValue": "Guid.NewGuid()"
+                    },
+                    {
+                        "matchValue": "created_on|updated_on",
+                        "matchType": "regex",
+                        "replacementValue": "DateTime",
+                        "replacementInitValue": "DateTime.UtcNow"
+                    },
+                    {
+                        "matchValue": "^is_|^has_",
+                        "matchType": "regex",
+                        "replacementValue": "bool",
+                        "replacementInitValue": "true"
+                    },
+                    {
+                        "matchValue": "active",
+                        "matchType": "string",
+                        "replacementValue": "bool",
+                        "replacementInitValue": "true"
+                    }
+                ],
+                "tableNameReplacements": [
+                    {
+                        "name": "artifact_metadata",
+                        "replacementName": "artifact_metadata_item"
+                    },
+                    {
+                        "name": "artifacts",
+                        "replacementName": "artifact"
+                    },
+                    {
+                        "name": "benchmarks",
+                        "replacementName": "benchmark"
+                    },
+                    {
+                        "name": "resource_metadata",
+                        "replacementName": "resource_metadata_item"
+                    },
+                    {
+                        "name": "resources",
+                        "replacementName": "resource"
+                    },
+                    {
+                        "name": "run_metadata",
+                        "replacementName": "run_metadata_item"
+                    },
+                    {
+                        "name": "source_metadata",
+                        "replacementName": "source_metadata_item"
+                    },
+                    {
+                        "name": "sources",
+                        "replacementName": "source"
+                    }
+                ]
+            }
+        ]
+    }
+]
