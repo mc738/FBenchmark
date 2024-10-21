@@ -30,7 +30,7 @@ module private Utils =
 /// Records representing database bindings for `records`.
 /// </summary>
 /// <remarks>
-/// Module generated on 20/10/2024 20:40:58 (utc) via Freql.Tools.
+/// Module generated on 21/10/2024 11:57:52 (utc) via Freql.Tools.
 /// </remarks>
 [<RequireQualifiedAccess>]
 module Records =
@@ -38,7 +38,7 @@ module Records =
     /// A record representing a row in the table `artifact_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type ArtifactMetadataItem =
         { [<JsonPropertyName("artifactId")>] ArtifactId: string
@@ -91,7 +91,7 @@ module Records =
     /// A record representing a row in the table `artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type Artifact =
         { [<JsonPropertyName("id")>] Id: string option
@@ -162,7 +162,7 @@ module Records =
     /// A record representing a row in the table `benchmark_build_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type BenchmarkBuildInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -315,7 +315,7 @@ module Records =
     /// A record representing a row in the table `benchmark_build_info_antivirus_installions`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type BenchmarkBuildInfoAntivirusInstallions =
         { [<JsonPropertyName("buildInfoId")>] BuildInfoId: string
@@ -364,7 +364,7 @@ module Records =
     /// A record representing a row in the table `benchmark_case_descriptors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type BenchmarkCaseDescriptors =
         { [<JsonPropertyName("id")>] Id: string
@@ -461,7 +461,7 @@ module Records =
     /// A record representing a row in the table `benchmark_cases`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type BenchmarkCases =
         { [<JsonPropertyName("id")>] Id: string
@@ -541,7 +541,7 @@ module Records =
     /// A record representing a row in the table `benchmark_jobs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type BenchmarkJobs =
         { [<JsonPropertyName("id")>] Id: string
@@ -611,10 +611,207 @@ module Records =
                   |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
     
     /// <summary>
+    /// A record representing a row in the table `benchmark_reports`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type BenchmarkReports =
+        { [<JsonPropertyName("id")>] Id: string option
+          [<JsonPropertyName("caseId")>] CaseId: string
+          [<JsonPropertyName("success")>] Success: int64
+          [<JsonPropertyName("gcStatsGen0Collections")>] GcStatsGen0Collections: int64
+          [<JsonPropertyName("gcStatsGen1Collections")>] GcStatsGen1Collections: int64
+          [<JsonPropertyName("gcStatsGen2Collections")>] GcStatsGen2Collections: int64
+          [<JsonPropertyName("gcStatsTotalOperations")>] GcStatsTotalOperations: int64
+          [<JsonPropertyName("gcStatsTotalAllocatedBytes")>] GcStatsTotalAllocatedBytes: int64
+          [<JsonPropertyName("gcStatsBytesAllocatedPerOperation")>] GcStatsBytesAllocatedPerOperation: int64
+          [<JsonPropertyName("resultsStatsKurtosis")>] ResultsStatsKurtosis: decimal
+          [<JsonPropertyName("resultsStatsMax")>] ResultsStatsMax: decimal
+          [<JsonPropertyName("resultsStatsMean")>] ResultsStatsMean: decimal
+          [<JsonPropertyName("resultsStatsMedian")>] ResultsStatsMedian: decimal
+          [<JsonPropertyName("resultsStatsN")>] ResultsStatsN: int64
+          [<JsonPropertyName("resultsStatsQ1")>] ResultsStatsQ1: decimal option
+          [<JsonPropertyName("resultsStatsQ3")>] ResultsStatsQ3: decimal
+          [<JsonPropertyName("resultsStatsSkewness")>] ResultsStatsSkewness: decimal
+          [<JsonPropertyName("resultsStatsVariance")>] ResultsStatsVariance: decimal
+          [<JsonPropertyName("resultsStatsInterquartileRange")>] ResultsStatsInterquartileRange: decimal
+          [<JsonPropertyName("resultsStatsLowerFence")>] ResultsStatsLowerFence: decimal
+          [<JsonPropertyName("resultsStatsStandardDeviation")>] ResultsStatsStandardDeviation: decimal
+          [<JsonPropertyName("resultsStatsStandardError")>] ResultsStatsStandardError: decimal
+          [<JsonPropertyName("resultsStatsUpperFence")>] ResultsStatsUpperFence: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalLevel")>] ResultsStatsConfidenceIntervalLevel: string
+          [<JsonPropertyName("resultsStatsConfidenceIntervalLower")>] ResultsStatsConfidenceIntervalLower: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalMargin")>] ResultsStatsConfidenceIntervalMargin: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalMean")>] ResultsStatsConfidenceIntervalMean: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalN")>] ResultsStatsConfidenceIntervalN: int64
+          [<JsonPropertyName("resultsStatsConfidenceIntervalUpper")>] ResultsStatsConfidenceIntervalUpper: decimal option
+          [<JsonPropertyName("resultsStatsConfidenceIntervalStandardError")>] ResultsStatsConfidenceIntervalStandardError: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP0")>] ResultsStatsPercentilesP0: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP25")>] ResultsStatsPercentilesP25: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP50")>] ResultsStatsPercentilesP50: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP67")>] ResultsStatsPercentilesP67: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP80")>] ResultsStatsPercentilesP80: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP85")>] ResultsStatsPercentilesP85: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP90")>] ResultsStatsPercentilesP90: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP95")>] ResultsStatsPercentilesP95: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP100")>] ResultsStatsPercentilesP100: decimal }
+    
+        static member Blank() =
+            { Id = None
+              CaseId = String.Empty
+              Success = 0L
+              GcStatsGen0Collections = 0L
+              GcStatsGen1Collections = 0L
+              GcStatsGen2Collections = 0L
+              GcStatsTotalOperations = 0L
+              GcStatsTotalAllocatedBytes = 0L
+              GcStatsBytesAllocatedPerOperation = 0L
+              ResultsStatsKurtosis = 0m
+              ResultsStatsMax = 0m
+              ResultsStatsMean = 0m
+              ResultsStatsMedian = 0m
+              ResultsStatsN = 0L
+              ResultsStatsQ1 = None
+              ResultsStatsQ3 = 0m
+              ResultsStatsSkewness = 0m
+              ResultsStatsVariance = 0m
+              ResultsStatsInterquartileRange = 0m
+              ResultsStatsLowerFence = 0m
+              ResultsStatsStandardDeviation = 0m
+              ResultsStatsStandardError = 0m
+              ResultsStatsUpperFence = 0m
+              ResultsStatsConfidenceIntervalLevel = String.Empty
+              ResultsStatsConfidenceIntervalLower = 0m
+              ResultsStatsConfidenceIntervalMargin = 0m
+              ResultsStatsConfidenceIntervalMean = 0m
+              ResultsStatsConfidenceIntervalN = 0L
+              ResultsStatsConfidenceIntervalUpper = None
+              ResultsStatsConfidenceIntervalStandardError = 0m
+              ResultsStatsPercentilesP0 = 0m
+              ResultsStatsPercentilesP25 = 0m
+              ResultsStatsPercentilesP50 = 0m
+              ResultsStatsPercentilesP67 = 0m
+              ResultsStatsPercentilesP80 = 0m
+              ResultsStatsPercentilesP85 = 0m
+              ResultsStatsPercentilesP90 = 0m
+              ResultsStatsPercentilesP95 = 0m
+              ResultsStatsPercentilesP100 = 0m }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE benchmark_reports
+(
+    id                                               TEXT
+        constraint benchmark_reports_pk
+            primary key,
+    case_id                                          TEXT    not null
+        constraint benchmark_reports_benchmark_cases_id_fk
+            references benchmark_cases,
+    success                                          INTEGER not null,
+    gc_stats_gen_0_collections                       INTEGER not null,
+    gc_stats_gen_1_collections                       INTEGER not null,
+    gc_stats_gen_2_collections                       INTEGER not null,
+    gc_stats_total_operations                        INTEGER not null,
+    gc_stats_total_allocated_bytes                   INTEGER not null,
+    gc_stats_bytes_allocated_per_operation           INTEGER not null,
+    results_stats_kurtosis                           REAL    not null,
+    results_stats_max                                REAL    not null,
+    results_stats_mean                               REAL    not null,
+    results_stats_median                             REAL    not null,
+    results_stats_n                                  INTEGER not null,
+    results_stats_q1                                 REAL,
+    results_stats_q3                                 REAL    not null,
+    results_stats_skewness                           REAL    not null,
+    results_stats_variance                           REAL    not null,
+    results_stats_interquartile_range                REAL    not null,
+    results_stats_lower_fence                        REAL    not null,
+    results_stats_standard_deviation                 REAL    not null,
+    results_stats_standard_error                     REAL    not null,
+    results_stats_upper_fence                        REAL    not null,
+    results_stats_confidence_interval_level          TEXT    not null,
+    results_stats_confidence_interval_lower          REAL    not null,
+    results_stats_confidence_interval_margin         REAL    not null,
+    results_stats_confidence_interval_mean           REAL    not null,
+    results_stats_confidence_interval_n              INTEGER not null,
+    results_stats_confidence_interval_upper          REAL,
+    results_stats_confidence_interval_standard_error REAL    not null,
+    results_stats_percentiles_p0                     REAL    not null,
+    results_stats_percentiles_p25                    REAL    not null,
+    results_stats_percentiles_p50                    REAL    not null,
+    results_stats_percentiles_p67                    REAL    not null,
+    results_stats_percentiles_p80                    REAL    not null,
+    results_stats_percentiles_p85                    REAL    not null,
+    results_stats_percentiles_p90                    REAL    not null,
+    results_stats_percentiles_p95                    REAL    not null,
+    results_stats_percentiles_p100                   REAL    not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              benchmark_reports.`id`,
+              benchmark_reports.`case_id`,
+              benchmark_reports.`success`,
+              benchmark_reports.`gc_stats_gen_0_collections`,
+              benchmark_reports.`gc_stats_gen_1_collections`,
+              benchmark_reports.`gc_stats_gen_2_collections`,
+              benchmark_reports.`gc_stats_total_operations`,
+              benchmark_reports.`gc_stats_total_allocated_bytes`,
+              benchmark_reports.`gc_stats_bytes_allocated_per_operation`,
+              benchmark_reports.`results_stats_kurtosis`,
+              benchmark_reports.`results_stats_max`,
+              benchmark_reports.`results_stats_mean`,
+              benchmark_reports.`results_stats_median`,
+              benchmark_reports.`results_stats_n`,
+              benchmark_reports.`results_stats_q1`,
+              benchmark_reports.`results_stats_q3`,
+              benchmark_reports.`results_stats_skewness`,
+              benchmark_reports.`results_stats_variance`,
+              benchmark_reports.`results_stats_interquartile_range`,
+              benchmark_reports.`results_stats_lower_fence`,
+              benchmark_reports.`results_stats_standard_deviation`,
+              benchmark_reports.`results_stats_standard_error`,
+              benchmark_reports.`results_stats_upper_fence`,
+              benchmark_reports.`results_stats_confidence_interval_level`,
+              benchmark_reports.`results_stats_confidence_interval_lower`,
+              benchmark_reports.`results_stats_confidence_interval_margin`,
+              benchmark_reports.`results_stats_confidence_interval_mean`,
+              benchmark_reports.`results_stats_confidence_interval_n`,
+              benchmark_reports.`results_stats_confidence_interval_upper`,
+              benchmark_reports.`results_stats_confidence_interval_standard_error`,
+              benchmark_reports.`results_stats_percentiles_p0`,
+              benchmark_reports.`results_stats_percentiles_p25`,
+              benchmark_reports.`results_stats_percentiles_p50`,
+              benchmark_reports.`results_stats_percentiles_p67`,
+              benchmark_reports.`results_stats_percentiles_p80`,
+              benchmark_reports.`results_stats_percentiles_p85`,
+              benchmark_reports.`results_stats_percentiles_p90`,
+              benchmark_reports.`results_stats_percentiles_p95`,
+              benchmark_reports.`results_stats_percentiles_p100`
+        FROM benchmark_reports
+        """
+    
+        static member TableName() = "benchmark_reports"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ BenchmarkReports.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  BenchmarkReports.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  BenchmarkReports.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
     /// A record representing a row in the table `benchmarks`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type Benchmark =
         { [<JsonPropertyName("id")>] Id: string
@@ -688,10 +885,160 @@ module Records =
                   |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
     
     /// <summary>
+    /// A record representing a row in the table `build_artifacts`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type BuildArtifacts =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("buildResultId")>] BuildResultId: string
+          [<JsonPropertyName("path")>] Path: string option }
+    
+        static member Blank() =
+            { Id = String.Empty
+              BuildResultId = String.Empty
+              Path = None }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE build_artifacts
+(
+    id              TEXT not null
+        constraint build_artifacts_pk
+            primary key,
+    build_result_id TEXT not null
+        constraint build_artifacts_build_results_id_fk
+            references build_results,
+    path            TEXT
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              build_artifacts.`id`,
+              build_artifacts.`build_result_id`,
+              build_artifacts.`path`
+        FROM build_artifacts
+        """
+    
+        static member TableName() = "build_artifacts"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ BuildArtifacts.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  BuildArtifacts.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  BuildArtifacts.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `build_results`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type BuildResults =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string
+          [<JsonPropertyName("errorMessage")>] ErrorMessage: string option
+          [<JsonPropertyName("isBuildSuccess")>] IsBuildSuccess: bool
+          [<JsonPropertyName("isGenerateSuccess")>] IsGenerateSuccess: bool
+          [<JsonPropertyName("executablePath")>] ExecutablePath: string
+          [<JsonPropertyName("programName")>] ProgramName: string
+          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string
+          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string
+          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string
+          [<JsonPropertyName("packageDirectoryName")>] PackageDirectoryName: string
+          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string
+          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string
+          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string
+          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string
+          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string
+          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = String.Empty
+              ErrorMessage = None
+              IsBuildSuccess = true
+              IsGenerateSuccess = true
+              ExecutablePath = String.Empty
+              ProgramName = String.Empty
+              AppConfigPath = String.Empty
+              BinariesDirectoryPath = String.Empty
+              IntermediateDirectoryPath = String.Empty
+              PackageDirectoryName = String.Empty
+              ProgramCodePath = String.Empty
+              ProjectFilePath = String.Empty
+              BuildArtifactsDirectoryPath = String.Empty
+              BuildScriptFilePath = String.Empty
+              NugetConfigPath = String.Empty
+              RootArtifactsFolderPath = String.Empty }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE "build_results"
+(
+    id                  TEXT    not null
+        constraint build_results_pk
+            primary key,
+    report_id           TEXT    not null
+        constraint build_results_benchmark_results_id_fk
+            references benchmark_reports,
+    error_message       TEXT,
+    is_build_success    INTEGER not null,
+    is_generate_success INTEGER not null
+, executable_path TEXT not null, program_name TEXT not null, app_config_path TEXT not null, binaries_directory_path TEXT not null, intermediate_directory_path TEXT not null, package_directory_name TEXT not null, program_code_path TEXT not null, project_file_path TEXT not null, build_artifacts_directory_path TEXT not null, build_script_file_path TEXT not null, nuget_config_path TEXT not null, root_artifacts_folder_path TEXT not null)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              build_results.`id`,
+              build_results.`report_id`,
+              build_results.`error_message`,
+              build_results.`is_build_success`,
+              build_results.`is_generate_success`,
+              build_results.`executable_path`,
+              build_results.`program_name`,
+              build_results.`app_config_path`,
+              build_results.`binaries_directory_path`,
+              build_results.`intermediate_directory_path`,
+              build_results.`package_directory_name`,
+              build_results.`program_code_path`,
+              build_results.`project_file_path`,
+              build_results.`build_artifacts_directory_path`,
+              build_results.`build_script_file_path`,
+              build_results.`nuget_config_path`,
+              build_results.`root_artifacts_folder_path`
+        FROM build_results
+        """
+    
+        static member TableName() = "build_results"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ BuildResults.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  BuildResults.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  BuildResults.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
     /// A record representing a row in the table `environment_gcs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type EnvironmentGcs =
         { [<JsonPropertyName("id")>] Id: string
@@ -788,7 +1135,7 @@ module Records =
     /// A record representing a row in the table `environment_runtimes`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type EnvironmentRuntimes =
         { [<JsonPropertyName("id")>] Id: string
@@ -853,7 +1200,7 @@ module Records =
     /// A record representing a row in the table `environmental_variables`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type EnvironmentalVariables =
         { [<JsonPropertyName("id")>] Id: string
@@ -907,10 +1254,628 @@ module Records =
                   |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
     
     /// <summary>
+    /// A record representing a row in the table `execution_result_errors`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ExecutionResultErrors =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
+          [<JsonPropertyName("error")>] Error: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ExecutionResultId = String.Empty
+              Error = String.Empty }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE execution_result_errors
+(
+    id                  TEXT not null
+        constraint execution_result_errors_pk
+            primary key,
+    execution_result_id TEXT not null
+        constraint execution_result_errors_execution_results_id_fk
+            references execution_results,
+    error               TEXT not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              execution_result_errors.`id`,
+              execution_result_errors.`execution_result_id`,
+              execution_result_errors.`error`
+        FROM execution_result_errors
+        """
+    
+        static member TableName() = "execution_result_errors"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ExecutionResultErrors.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ExecutionResultErrors.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ExecutionResultErrors.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `execution_result_items`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ExecutionResultItems =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
+          [<JsonPropertyName("value")>] Value: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ExecutionResultId = String.Empty
+              Value = String.Empty }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE execution_result_items
+(
+    id                  TEXT not null
+        constraint execution_result_items_pk
+            primary key,
+    execution_result_id TEXT not null
+        constraint execution_result_items_execution_results_id_fk
+            references execution_results,
+    value               TEXT not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              execution_result_items.`id`,
+              execution_result_items.`execution_result_id`,
+              execution_result_items.`value`
+        FROM execution_result_items
+        """
+    
+        static member TableName() = "execution_result_items"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ExecutionResultItems.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ExecutionResultItems.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ExecutionResultItems.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `execution_result_measurements`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ExecutionResultMeasurements =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string option
+          [<JsonPropertyName("nanoseconds")>] Nanoseconds: decimal
+          [<JsonPropertyName("operations")>] Operations: int64
+          [<JsonPropertyName("iterationIndex")>] IterationIndex: int64
+          [<JsonPropertyName("iterationMode")>] IterationMode: string
+          [<JsonPropertyName("iterationStage")>] IterationStage: string
+          [<JsonPropertyName("launchIndex")>] LaunchIndex: int64 }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ExecutionResultId = None
+              Nanoseconds = 0m
+              Operations = 0L
+              IterationIndex = 0L
+              IterationMode = String.Empty
+              IterationStage = String.Empty
+              LaunchIndex = 0L }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE execution_result_measurements
+(
+    id                  TEXT not null
+        constraint execution_result_measurements_pk
+            primary key,
+    execution_result_id TEXT
+        constraint execution_result_measurements_execution_results_id_fk
+            references execution_results,
+    nanoseconds     REAL    not null,
+    operations      INTEGER not null,
+    iteration_index INTEGER not null,
+    iteration_mode  TEXT    not null,
+    iteration_stage TEXT    not null,
+    launch_index    INTEGER not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              execution_result_measurements.`id`,
+              execution_result_measurements.`execution_result_id`,
+              execution_result_measurements.`nanoseconds`,
+              execution_result_measurements.`operations`,
+              execution_result_measurements.`iteration_index`,
+              execution_result_measurements.`iteration_mode`,
+              execution_result_measurements.`iteration_stage`,
+              execution_result_measurements.`launch_index`
+        FROM execution_result_measurements
+        """
+    
+        static member TableName() = "execution_result_measurements"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ExecutionResultMeasurements.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ExecutionResultMeasurements.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ExecutionResultMeasurements.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `execution_result_prefixed_lines`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ExecutionResultPrefixedLines =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
+          [<JsonPropertyName("prefixedLine")>] PrefixedLine: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ExecutionResultId = String.Empty
+              PrefixedLine = String.Empty }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE execution_result_prefixed_lines
+(
+    id                  TEXT not null
+        constraint execution_result_prefixed_lines_pk
+            primary key,
+    execution_result_id TEXT not null
+        constraint execution_result_prefixed_lines_execution_results_id_fk
+            references execution_results,
+    prefixed_line       TEXT not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              execution_result_prefixed_lines.`id`,
+              execution_result_prefixed_lines.`execution_result_id`,
+              execution_result_prefixed_lines.`prefixed_line`
+        FROM execution_result_prefixed_lines
+        """
+    
+        static member TableName() = "execution_result_prefixed_lines"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ExecutionResultPrefixedLines.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ExecutionResultPrefixedLines.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ExecutionResultPrefixedLines.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `execution_result_standard_output_lines`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ExecutionResultStandardOutputLines =
+        { [<JsonPropertyName("id")>] Id: string option
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
+          [<JsonPropertyName("line")>] Line: string }
+    
+        static member Blank() =
+            { Id = None
+              ExecutionResultId = String.Empty
+              Line = String.Empty }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE execution_result_standard_output_lines
+(
+    id                  TEXT
+        constraint execution_result_standard_output_lines_pk
+            primary key,
+    execution_result_id TEXT not null
+        constraint execution_result_standard_output_lines_execution_results_id_fk
+            references execution_results,
+    line                TEXT not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              execution_result_standard_output_lines.`id`,
+              execution_result_standard_output_lines.`execution_result_id`,
+              execution_result_standard_output_lines.`line`
+        FROM execution_result_standard_output_lines
+        """
+    
+        static member TableName() = "execution_result_standard_output_lines"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ExecutionResultStandardOutputLines.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ExecutionResultStandardOutputLines.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ExecutionResultStandardOutputLines.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `execution_results`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ExecutionResults =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string option
+          [<JsonPropertyName("exitCode")>] ExitCode: int64 option
+          [<JsonPropertyName("isSuccess")>] IsSuccess: bool
+          [<JsonPropertyName("processId")>] ProcessId: int64 option }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = None
+              ExitCode = None
+              IsSuccess = true
+              ProcessId = None }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE execution_results
+(
+    id         TEXT    not null
+        constraint execution_results_pk
+            primary key,
+    report_id  TEXT
+        constraint execution_results_benchmark_reports_id_fk
+            references benchmark_reports,
+    exit_code  INTEGER,
+    is_success INTEGER not null,
+    process_id INTEGER
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              execution_results.`id`,
+              execution_results.`report_id`,
+              execution_results.`exit_code`,
+              execution_results.`is_success`,
+              execution_results.`process_id`
+        FROM execution_results
+        """
+    
+        static member TableName() = "execution_results"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ExecutionResults.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ExecutionResults.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ExecutionResults.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `generate_artifacts`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type GenerateArtifacts =
+        { [<JsonPropertyName("id")>] Id: string option
+          [<JsonPropertyName("generateResultId")>] GenerateResultId: string
+          [<JsonPropertyName("path")>] Path: string }
+    
+        static member Blank() =
+            { Id = None
+              GenerateResultId = String.Empty
+              Path = String.Empty }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE generate_artifacts
+(
+    id                 TEXT
+        constraint generate_artifacts_pk
+            primary key,
+    generate_result_id TEXT not null
+        constraint generate_artifacts_generate_results_id_fk
+            references generate_results,
+    path               TEXT not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              generate_artifacts.`id`,
+              generate_artifacts.`generate_result_id`,
+              generate_artifacts.`path`
+        FROM generate_artifacts
+        """
+    
+        static member TableName() = "generate_artifacts"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ GenerateArtifacts.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  GenerateArtifacts.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  GenerateArtifacts.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `generate_results`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type GenerateResults =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string
+          [<JsonPropertyName("isGenerateSuccess")>] IsGenerateSuccess: bool
+          [<JsonPropertyName("executablePath")>] ExecutablePath: string
+          [<JsonPropertyName("programName")>] ProgramName: string
+          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string
+          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string
+          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string
+          [<JsonPropertyName("packagesDirectoryName")>] PackagesDirectoryName: string
+          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string
+          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string
+          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string
+          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string
+          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string
+          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = String.Empty
+              IsGenerateSuccess = true
+              ExecutablePath = String.Empty
+              ProgramName = String.Empty
+              AppConfigPath = String.Empty
+              BinariesDirectoryPath = String.Empty
+              IntermediateDirectoryPath = String.Empty
+              PackagesDirectoryName = String.Empty
+              ProgramCodePath = String.Empty
+              ProjectFilePath = String.Empty
+              BuildArtifactsDirectoryPath = String.Empty
+              BuildScriptFilePath = String.Empty
+              NugetConfigPath = String.Empty
+              RootArtifactsFolderPath = String.Empty }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE "generate_results"
+(
+    id                             TEXT    not null
+        constraint generate_results_pk
+            primary key,
+    report_id                      TEXT    not null
+        constraint generate_results_benchmark_reports_id_fk
+            references benchmark_reports,
+    is_generate_success            INTEGER not null,
+    executable_path                TEXT    not null,
+    program_name                   TEXT    not null,
+    app_config_path                TEXT    not null,
+    binaries_directory_path        TEXT    not null,
+    intermediate_directory_path    TEXT    not null,
+    packages_directory_name        TEXT    not null,
+    program_code_path              TEXT    not null,
+    project_file_path              TEXT    not null,
+    build_artifacts_directory_path TEXT    not null,
+    build_script_file_path         TEXT    not null,
+    nuget_config_path              TEXT    not null,
+    root_artifacts_folder_path     TEXT    not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              generate_results.`id`,
+              generate_results.`report_id`,
+              generate_results.`is_generate_success`,
+              generate_results.`executable_path`,
+              generate_results.`program_name`,
+              generate_results.`app_config_path`,
+              generate_results.`binaries_directory_path`,
+              generate_results.`intermediate_directory_path`,
+              generate_results.`packages_directory_name`,
+              generate_results.`program_code_path`,
+              generate_results.`project_file_path`,
+              generate_results.`build_artifacts_directory_path`,
+              generate_results.`build_script_file_path`,
+              generate_results.`nuget_config_path`,
+              generate_results.`root_artifacts_folder_path`
+        FROM generate_results
+        """
+    
+        static member TableName() = "generate_results"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ GenerateResults.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  GenerateResults.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  GenerateResults.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `infrastructure_arguments`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type InfrastructureArguments =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("infrastructureId")>] InfrastructureId: string option
+          [<JsonPropertyName("textRepresentation")>] TextRepresentation: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              InfrastructureId = None
+              TextRepresentation = String.Empty }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE infrastructure_arguments
+(
+    id                  TEXT not null
+        constraint infrastructure_arguments_pk
+            primary key,
+    infrastructure_id   TEXT
+        constraint infrastructure_arguments_job_infrastructures_id_fk
+            references job_infrastructures,
+    text_representation TEXT not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              infrastructure_arguments.`id`,
+              infrastructure_arguments.`infrastructure_id`,
+              infrastructure_arguments.`text_representation`
+        FROM infrastructure_arguments
+        """
+    
+        static member TableName() = "infrastructure_arguments"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ InfrastructureArguments.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  InfrastructureArguments.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  InfrastructureArguments.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `infrastructure_nuget_references`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type InfrastructureNugetReferences =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("infrastructureId")>] InfrastructureId: string
+          [<JsonPropertyName("prerelease")>] Prerelease: int64
+          [<JsonPropertyName("packageName")>] PackageName: string
+          [<JsonPropertyName("packageSource")>] PackageSource: string
+          [<JsonPropertyName("packageVersion")>] PackageVersion: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              InfrastructureId = String.Empty
+              Prerelease = 0L
+              PackageName = String.Empty
+              PackageSource = String.Empty
+              PackageVersion = String.Empty }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE infrastructure_nuget_references
+(
+    id                TEXT    not null
+        constraint infrastructure_nuget_references_pk
+            primary key,
+    infrastructure_id TEXT    not null
+        constraint infrastructure_nuget_references_job_infrastructures_id_fk
+            references job_infrastructures,
+    prerelease        INTEGER not null,
+    package_name      TEXT    not null,
+    package_source    TEXT    not null,
+    package_version   TEXT    not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              infrastructure_nuget_references.`id`,
+              infrastructure_nuget_references.`infrastructure_id`,
+              infrastructure_nuget_references.`prerelease`,
+              infrastructure_nuget_references.`package_name`,
+              infrastructure_nuget_references.`package_source`,
+              infrastructure_nuget_references.`package_version`
+        FROM infrastructure_nuget_references
+        """
+    
+        static member TableName() = "infrastructure_nuget_references"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ InfrastructureNugetReferences.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  InfrastructureNugetReferences.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  InfrastructureNugetReferences.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
     /// A record representing a row in the table `job_accuracy`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type JobAccuracy =
         { [<JsonPropertyName("id")>] Id: string
@@ -1003,7 +1968,7 @@ module Records =
     /// A record representing a row in the table `job_environments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type JobEnvironments =
         { [<JsonPropertyName("id")>] Id: string
@@ -1081,10 +2046,168 @@ module Records =
                   |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
     
     /// <summary>
+    /// A record representing a row in the table `job_infrastructures`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type JobInfrastructures =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("jobId")>] JobId: string
+          [<JsonPropertyName("clockFrequencyHz")>] ClockFrequencyHz: int64
+          [<JsonPropertyName("clockTitle")>] ClockTitle: string
+          [<JsonPropertyName("clockIsAvailable")>] ClockIsAvailable: int64
+          [<JsonPropertyName("frozen")>] Frozen: int64
+          [<JsonPropertyName("infrastructureId")>] InfrastructureId: string
+          [<JsonPropertyName("toolchainName")>] ToolchainName: string
+          [<JsonPropertyName("toolchainIsInProcess")>] ToolchainIsInProcess: int64
+          [<JsonPropertyName("buildConfiguration")>] BuildConfiguration: string
+          [<JsonPropertyName("hasChanges")>] HasChanges: bool }
+    
+        static member Blank() =
+            { Id = String.Empty
+              JobId = String.Empty
+              ClockFrequencyHz = 0L
+              ClockTitle = String.Empty
+              ClockIsAvailable = 0L
+              Frozen = 0L
+              InfrastructureId = String.Empty
+              ToolchainName = String.Empty
+              ToolchainIsInProcess = 0L
+              BuildConfiguration = String.Empty
+              HasChanges = true }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE job_infrastructures
+(
+    id                      TEXT    not null
+        constraint job_infrastructures_pk
+            primary key,
+    job_id                  TEXT    not null
+        constraint job_infrastructures_benchmark_jobs_id_fk
+            references benchmark_jobs,
+    clock_frequency_hz      INTEGER not null,
+    clock_title             TEXT    not null,
+    clock_is_available      INTEGER not null,
+    frozen                  INTEGER not null,
+    infrastructure_id       TEXT    not null,
+    toolchain_name          TEXT    not null,
+    toolchain_is_in_process INTEGER not null,
+    build_configuration     TEXT    not null,
+    has_changes             INTEGER not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              job_infrastructures.`id`,
+              job_infrastructures.`job_id`,
+              job_infrastructures.`clock_frequency_hz`,
+              job_infrastructures.`clock_title`,
+              job_infrastructures.`clock_is_available`,
+              job_infrastructures.`frozen`,
+              job_infrastructures.`infrastructure_id`,
+              job_infrastructures.`toolchain_name`,
+              job_infrastructures.`toolchain_is_in_process`,
+              job_infrastructures.`build_configuration`,
+              job_infrastructures.`has_changes`
+        FROM job_infrastructures
+        """
+    
+        static member TableName() = "job_infrastructures"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ JobInfrastructures.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  JobInfrastructures.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  JobInfrastructures.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `job_meta`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type JobMeta =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("jobId")>] JobId: string
+          [<JsonPropertyName("baseline")>] Baseline: int64
+          [<JsonPropertyName("frozen")>] Frozen: int64
+          [<JsonPropertyName("metaId")>] MetaId: string
+          [<JsonPropertyName("hasChanges")>] HasChanges: bool
+          [<JsonPropertyName("isDefault")>] IsDefault: bool
+          [<JsonPropertyName("isMutator")>] IsMutator: bool }
+    
+        static member Blank() =
+            { Id = String.Empty
+              JobId = String.Empty
+              Baseline = 0L
+              Frozen = 0L
+              MetaId = String.Empty
+              HasChanges = true
+              IsDefault = true
+              IsMutator = true }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE job_meta
+(
+    id          TEXT    not null
+        constraint job_meta_pk
+            primary key,
+    job_id      TEXT    not null
+        constraint job_meta_benchmark_jobs_id_fk
+            references benchmark_jobs,
+    baseline    INTEGER not null,
+    frozen      INTEGER not null,
+    meta_id     TEXT    not null,
+    has_changes INTEGER not null,
+    is_default  INTEGER not null,
+    is_mutator  INTEGER not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              job_meta.`id`,
+              job_meta.`job_id`,
+              job_meta.`baseline`,
+              job_meta.`frozen`,
+              job_meta.`meta_id`,
+              job_meta.`has_changes`,
+              job_meta.`is_default`,
+              job_meta.`is_mutator`
+        FROM job_meta
+        """
+    
+        static member TableName() = "job_meta"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ JobMeta.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  JobMeta.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  JobMeta.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
     /// A record representing a row in the table `job_runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type JobRuns =
         { [<JsonPropertyName("id")>] Id: string
@@ -1197,7 +2320,7 @@ module Records =
     /// A record representing a row in the table `method_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type MethodInfo =
         { [<JsonPropertyName("id")>] Id: string option
@@ -1241,10 +2364,233 @@ module Records =
                   |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
     
     /// <summary>
+    /// A record representing a row in the table `report_measurements`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ReportMeasurements =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string
+          [<JsonPropertyName("nanoseconds")>] Nanoseconds: decimal
+          [<JsonPropertyName("operations")>] Operations: int64
+          [<JsonPropertyName("iterationIndex")>] IterationIndex: int64
+          [<JsonPropertyName("iterationMode")>] IterationMode: string
+          [<JsonPropertyName("iterationStage")>] IterationStage: string
+          [<JsonPropertyName("launchIndex")>] LaunchIndex: int64 }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = String.Empty
+              Nanoseconds = 0m
+              Operations = 0L
+              IterationIndex = 0L
+              IterationMode = String.Empty
+              IterationStage = String.Empty
+              LaunchIndex = 0L }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE report_measurements
+(
+    id              TEXT    not null
+        constraint report_measurements_pk
+            primary key,
+    report_id       TEXT    not null
+        constraint report_measurements_benchmark_reports_id_fk
+            references benchmark_reports,
+    nanoseconds     REAL    not null,
+    operations      INTEGER not null,
+    iteration_index INTEGER not null,
+    iteration_mode  TEXT    not null,
+    iteration_stage TEXT    not null,
+    launch_index    INTEGER not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              report_measurements.`id`,
+              report_measurements.`report_id`,
+              report_measurements.`nanoseconds`,
+              report_measurements.`operations`,
+              report_measurements.`iteration_index`,
+              report_measurements.`iteration_mode`,
+              report_measurements.`iteration_stage`,
+              report_measurements.`launch_index`
+        FROM report_measurements
+        """
+    
+        static member TableName() = "report_measurements"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ReportMeasurements.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ReportMeasurements.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ReportMeasurements.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `report_metrics`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ReportMetrics =
+        { [<JsonPropertyName("id")>] Id: string option
+          [<JsonPropertyName("reportId")>] ReportId: string option
+          [<JsonPropertyName("metricKey")>] MetricKey: string
+          [<JsonPropertyName("metricValue")>] MetricValue: decimal
+          [<JsonPropertyName("metricId")>] MetricId: string
+          [<JsonPropertyName("legend")>] Legend: string
+          [<JsonPropertyName("unit")>] Unit: string option
+          [<JsonPropertyName("displayName")>] DisplayName: string option
+          [<JsonPropertyName("numberFormat")>] NumberFormat: string option
+          [<JsonPropertyName("unitType")>] UnitType: string
+          [<JsonPropertyName("priorityInCategory")>] PriorityInCategory: int64
+          [<JsonPropertyName("theGreaterTheBetter")>] TheGreaterTheBetter: int64 }
+    
+        static member Blank() =
+            { Id = None
+              ReportId = None
+              MetricKey = String.Empty
+              MetricValue = 0m
+              MetricId = String.Empty
+              Legend = String.Empty
+              Unit = None
+              DisplayName = None
+              NumberFormat = None
+              UnitType = String.Empty
+              PriorityInCategory = 0L
+              TheGreaterTheBetter = 0L }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE report_metrics
+(
+    id                     TEXT
+        constraint report_metrics_pk
+            primary key,
+    report_id              TEXT
+        constraint report_metrics_benchmark_reports_id_fk
+            references benchmark_reports,
+    metric_key             TEXT    not null,
+    metric_value           REAL    not null,
+    metric_id              TEXT    not null,
+    legend                 TEXT    not null,
+    unit                   TEXT,
+    display_name           TEXT,
+    number_format          TEXT,
+    unit_type              TEXT    not null,
+    priority_in_category   INTEGER not null,
+    the_greater_the_better INTEGER not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              report_metrics.`id`,
+              report_metrics.`report_id`,
+              report_metrics.`metric_key`,
+              report_metrics.`metric_value`,
+              report_metrics.`metric_id`,
+              report_metrics.`legend`,
+              report_metrics.`unit`,
+              report_metrics.`display_name`,
+              report_metrics.`number_format`,
+              report_metrics.`unit_type`,
+              report_metrics.`priority_in_category`,
+              report_metrics.`the_greater_the_better`
+        FROM report_metrics
+        """
+    
+        static member TableName() = "report_metrics"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ReportMetrics.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ReportMetrics.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ReportMetrics.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
+    /// A record representing a row in the table `report_original_values`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ReportOriginalValues =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string
+          [<JsonPropertyName("value")>] Value: decimal option
+          [<JsonPropertyName("isUpperOutlier")>] IsUpperOutlier: bool
+          [<JsonPropertyName("isLowerOutlier")>] IsLowerOutlier: bool }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = String.Empty
+              Value = None
+              IsUpperOutlier = true
+              IsLowerOutlier = true }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE report_original_values
+(
+    id               TEXT    not null
+        constraint report_original_values_pk
+            primary key,
+    report_id        TEXT    not null
+        constraint result_original_values_benchmark_results_id_fk
+            references benchmark_reports,
+    value            REAL,
+    is_upper_outlier INTEGER not null,
+    is_lower_outlier INTEGER not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              report_original_values.`id`,
+              report_original_values.`report_id`,
+              report_original_values.`value`,
+              report_original_values.`is_upper_outlier`,
+              report_original_values.`is_lower_outlier`
+        FROM report_original_values
+        """
+    
+        static member TableName() = "report_original_values"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ReportOriginalValues.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ReportOriginalValues.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ReportOriginalValues.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+    /// <summary>
     /// A record representing a row in the table `resource_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type ResourceMetadataItem =
         { [<JsonPropertyName("resourceId")>] ResourceId: string
@@ -1297,7 +2643,7 @@ module Records =
     /// A record representing a row in the table `resources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type Resource =
         { [<JsonPropertyName("id")>] Id: string option
@@ -1368,7 +2714,7 @@ module Records =
     /// A record representing a row in the table `run_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type RunMetadataItem =
         { [<JsonPropertyName("runId")>] RunId: string
@@ -1421,7 +2767,7 @@ module Records =
     /// A record representing a row in the table `runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type Runs =
         { [<JsonPropertyName("id")>] Id: string
@@ -1476,7 +2822,7 @@ module Records =
     /// A record representing a row in the table `source_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type SourceMetadataItem =
         { [<JsonPropertyName("sourceId")>] SourceId: string
@@ -1529,7 +2875,7 @@ module Records =
     /// A record representing a row in the table `sources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type Source =
         { [<JsonPropertyName("id")>] Id: string
@@ -1584,14 +2930,75 @@ module Records =
                   Source.CreateTriggersSql()
                   |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
     
-/// Module generated on 20/10/2024 20:40:58 (utc) via Freql.Tools.
+    /// <summary>
+    /// A record representing a row in the table `validation_error`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type ValidationError =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("message")>] Message: string
+          [<JsonPropertyName("benchmarkId")>] BenchmarkId: string option
+          [<JsonPropertyName("benchmarkCaseDisplayId")>] BenchmarkCaseDisplayId: string
+          [<JsonPropertyName("isCritical")>] IsCritical: bool }
+    
+        static member Blank() =
+            { Id = String.Empty
+              Message = String.Empty
+              BenchmarkId = None
+              BenchmarkCaseDisplayId = String.Empty
+              IsCritical = true }
+    
+        static member CreateTableSql() = """
+        CREATE TABLE validation_error
+(
+    id                        TEXT    not null
+        constraint validation_error_pk
+            primary key,
+    message                   TEXT    not null,
+    benchmark_id              TEXT
+        constraint validation_error_benchmarks_id_fk
+            references benchmarks,
+    benchmark_case_display_id TEXT    not null,
+    is_critical               INTEGER not null
+)
+        """
+    
+        static member SelectSql() = """
+        SELECT
+              validation_error.`id`,
+              validation_error.`message`,
+              validation_error.`benchmark_id`,
+              validation_error.`benchmark_case_display_id`,
+              validation_error.`is_critical`
+        FROM validation_error
+        """
+    
+        static member TableName() = "validation_error"
+    
+        static member CreateIndexesSql() = []
+    
+        static member CreateTriggersSql() = []
+    
+        static member InitializationSql(checkIfExists: bool) =
+            [ ValidationError.CreateTableSql()
+              |> Utils.updateCheckIfExists checkIfExists "TABLE"
+              yield!
+                  ValidationError.CreateIndexesSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "INDEX")
+              yield!
+                  ValidationError.CreateTriggersSql()
+                  |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
+    
+/// Module generated on 21/10/2024 11:57:52 (utc) via Freql.Tools.
 [<RequireQualifiedAccess>]
 module Parameters =
     /// <summary>
     /// A record representing a new row in the table `artifact_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewArtifactMetadataItem =
         { [<JsonPropertyName("artifactId")>] ArtifactId: string
@@ -1607,7 +3014,7 @@ module Parameters =
     /// A record representing a new row in the table `artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewArtifact =
         { [<JsonPropertyName("id")>] Id: string option
@@ -1631,7 +3038,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_build_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewBenchmarkBuildInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -1697,7 +3104,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_build_info_antivirus_installions`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewBenchmarkBuildInfoAntivirusInstallions =
         { [<JsonPropertyName("buildInfoId")>] BuildInfoId: string
@@ -1711,7 +3118,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_case_descriptors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewBenchmarkCaseDescriptors =
         { [<JsonPropertyName("id")>] Id: string
@@ -1745,7 +3152,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_cases`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewBenchmarkCases =
         { [<JsonPropertyName("id")>] Id: string
@@ -1777,7 +3184,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_jobs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewBenchmarkJobs =
         { [<JsonPropertyName("id")>] Id: string
@@ -1800,10 +3207,98 @@ module Parameters =
               ResolveId = String.Empty }
     
     /// <summary>
+    /// A record representing a new row in the table `benchmark_reports`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewBenchmarkReports =
+        { [<JsonPropertyName("id")>] Id: string option
+          [<JsonPropertyName("caseId")>] CaseId: string
+          [<JsonPropertyName("success")>] Success: int64
+          [<JsonPropertyName("gcStatsGen0Collections")>] GcStatsGen0Collections: int64
+          [<JsonPropertyName("gcStatsGen1Collections")>] GcStatsGen1Collections: int64
+          [<JsonPropertyName("gcStatsGen2Collections")>] GcStatsGen2Collections: int64
+          [<JsonPropertyName("gcStatsTotalOperations")>] GcStatsTotalOperations: int64
+          [<JsonPropertyName("gcStatsTotalAllocatedBytes")>] GcStatsTotalAllocatedBytes: int64
+          [<JsonPropertyName("gcStatsBytesAllocatedPerOperation")>] GcStatsBytesAllocatedPerOperation: int64
+          [<JsonPropertyName("resultsStatsKurtosis")>] ResultsStatsKurtosis: decimal
+          [<JsonPropertyName("resultsStatsMax")>] ResultsStatsMax: decimal
+          [<JsonPropertyName("resultsStatsMean")>] ResultsStatsMean: decimal
+          [<JsonPropertyName("resultsStatsMedian")>] ResultsStatsMedian: decimal
+          [<JsonPropertyName("resultsStatsN")>] ResultsStatsN: int64
+          [<JsonPropertyName("resultsStatsQ1")>] ResultsStatsQ1: decimal option
+          [<JsonPropertyName("resultsStatsQ3")>] ResultsStatsQ3: decimal
+          [<JsonPropertyName("resultsStatsSkewness")>] ResultsStatsSkewness: decimal
+          [<JsonPropertyName("resultsStatsVariance")>] ResultsStatsVariance: decimal
+          [<JsonPropertyName("resultsStatsInterquartileRange")>] ResultsStatsInterquartileRange: decimal
+          [<JsonPropertyName("resultsStatsLowerFence")>] ResultsStatsLowerFence: decimal
+          [<JsonPropertyName("resultsStatsStandardDeviation")>] ResultsStatsStandardDeviation: decimal
+          [<JsonPropertyName("resultsStatsStandardError")>] ResultsStatsStandardError: decimal
+          [<JsonPropertyName("resultsStatsUpperFence")>] ResultsStatsUpperFence: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalLevel")>] ResultsStatsConfidenceIntervalLevel: string
+          [<JsonPropertyName("resultsStatsConfidenceIntervalLower")>] ResultsStatsConfidenceIntervalLower: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalMargin")>] ResultsStatsConfidenceIntervalMargin: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalMean")>] ResultsStatsConfidenceIntervalMean: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalN")>] ResultsStatsConfidenceIntervalN: int64
+          [<JsonPropertyName("resultsStatsConfidenceIntervalUpper")>] ResultsStatsConfidenceIntervalUpper: decimal option
+          [<JsonPropertyName("resultsStatsConfidenceIntervalStandardError")>] ResultsStatsConfidenceIntervalStandardError: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP0")>] ResultsStatsPercentilesP0: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP25")>] ResultsStatsPercentilesP25: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP50")>] ResultsStatsPercentilesP50: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP67")>] ResultsStatsPercentilesP67: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP80")>] ResultsStatsPercentilesP80: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP85")>] ResultsStatsPercentilesP85: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP90")>] ResultsStatsPercentilesP90: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP95")>] ResultsStatsPercentilesP95: decimal
+          [<JsonPropertyName("resultsStatsPercentilesP100")>] ResultsStatsPercentilesP100: decimal }
+    
+        static member Blank() =
+            { Id = None
+              CaseId = String.Empty
+              Success = 0L
+              GcStatsGen0Collections = 0L
+              GcStatsGen1Collections = 0L
+              GcStatsGen2Collections = 0L
+              GcStatsTotalOperations = 0L
+              GcStatsTotalAllocatedBytes = 0L
+              GcStatsBytesAllocatedPerOperation = 0L
+              ResultsStatsKurtosis = 0m
+              ResultsStatsMax = 0m
+              ResultsStatsMean = 0m
+              ResultsStatsMedian = 0m
+              ResultsStatsN = 0L
+              ResultsStatsQ1 = None
+              ResultsStatsQ3 = 0m
+              ResultsStatsSkewness = 0m
+              ResultsStatsVariance = 0m
+              ResultsStatsInterquartileRange = 0m
+              ResultsStatsLowerFence = 0m
+              ResultsStatsStandardDeviation = 0m
+              ResultsStatsStandardError = 0m
+              ResultsStatsUpperFence = 0m
+              ResultsStatsConfidenceIntervalLevel = String.Empty
+              ResultsStatsConfidenceIntervalLower = 0m
+              ResultsStatsConfidenceIntervalMargin = 0m
+              ResultsStatsConfidenceIntervalMean = 0m
+              ResultsStatsConfidenceIntervalN = 0L
+              ResultsStatsConfidenceIntervalUpper = None
+              ResultsStatsConfidenceIntervalStandardError = 0m
+              ResultsStatsPercentilesP0 = 0m
+              ResultsStatsPercentilesP25 = 0m
+              ResultsStatsPercentilesP50 = 0m
+              ResultsStatsPercentilesP67 = 0m
+              ResultsStatsPercentilesP80 = 0m
+              ResultsStatsPercentilesP85 = 0m
+              ResultsStatsPercentilesP90 = 0m
+              ResultsStatsPercentilesP95 = 0m
+              ResultsStatsPercentilesP100 = 0m }
+    
+    /// <summary>
     /// A record representing a new row in the table `benchmarks`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewBenchmark =
         { [<JsonPropertyName("id")>] Id: string
@@ -1828,10 +3323,70 @@ module Parameters =
               HasCriticalValidationErrors = true }
     
     /// <summary>
+    /// A record representing a new row in the table `build_artifacts`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewBuildArtifacts =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("buildResultId")>] BuildResultId: string
+          [<JsonPropertyName("path")>] Path: string option }
+    
+        static member Blank() =
+            { Id = String.Empty
+              BuildResultId = String.Empty
+              Path = None }
+    
+    /// <summary>
+    /// A record representing a new row in the table `build_results`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewBuildResults =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string
+          [<JsonPropertyName("errorMessage")>] ErrorMessage: string option
+          [<JsonPropertyName("isBuildSuccess")>] IsBuildSuccess: bool
+          [<JsonPropertyName("isGenerateSuccess")>] IsGenerateSuccess: bool
+          [<JsonPropertyName("executablePath")>] ExecutablePath: string
+          [<JsonPropertyName("programName")>] ProgramName: string
+          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string
+          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string
+          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string
+          [<JsonPropertyName("packageDirectoryName")>] PackageDirectoryName: string
+          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string
+          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string
+          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string
+          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string
+          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string
+          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = String.Empty
+              ErrorMessage = None
+              IsBuildSuccess = true
+              IsGenerateSuccess = true
+              ExecutablePath = String.Empty
+              ProgramName = String.Empty
+              AppConfigPath = String.Empty
+              BinariesDirectoryPath = String.Empty
+              IntermediateDirectoryPath = String.Empty
+              PackageDirectoryName = String.Empty
+              ProgramCodePath = String.Empty
+              ProjectFilePath = String.Empty
+              BuildArtifactsDirectoryPath = String.Empty
+              BuildScriptFilePath = String.Empty
+              NugetConfigPath = String.Empty
+              RootArtifactsFolderPath = String.Empty }
+    
+    /// <summary>
     /// A record representing a new row in the table `environment_gcs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewEnvironmentGcs =
         { [<JsonPropertyName("id")>] Id: string
@@ -1869,7 +3424,7 @@ module Parameters =
     /// A record representing a new row in the table `environment_runtimes`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewEnvironmentRuntimes =
         { [<JsonPropertyName("id")>] Id: string
@@ -1891,7 +3446,7 @@ module Parameters =
     /// A record representing a new row in the table `environmental_variables`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewEnvironmentalVariables =
         { [<JsonPropertyName("id")>] Id: string
@@ -1906,10 +3461,214 @@ module Parameters =
               VariableValue = String.Empty }
     
     /// <summary>
+    /// A record representing a new row in the table `execution_result_errors`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewExecutionResultErrors =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
+          [<JsonPropertyName("error")>] Error: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ExecutionResultId = String.Empty
+              Error = String.Empty }
+    
+    /// <summary>
+    /// A record representing a new row in the table `execution_result_items`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewExecutionResultItems =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
+          [<JsonPropertyName("value")>] Value: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ExecutionResultId = String.Empty
+              Value = String.Empty }
+    
+    /// <summary>
+    /// A record representing a new row in the table `execution_result_measurements`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewExecutionResultMeasurements =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string option
+          [<JsonPropertyName("nanoseconds")>] Nanoseconds: decimal
+          [<JsonPropertyName("operations")>] Operations: int64
+          [<JsonPropertyName("iterationIndex")>] IterationIndex: int64
+          [<JsonPropertyName("iterationMode")>] IterationMode: string
+          [<JsonPropertyName("iterationStage")>] IterationStage: string
+          [<JsonPropertyName("launchIndex")>] LaunchIndex: int64 }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ExecutionResultId = None
+              Nanoseconds = 0m
+              Operations = 0L
+              IterationIndex = 0L
+              IterationMode = String.Empty
+              IterationStage = String.Empty
+              LaunchIndex = 0L }
+    
+    /// <summary>
+    /// A record representing a new row in the table `execution_result_prefixed_lines`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewExecutionResultPrefixedLines =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
+          [<JsonPropertyName("prefixedLine")>] PrefixedLine: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ExecutionResultId = String.Empty
+              PrefixedLine = String.Empty }
+    
+    /// <summary>
+    /// A record representing a new row in the table `execution_result_standard_output_lines`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewExecutionResultStandardOutputLines =
+        { [<JsonPropertyName("id")>] Id: string option
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
+          [<JsonPropertyName("line")>] Line: string }
+    
+        static member Blank() =
+            { Id = None
+              ExecutionResultId = String.Empty
+              Line = String.Empty }
+    
+    /// <summary>
+    /// A record representing a new row in the table `execution_results`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewExecutionResults =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string option
+          [<JsonPropertyName("exitCode")>] ExitCode: int64 option
+          [<JsonPropertyName("isSuccess")>] IsSuccess: bool
+          [<JsonPropertyName("processId")>] ProcessId: int64 option }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = None
+              ExitCode = None
+              IsSuccess = true
+              ProcessId = None }
+    
+    /// <summary>
+    /// A record representing a new row in the table `generate_artifacts`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewGenerateArtifacts =
+        { [<JsonPropertyName("id")>] Id: string option
+          [<JsonPropertyName("generateResultId")>] GenerateResultId: string
+          [<JsonPropertyName("path")>] Path: string }
+    
+        static member Blank() =
+            { Id = None
+              GenerateResultId = String.Empty
+              Path = String.Empty }
+    
+    /// <summary>
+    /// A record representing a new row in the table `generate_results`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewGenerateResults =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string
+          [<JsonPropertyName("isGenerateSuccess")>] IsGenerateSuccess: bool
+          [<JsonPropertyName("executablePath")>] ExecutablePath: string
+          [<JsonPropertyName("programName")>] ProgramName: string
+          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string
+          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string
+          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string
+          [<JsonPropertyName("packagesDirectoryName")>] PackagesDirectoryName: string
+          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string
+          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string
+          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string
+          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string
+          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string
+          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = String.Empty
+              IsGenerateSuccess = true
+              ExecutablePath = String.Empty
+              ProgramName = String.Empty
+              AppConfigPath = String.Empty
+              BinariesDirectoryPath = String.Empty
+              IntermediateDirectoryPath = String.Empty
+              PackagesDirectoryName = String.Empty
+              ProgramCodePath = String.Empty
+              ProjectFilePath = String.Empty
+              BuildArtifactsDirectoryPath = String.Empty
+              BuildScriptFilePath = String.Empty
+              NugetConfigPath = String.Empty
+              RootArtifactsFolderPath = String.Empty }
+    
+    /// <summary>
+    /// A record representing a new row in the table `infrastructure_arguments`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewInfrastructureArguments =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("infrastructureId")>] InfrastructureId: string option
+          [<JsonPropertyName("textRepresentation")>] TextRepresentation: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              InfrastructureId = None
+              TextRepresentation = String.Empty }
+    
+    /// <summary>
+    /// A record representing a new row in the table `infrastructure_nuget_references`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewInfrastructureNugetReferences =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("infrastructureId")>] InfrastructureId: string
+          [<JsonPropertyName("prerelease")>] Prerelease: int64
+          [<JsonPropertyName("packageName")>] PackageName: string
+          [<JsonPropertyName("packageSource")>] PackageSource: string
+          [<JsonPropertyName("packageVersion")>] PackageVersion: string }
+    
+        static member Blank() =
+            { Id = String.Empty
+              InfrastructureId = String.Empty
+              Prerelease = 0L
+              PackageName = String.Empty
+              PackageSource = String.Empty
+              PackageVersion = String.Empty }
+    
+    /// <summary>
     /// A record representing a new row in the table `job_accuracy`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewJobAccuracy =
         { [<JsonPropertyName("id")>] Id: string
@@ -1945,7 +3704,7 @@ module Parameters =
     /// A record representing a new row in the table `job_environments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewJobEnvironments =
         { [<JsonPropertyName("id")>] Id: string
@@ -1972,10 +3731,68 @@ module Parameters =
               PowerPlanMode = None }
     
     /// <summary>
+    /// A record representing a new row in the table `job_infrastructures`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewJobInfrastructures =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("jobId")>] JobId: string
+          [<JsonPropertyName("clockFrequencyHz")>] ClockFrequencyHz: int64
+          [<JsonPropertyName("clockTitle")>] ClockTitle: string
+          [<JsonPropertyName("clockIsAvailable")>] ClockIsAvailable: int64
+          [<JsonPropertyName("frozen")>] Frozen: int64
+          [<JsonPropertyName("infrastructureId")>] InfrastructureId: string
+          [<JsonPropertyName("toolchainName")>] ToolchainName: string
+          [<JsonPropertyName("toolchainIsInProcess")>] ToolchainIsInProcess: int64
+          [<JsonPropertyName("buildConfiguration")>] BuildConfiguration: string
+          [<JsonPropertyName("hasChanges")>] HasChanges: bool }
+    
+        static member Blank() =
+            { Id = String.Empty
+              JobId = String.Empty
+              ClockFrequencyHz = 0L
+              ClockTitle = String.Empty
+              ClockIsAvailable = 0L
+              Frozen = 0L
+              InfrastructureId = String.Empty
+              ToolchainName = String.Empty
+              ToolchainIsInProcess = 0L
+              BuildConfiguration = String.Empty
+              HasChanges = true }
+    
+    /// <summary>
+    /// A record representing a new row in the table `job_meta`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewJobMeta =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("jobId")>] JobId: string
+          [<JsonPropertyName("baseline")>] Baseline: int64
+          [<JsonPropertyName("frozen")>] Frozen: int64
+          [<JsonPropertyName("metaId")>] MetaId: string
+          [<JsonPropertyName("hasChanges")>] HasChanges: bool
+          [<JsonPropertyName("isDefault")>] IsDefault: bool
+          [<JsonPropertyName("isMutator")>] IsMutator: bool }
+    
+        static member Blank() =
+            { Id = String.Empty
+              JobId = String.Empty
+              Baseline = 0L
+              Frozen = 0L
+              MetaId = String.Empty
+              HasChanges = true
+              IsDefault = true
+              IsMutator = true }
+    
+    /// <summary>
     /// A record representing a new row in the table `job_runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewJobRuns =
         { [<JsonPropertyName("id")>] Id: string
@@ -2021,7 +3838,7 @@ module Parameters =
     /// A record representing a new row in the table `method_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewMethodInfo =
         { [<JsonPropertyName("id")>] Id: string option
@@ -2032,10 +3849,90 @@ module Parameters =
               Name = None }
     
     /// <summary>
+    /// A record representing a new row in the table `report_measurements`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewReportMeasurements =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string
+          [<JsonPropertyName("nanoseconds")>] Nanoseconds: decimal
+          [<JsonPropertyName("operations")>] Operations: int64
+          [<JsonPropertyName("iterationIndex")>] IterationIndex: int64
+          [<JsonPropertyName("iterationMode")>] IterationMode: string
+          [<JsonPropertyName("iterationStage")>] IterationStage: string
+          [<JsonPropertyName("launchIndex")>] LaunchIndex: int64 }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = String.Empty
+              Nanoseconds = 0m
+              Operations = 0L
+              IterationIndex = 0L
+              IterationMode = String.Empty
+              IterationStage = String.Empty
+              LaunchIndex = 0L }
+    
+    /// <summary>
+    /// A record representing a new row in the table `report_metrics`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewReportMetrics =
+        { [<JsonPropertyName("id")>] Id: string option
+          [<JsonPropertyName("reportId")>] ReportId: string option
+          [<JsonPropertyName("metricKey")>] MetricKey: string
+          [<JsonPropertyName("metricValue")>] MetricValue: decimal
+          [<JsonPropertyName("metricId")>] MetricId: string
+          [<JsonPropertyName("legend")>] Legend: string
+          [<JsonPropertyName("unit")>] Unit: string option
+          [<JsonPropertyName("displayName")>] DisplayName: string option
+          [<JsonPropertyName("numberFormat")>] NumberFormat: string option
+          [<JsonPropertyName("unitType")>] UnitType: string
+          [<JsonPropertyName("priorityInCategory")>] PriorityInCategory: int64
+          [<JsonPropertyName("theGreaterTheBetter")>] TheGreaterTheBetter: int64 }
+    
+        static member Blank() =
+            { Id = None
+              ReportId = None
+              MetricKey = String.Empty
+              MetricValue = 0m
+              MetricId = String.Empty
+              Legend = String.Empty
+              Unit = None
+              DisplayName = None
+              NumberFormat = None
+              UnitType = String.Empty
+              PriorityInCategory = 0L
+              TheGreaterTheBetter = 0L }
+    
+    /// <summary>
+    /// A record representing a new row in the table `report_original_values`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewReportOriginalValues =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("reportId")>] ReportId: string
+          [<JsonPropertyName("value")>] Value: decimal option
+          [<JsonPropertyName("isUpperOutlier")>] IsUpperOutlier: bool
+          [<JsonPropertyName("isLowerOutlier")>] IsLowerOutlier: bool }
+    
+        static member Blank() =
+            { Id = String.Empty
+              ReportId = String.Empty
+              Value = None
+              IsUpperOutlier = true
+              IsLowerOutlier = true }
+    
+    /// <summary>
     /// A record representing a new row in the table `resource_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewResourceMetadataItem =
         { [<JsonPropertyName("resourceId")>] ResourceId: string
@@ -2051,7 +3948,7 @@ module Parameters =
     /// A record representing a new row in the table `resources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewResource =
         { [<JsonPropertyName("id")>] Id: string option
@@ -2075,7 +3972,7 @@ module Parameters =
     /// A record representing a new row in the table `run_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewRunMetadataItem =
         { [<JsonPropertyName("runId")>] RunId: string
@@ -2091,7 +3988,7 @@ module Parameters =
     /// A record representing a new row in the table `runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewRuns =
         { [<JsonPropertyName("id")>] Id: string
@@ -2109,7 +4006,7 @@ module Parameters =
     /// A record representing a new row in the table `source_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewSourceMetadataItem =
         { [<JsonPropertyName("sourceId")>] SourceId: string
@@ -2125,7 +4022,7 @@ module Parameters =
     /// A record representing a new row in the table `sources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     type NewSource =
         { [<JsonPropertyName("id")>] Id: string
@@ -2139,7 +4036,27 @@ module Parameters =
               Name = String.Empty
               SourceType = String.Empty }
     
-/// Module generated on 20/10/2024 20:40:58 (utc) via Freql.Tools.
+    /// <summary>
+    /// A record representing a new row in the table `validation_error`.
+    /// </summary>
+    /// <remarks>
+    /// This record was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    type NewValidationError =
+        { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("message")>] Message: string
+          [<JsonPropertyName("benchmarkId")>] BenchmarkId: string option
+          [<JsonPropertyName("benchmarkCaseDisplayId")>] BenchmarkCaseDisplayId: string
+          [<JsonPropertyName("isCritical")>] IsCritical: bool }
+    
+        static member Blank() =
+            { Id = String.Empty
+              Message = String.Empty
+              BenchmarkId = None
+              BenchmarkCaseDisplayId = String.Empty
+              IsCritical = true }
+    
+/// Module generated on 21/10/2024 11:57:52 (utc) via Freql.Tools.
 [<RequireQualifiedAccess>]
 module Operations =
 
@@ -2154,7 +4071,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2173,7 +4090,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2196,7 +4113,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2215,7 +4132,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2238,7 +4155,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2257,7 +4174,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2280,7 +4197,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2299,7 +4216,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2322,7 +4239,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2341,7 +4258,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2364,7 +4281,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2383,7 +4300,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2406,7 +4323,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2425,7 +4342,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2440,6 +4357,48 @@ module Operations =
         context.Insert("benchmark_jobs", parameters)
     
     /// <summary>
+    /// Select a `Records.BenchmarkReports` from the table `benchmark_reports`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.BenchmarkReports&gt;` and uses Records.BenchmarkReports.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectBenchmarkReportsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectBenchmarkReportsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.BenchmarkReports.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.BenchmarkReports>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.BenchmarkReports&gt;` and uses Records.BenchmarkReports.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectBenchmarkReportsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectBenchmarkReportsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.BenchmarkReports.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.BenchmarkReports>(sql, parameters)
+    
+    let insertBenchmarkReports (context: SqliteContext) (parameters: Parameters.NewBenchmarkReports) =
+        context.Insert("benchmark_reports", parameters)
+    
+    /// <summary>
     /// Select a `Records.Benchmark` from the table `benchmarks`.
     /// Internally this calls `context.SelectSingleAnon&lt;Records.Benchmark&gt;` and uses Records.Benchmark.SelectSql().
     /// The caller can provide extra string lines to create a query and boxed parameters.
@@ -2448,7 +4407,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2467,7 +4426,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2482,6 +4441,90 @@ module Operations =
         context.Insert("benchmarks", parameters)
     
     /// <summary>
+    /// Select a `Records.BuildArtifacts` from the table `build_artifacts`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.BuildArtifacts&gt;` and uses Records.BuildArtifacts.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectBuildArtifactsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectBuildArtifactsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.BuildArtifacts.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.BuildArtifacts>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.BuildArtifacts&gt;` and uses Records.BuildArtifacts.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectBuildArtifactsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectBuildArtifactsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.BuildArtifacts.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.BuildArtifacts>(sql, parameters)
+    
+    let insertBuildArtifacts (context: SqliteContext) (parameters: Parameters.NewBuildArtifacts) =
+        context.Insert("build_artifacts", parameters)
+    
+    /// <summary>
+    /// Select a `Records.BuildResults` from the table `build_results`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.BuildResults&gt;` and uses Records.BuildResults.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectBuildResultsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectBuildResultsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.BuildResults.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.BuildResults>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.BuildResults&gt;` and uses Records.BuildResults.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectBuildResultsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectBuildResultsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.BuildResults.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.BuildResults>(sql, parameters)
+    
+    let insertBuildResults (context: SqliteContext) (parameters: Parameters.NewBuildResults) =
+        context.Insert("build_results", parameters)
+    
+    /// <summary>
     /// Select a `Records.EnvironmentGcs` from the table `environment_gcs`.
     /// Internally this calls `context.SelectSingleAnon&lt;Records.EnvironmentGcs&gt;` and uses Records.EnvironmentGcs.SelectSql().
     /// The caller can provide extra string lines to create a query and boxed parameters.
@@ -2490,7 +4533,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2509,7 +4552,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2532,7 +4575,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2551,7 +4594,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2574,7 +4617,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2593,7 +4636,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2608,6 +4651,426 @@ module Operations =
         context.Insert("environmental_variables", parameters)
     
     /// <summary>
+    /// Select a `Records.ExecutionResultErrors` from the table `execution_result_errors`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ExecutionResultErrors&gt;` and uses Records.ExecutionResultErrors.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultErrorsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultErrorsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultErrors.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ExecutionResultErrors>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ExecutionResultErrors&gt;` and uses Records.ExecutionResultErrors.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultErrorsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultErrorsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultErrors.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ExecutionResultErrors>(sql, parameters)
+    
+    let insertExecutionResultErrors (context: SqliteContext) (parameters: Parameters.NewExecutionResultErrors) =
+        context.Insert("execution_result_errors", parameters)
+    
+    /// <summary>
+    /// Select a `Records.ExecutionResultItems` from the table `execution_result_items`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ExecutionResultItems&gt;` and uses Records.ExecutionResultItems.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultItemsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultItemsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultItems.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ExecutionResultItems>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ExecutionResultItems&gt;` and uses Records.ExecutionResultItems.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultItemsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultItemsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultItems.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ExecutionResultItems>(sql, parameters)
+    
+    let insertExecutionResultItems (context: SqliteContext) (parameters: Parameters.NewExecutionResultItems) =
+        context.Insert("execution_result_items", parameters)
+    
+    /// <summary>
+    /// Select a `Records.ExecutionResultMeasurements` from the table `execution_result_measurements`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ExecutionResultMeasurements&gt;` and uses Records.ExecutionResultMeasurements.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultMeasurementsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultMeasurementsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultMeasurements.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ExecutionResultMeasurements>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ExecutionResultMeasurements&gt;` and uses Records.ExecutionResultMeasurements.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultMeasurementsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultMeasurementsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultMeasurements.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ExecutionResultMeasurements>(sql, parameters)
+    
+    let insertExecutionResultMeasurements (context: SqliteContext) (parameters: Parameters.NewExecutionResultMeasurements) =
+        context.Insert("execution_result_measurements", parameters)
+    
+    /// <summary>
+    /// Select a `Records.ExecutionResultPrefixedLines` from the table `execution_result_prefixed_lines`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ExecutionResultPrefixedLines&gt;` and uses Records.ExecutionResultPrefixedLines.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultPrefixedLinesRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultPrefixedLinesRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultPrefixedLines.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ExecutionResultPrefixedLines>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ExecutionResultPrefixedLines&gt;` and uses Records.ExecutionResultPrefixedLines.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultPrefixedLinesRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultPrefixedLinesRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultPrefixedLines.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ExecutionResultPrefixedLines>(sql, parameters)
+    
+    let insertExecutionResultPrefixedLines (context: SqliteContext) (parameters: Parameters.NewExecutionResultPrefixedLines) =
+        context.Insert("execution_result_prefixed_lines", parameters)
+    
+    /// <summary>
+    /// Select a `Records.ExecutionResultStandardOutputLines` from the table `execution_result_standard_output_lines`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ExecutionResultStandardOutputLines&gt;` and uses Records.ExecutionResultStandardOutputLines.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultStandardOutputLinesRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultStandardOutputLinesRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultStandardOutputLines.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ExecutionResultStandardOutputLines>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ExecutionResultStandardOutputLines&gt;` and uses Records.ExecutionResultStandardOutputLines.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultStandardOutputLinesRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultStandardOutputLinesRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResultStandardOutputLines.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ExecutionResultStandardOutputLines>(sql, parameters)
+    
+    let insertExecutionResultStandardOutputLines (context: SqliteContext) (parameters: Parameters.NewExecutionResultStandardOutputLines) =
+        context.Insert("execution_result_standard_output_lines", parameters)
+    
+    /// <summary>
+    /// Select a `Records.ExecutionResults` from the table `execution_results`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ExecutionResults&gt;` and uses Records.ExecutionResults.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResults.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ExecutionResults>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ExecutionResults&gt;` and uses Records.ExecutionResults.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectExecutionResultsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectExecutionResultsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ExecutionResults.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ExecutionResults>(sql, parameters)
+    
+    let insertExecutionResults (context: SqliteContext) (parameters: Parameters.NewExecutionResults) =
+        context.Insert("execution_results", parameters)
+    
+    /// <summary>
+    /// Select a `Records.GenerateArtifacts` from the table `generate_artifacts`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.GenerateArtifacts&gt;` and uses Records.GenerateArtifacts.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectGenerateArtifactsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectGenerateArtifactsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.GenerateArtifacts.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.GenerateArtifacts>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.GenerateArtifacts&gt;` and uses Records.GenerateArtifacts.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectGenerateArtifactsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectGenerateArtifactsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.GenerateArtifacts.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.GenerateArtifacts>(sql, parameters)
+    
+    let insertGenerateArtifacts (context: SqliteContext) (parameters: Parameters.NewGenerateArtifacts) =
+        context.Insert("generate_artifacts", parameters)
+    
+    /// <summary>
+    /// Select a `Records.GenerateResults` from the table `generate_results`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.GenerateResults&gt;` and uses Records.GenerateResults.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectGenerateResultsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectGenerateResultsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.GenerateResults.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.GenerateResults>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.GenerateResults&gt;` and uses Records.GenerateResults.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectGenerateResultsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectGenerateResultsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.GenerateResults.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.GenerateResults>(sql, parameters)
+    
+    let insertGenerateResults (context: SqliteContext) (parameters: Parameters.NewGenerateResults) =
+        context.Insert("generate_results", parameters)
+    
+    /// <summary>
+    /// Select a `Records.InfrastructureArguments` from the table `infrastructure_arguments`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.InfrastructureArguments&gt;` and uses Records.InfrastructureArguments.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectInfrastructureArgumentsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectInfrastructureArgumentsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.InfrastructureArguments.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.InfrastructureArguments>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.InfrastructureArguments&gt;` and uses Records.InfrastructureArguments.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectInfrastructureArgumentsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectInfrastructureArgumentsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.InfrastructureArguments.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.InfrastructureArguments>(sql, parameters)
+    
+    let insertInfrastructureArguments (context: SqliteContext) (parameters: Parameters.NewInfrastructureArguments) =
+        context.Insert("infrastructure_arguments", parameters)
+    
+    /// <summary>
+    /// Select a `Records.InfrastructureNugetReferences` from the table `infrastructure_nuget_references`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.InfrastructureNugetReferences&gt;` and uses Records.InfrastructureNugetReferences.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectInfrastructureNugetReferencesRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectInfrastructureNugetReferencesRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.InfrastructureNugetReferences.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.InfrastructureNugetReferences>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.InfrastructureNugetReferences&gt;` and uses Records.InfrastructureNugetReferences.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectInfrastructureNugetReferencesRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectInfrastructureNugetReferencesRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.InfrastructureNugetReferences.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.InfrastructureNugetReferences>(sql, parameters)
+    
+    let insertInfrastructureNugetReferences (context: SqliteContext) (parameters: Parameters.NewInfrastructureNugetReferences) =
+        context.Insert("infrastructure_nuget_references", parameters)
+    
+    /// <summary>
     /// Select a `Records.JobAccuracy` from the table `job_accuracy`.
     /// Internally this calls `context.SelectSingleAnon&lt;Records.JobAccuracy&gt;` and uses Records.JobAccuracy.SelectSql().
     /// The caller can provide extra string lines to create a query and boxed parameters.
@@ -2616,7 +5079,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2635,7 +5098,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2658,7 +5121,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2677,7 +5140,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2692,6 +5155,90 @@ module Operations =
         context.Insert("job_environments", parameters)
     
     /// <summary>
+    /// Select a `Records.JobInfrastructures` from the table `job_infrastructures`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.JobInfrastructures&gt;` and uses Records.JobInfrastructures.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectJobInfrastructuresRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectJobInfrastructuresRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.JobInfrastructures.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.JobInfrastructures>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.JobInfrastructures&gt;` and uses Records.JobInfrastructures.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectJobInfrastructuresRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectJobInfrastructuresRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.JobInfrastructures.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.JobInfrastructures>(sql, parameters)
+    
+    let insertJobInfrastructures (context: SqliteContext) (parameters: Parameters.NewJobInfrastructures) =
+        context.Insert("job_infrastructures", parameters)
+    
+    /// <summary>
+    /// Select a `Records.JobMeta` from the table `job_meta`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.JobMeta&gt;` and uses Records.JobMeta.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectJobMetaRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectJobMetaRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.JobMeta.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.JobMeta>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.JobMeta&gt;` and uses Records.JobMeta.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectJobMetaRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectJobMetaRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.JobMeta.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.JobMeta>(sql, parameters)
+    
+    let insertJobMeta (context: SqliteContext) (parameters: Parameters.NewJobMeta) =
+        context.Insert("job_meta", parameters)
+    
+    /// <summary>
     /// Select a `Records.JobRuns` from the table `job_runs`.
     /// Internally this calls `context.SelectSingleAnon&lt;Records.JobRuns&gt;` and uses Records.JobRuns.SelectSql().
     /// The caller can provide extra string lines to create a query and boxed parameters.
@@ -2700,7 +5247,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2719,7 +5266,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2742,7 +5289,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2761,7 +5308,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2776,6 +5323,132 @@ module Operations =
         context.Insert("method_info", parameters)
     
     /// <summary>
+    /// Select a `Records.ReportMeasurements` from the table `report_measurements`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ReportMeasurements&gt;` and uses Records.ReportMeasurements.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectReportMeasurementsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectReportMeasurementsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ReportMeasurements.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ReportMeasurements>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ReportMeasurements&gt;` and uses Records.ReportMeasurements.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectReportMeasurementsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectReportMeasurementsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ReportMeasurements.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ReportMeasurements>(sql, parameters)
+    
+    let insertReportMeasurements (context: SqliteContext) (parameters: Parameters.NewReportMeasurements) =
+        context.Insert("report_measurements", parameters)
+    
+    /// <summary>
+    /// Select a `Records.ReportMetrics` from the table `report_metrics`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ReportMetrics&gt;` and uses Records.ReportMetrics.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectReportMetricsRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectReportMetricsRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ReportMetrics.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ReportMetrics>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ReportMetrics&gt;` and uses Records.ReportMetrics.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectReportMetricsRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectReportMetricsRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ReportMetrics.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ReportMetrics>(sql, parameters)
+    
+    let insertReportMetrics (context: SqliteContext) (parameters: Parameters.NewReportMetrics) =
+        context.Insert("report_metrics", parameters)
+    
+    /// <summary>
+    /// Select a `Records.ReportOriginalValues` from the table `report_original_values`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ReportOriginalValues&gt;` and uses Records.ReportOriginalValues.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectReportOriginalValuesRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectReportOriginalValuesRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ReportOriginalValues.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ReportOriginalValues>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ReportOriginalValues&gt;` and uses Records.ReportOriginalValues.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectReportOriginalValuesRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectReportOriginalValuesRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ReportOriginalValues.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ReportOriginalValues>(sql, parameters)
+    
+    let insertReportOriginalValues (context: SqliteContext) (parameters: Parameters.NewReportOriginalValues) =
+        context.Insert("report_original_values", parameters)
+    
+    /// <summary>
     /// Select a `Records.ResourceMetadataItem` from the table `resource_metadata`.
     /// Internally this calls `context.SelectSingleAnon&lt;Records.ResourceMetadataItem&gt;` and uses Records.ResourceMetadataItem.SelectSql().
     /// The caller can provide extra string lines to create a query and boxed parameters.
@@ -2784,7 +5457,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2803,7 +5476,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2826,7 +5499,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2845,7 +5518,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2868,7 +5541,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2887,7 +5560,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2910,7 +5583,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2929,7 +5602,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2952,7 +5625,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2971,7 +5644,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -2994,7 +5667,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -3013,7 +5686,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 20/10/2024 20:40:58
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
     /// </remarks>
     /// <example>
     /// <code>
@@ -3027,6 +5700,48 @@ module Operations =
     let insertSource (context: SqliteContext) (parameters: Parameters.NewSource) =
         context.Insert("sources", parameters)
     
+    /// <summary>
+    /// Select a `Records.ValidationError` from the table `validation_error`.
+    /// Internally this calls `context.SelectSingleAnon&lt;Records.ValidationError&gt;` and uses Records.ValidationError.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectValidationErrorRecord ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectValidationErrorRecord (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ValidationError.SelectSql() ] @ query |> buildSql
+        context.SelectSingleAnon<Records.ValidationError>(sql, parameters)
+    
+    /// <summary>
+    /// Internally this calls `context.SelectAnon&lt;Records.ValidationError&gt;` and uses Records.ValidationError.SelectSql().
+    /// The caller can provide extra string lines to create a query and boxed parameters.
+    /// It is up to the caller to verify the sql and parameters are correct,
+    /// this should be considered an internal function (not exposed in public APIs).
+    /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
+    /// </summary>
+    /// <remarks>
+    /// This function was generated via Freql.Tools on 21/10/2024 11:57:52
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// let result = selectValidationErrorRecords ctx "WHERE `field` = @0" [ box `value` ]
+    /// </code>
+    /// </example>
+    let selectValidationErrorRecords (context: SqliteContext) (query: string list) (parameters: obj list) =
+        let sql = [ Records.ValidationError.SelectSql() ] @ query |> buildSql
+        context.SelectAnon<Records.ValidationError>(sql, parameters)
+    
+    let insertValidationError (context: SqliteContext) (parameters: Parameters.NewValidationError) =
+        context.Insert("validation_error", parameters)
+    
 [<RequireQualifiedAccess>]
 module Initialization =
     let sql (checkIfExists: bool) =
@@ -3035,19 +5750,38 @@ module Initialization =
           Records.Benchmark.InitializationSql checkIfExists
           Records.BenchmarkCases.InitializationSql checkIfExists
           Records.BenchmarkJobs.InitializationSql checkIfExists
+          Records.BenchmarkReports.InitializationSql checkIfExists
           Records.Resource.InitializationSql checkIfExists
+          Records.JobInfrastructures.InitializationSql checkIfExists
+          Records.GenerateResults.InitializationSql checkIfExists
+          Records.ExecutionResults.InitializationSql checkIfExists
           Records.JobEnvironments.InitializationSql checkIfExists
+          Records.BuildResults.InitializationSql checkIfExists
           Records.MethodInfo.InitializationSql checkIfExists
           Records.BenchmarkBuildInfo.InitializationSql checkIfExists
           Records.Artifact.InitializationSql checkIfExists
+          Records.ValidationError.InitializationSql checkIfExists
           Records.SourceMetadataItem.InitializationSql checkIfExists
           Records.RunMetadataItem.InitializationSql checkIfExists
           Records.ResourceMetadataItem.InitializationSql checkIfExists
+          Records.ReportOriginalValues.InitializationSql checkIfExists
+          Records.ReportMetrics.InitializationSql checkIfExists
+          Records.ReportMeasurements.InitializationSql checkIfExists
           Records.JobRuns.InitializationSql checkIfExists
+          Records.JobMeta.InitializationSql checkIfExists
           Records.JobAccuracy.InitializationSql checkIfExists
+          Records.InfrastructureNugetReferences.InitializationSql checkIfExists
+          Records.InfrastructureArguments.InitializationSql checkIfExists
+          Records.GenerateArtifacts.InitializationSql checkIfExists
+          Records.ExecutionResultStandardOutputLines.InitializationSql checkIfExists
+          Records.ExecutionResultPrefixedLines.InitializationSql checkIfExists
+          Records.ExecutionResultMeasurements.InitializationSql checkIfExists
+          Records.ExecutionResultItems.InitializationSql checkIfExists
+          Records.ExecutionResultErrors.InitializationSql checkIfExists
           Records.EnvironmentalVariables.InitializationSql checkIfExists
           Records.EnvironmentRuntimes.InitializationSql checkIfExists
           Records.EnvironmentGcs.InitializationSql checkIfExists
+          Records.BuildArtifacts.InitializationSql checkIfExists
           Records.BenchmarkCaseDescriptors.InitializationSql checkIfExists
           Records.BenchmarkBuildInfoAntivirusInstallions.InitializationSql checkIfExists
           Records.ArtifactMetadataItem.InitializationSql checkIfExists ]
