@@ -9,6 +9,8 @@ open BenchmarkDotNet.Reports
 open BenchmarkDotNet.Running
 open FBenchmark.Store.SQLite.Persistence
 open Freql.Sqlite
+open FsToolbox.Core
+open FsToolbox.Core.Strings
 open Perfolizer.Horology
 open Perfolizer.Mathematics.OutlierDetection
 open Perfolizer.Metrology
@@ -170,7 +172,6 @@ module Operations =
 
     let insertBenchmarkJob (ctx: SqliteContext) (caseId: string) (job: Job) =
         let id = createId ()
-        job.Accuracy
 
         ({ Id = id
            CaseId = caseId
@@ -262,6 +263,100 @@ module Operations =
 
         id
 
+    let insertEnvironmentGc (ctx: SqliteContext) (environmentId: string) (gcMode: GcMode) =
+        let id = createId ()
+
+        ({ Id = id
+           EnvironmentId = environmentId
+           Concurrent = gcMode.Concurrent
+           Force = gcMode.Force
+           Frozen = gcMode.Frozen
+           GcDisplayId = gcMode.Id
+           Server = gcMode.Server
+           CpuGroups = gcMode.CpuGroups
+           HasChanges = gcMode.HasChanges
+           HeapCount = gcMode.HeapCount
+           NoAffinitize = gcMode.NoAffinitize
+           RetainVm = gcMode.RetainVm
+           HeapAffinitizeMask = gcMode.HeapAffinitizeMask
+           AllowVeryLargeObjects = gcMode.AllowVeryLargeObjects }
+        : Parameters.NewEnvironmentGcs)
+        |> Operations.insertEnvironmentGcs ctx
+
+        id
+
+    let insertEnvironmentRuntime (ctx: SqliteContext) (environmentId: string) (runtime: Runtime) =
+        let id = createId ()
+
+        ({ Id = id
+           EnvironmentId = environmentId
+           Name = runtime.Name
+           RuntimeMoniker =
+             runtime.RuntimeMoniker
+             |> Enum.GetName
+             |> Strings.slugify SlugifySettings.Default
+           MsBuildMoniker = runtime.MsBuildMoniker
+           IsAot = runtime.IsAOT }
+        : Parameters.NewEnvironmentRuntimes)
+        |> Operations.insertEnvironmentRuntimes ctx
+
+        id
+        
+    let insertEnvironmentalVariable (ctx: SqliteContext) (environmentId: string) (variable: EnvironmentVariable) =
+        let id = createId ()
+        
+        ({  Id = id
+            EnvironmentalId = environmentId
+            VariableKey = variable.Key
+            VariableValue = variable.Value
+        }: Parameters.NewEnvironmentalVariables)
+        |> Operations.insertEnvironmentalVariables ctx
+        
+        id
+
+    let insertJobMeta (ctx: SqliteContext) (jobId: string) (meta: MetaMode) =
+        let id = createId ()
+
+        ({ Id = id
+           JobId = jobId
+           Baseline = meta.Baseline
+           Frozen = meta.Frozen
+           MetaDisplayId = meta.Id
+           HasChanges = meta.HasChanges
+           IsDefault = meta.IsDefault
+           IsMutator = meta.IsMutator }
+        : Parameters.NewJobMeta)
+        |> Operations.insertJobMeta ctx
+
+        id
+
+    let insertJobRun (ctx: SqliteContext) (jobId: string) (runMode: RunMode) =
+        let id = createId ()
+        
+        ({
+            Id = id
+            JobId = failwith "todo"
+            Frozen = failwith "todo"
+            JobRunId = failwith "todo"
+            HasChanges = failwith "todo"
+            InvocationCount = failwith "todo"
+            IterationCount = failwith "todo"
+            IterationTimeNanoSeconds = failwith "todo"
+            IterationTimeUnit = failwith "todo"
+            LaunchCount = failwith "todo"
+            MemoryRandomization = failwith "todo"
+            RunStrategy = failwith "todo"
+            UnrollFactor = failwith "todo"
+            WarmupCount = failwith "todo"
+            MaxIterationCount = failwith "todo"
+            MinIterationCount = failwith "todo"
+            MaxWarmupIterationCount = failwith "todo"
+            MinWarmupIterationCount = failwith "todo"
+        }: Parameters.NewJobRuns)
+        |> Operations.insertJobRuns ctx 
+        
+        id
+    
     let saveSummary (ctx: SqliteContext) (sourceId: string) (summary: Summary) =
 
         let benchmarkId = insertBenchmark ctx sourceId summary
@@ -284,12 +379,23 @@ module Operations =
 
             insertJobAccuracy ctx jobId report.BenchmarkCase.Job.Accuracy |> ignore
 
-            let environmentId = insertJobEnvironment ctx jobId report.BenchmarkCase.Job.Environment
+            let environmentId =
+                insertJobEnvironment ctx jobId report.BenchmarkCase.Job.Environment
+
+            insertEnvironmentGc ctx environmentId report.BenchmarkCase.Job.Environment.Gc
+            |> ignore
+
+            insertEnvironmentRuntime ctx environmentId report.BenchmarkCase.Job.Environment.Runtime
+            |> ignore
+            
+            report.BenchmarkCase.Job.Environment.EnvironmentVariables
+            |> Seq.iter (insertEnvironmentalVariable ctx environmentId >> ignore)
+
+            insertJobMeta ctx jobId report.BenchmarkCase.Job.Meta |> ignore
+            
+            report.BenchmarkCase.Job.Run
 
 
 
 
-            ())
-
-
-        ()
+        )
