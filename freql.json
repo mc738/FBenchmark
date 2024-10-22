@@ -25,7 +25,7 @@
                         "replacementInitValue": "DateTime.UtcNow"
                     },
                     {
-                        "matchValue": "^is_|^has_|^in_|^frozen$|^evaluate_overhead$|^analyze_launch_variance$|^large_address_aware$|^concurrent$|^force$|^server$|^cpu_groups$|^no_affinitize$|^retain_vm$|^allow_very_large_objects$|^baseline$",
+                        "matchValue": "^is_|^has_|^in_|^frozen$|^evaluate_overhead$|^analyze_launch_variance$|^large_address_aware$|^concurrent$|^force$|^server$|^cpu_groups$|^no_affinitize$|^retain_vm$|^allow_very_large_objects$|^baseline$|^memory_randomization$|^clock_is_available$|^toolchain_is_in|^prerelease$",
                         "matchType": "regex",
                         "replacementValue": "bool",
                         "replacementInitValue": "true"
