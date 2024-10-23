@@ -8,6 +8,9 @@
     <ItemGroup>
         <Compile Include="Core\Configuration.fs" />
         <Compile Include="Store\SQLite\Persistence.fs" />
+        <Compile Include="Store\SQLite\Mapping.fs" />
+        <Compile Include="Store\SQLite\Operations.fs" />
+        <Compile Include="Store\SQLite\Impl.fs" />
         <Compile Include="Exporters\SQLite\Persistence.fs" />
         <Compile Include="Exporters\SQLite\Impl.fs" />
         <Compile Include="ExternalProcesses\Common.fs" />
