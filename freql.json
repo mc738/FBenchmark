@@ -19,7 +19,7 @@
                         "replacementInitValue": "Guid.NewGuid()"
                     },
                     {
-                        "matchValue": "created_on|updated_on",
+                        "matchValue": "created_on|updated_on|^started_on$",
                         "matchType": "regex",
                         "replacementValue": "DateTime",
                         "replacementInitValue": "DateTime.UtcNow"
@@ -37,7 +37,7 @@
                         "replacementInitValue": "true"
                     },
                     {
-                        "matchValue": "frequency$|nanoseconds$|_hz$|^max_relative_error$",
+                        "matchValue": "frequency$|nanoseconds$|_hz$|^max_relative_error$|^results_stats_(.*)(?<!_n|interval_level)$",
                         "matchType": "regex",
                         "replacementValue": "float",
                         "replacementInitValue": "0."

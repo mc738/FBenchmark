@@ -30,7 +30,7 @@ module private Utils =
 /// Records representing database bindings for `records`.
 /// </summary>
 /// <remarks>
-/// Module generated on 22/10/2024 17:38:12 (utc) via Freql.Tools.
+/// Module generated on 22/10/2024 23:28:17 (utc) via Freql.Tools.
 /// </remarks>
 [<RequireQualifiedAccess>]
 module Records =
@@ -38,7 +38,7 @@ module Records =
     /// A record representing a row in the table `artifact_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ArtifactMetadataItem =
         { [<JsonPropertyName("artifactId")>] ArtifactId: string
@@ -91,7 +91,7 @@ module Records =
     /// A record representing a row in the table `artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type Artifact =
         { [<JsonPropertyName("id")>] Id: string option
@@ -162,7 +162,7 @@ module Records =
     /// A record representing a row in the table `benchmark_case_descriptors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type BenchmarkCaseDescriptors =
         { [<JsonPropertyName("id")>] Id: string
@@ -259,7 +259,7 @@ module Records =
     /// A record representing a row in the table `benchmark_cases`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type BenchmarkCases =
         { [<JsonPropertyName("id")>] Id: string
@@ -339,7 +339,7 @@ module Records =
     /// A record representing a row in the table `benchmark_host_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type BenchmarkHostInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -494,7 +494,7 @@ module Records =
     /// A record representing a row in the table `benchmark_host_info_antivirus_installations`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type BenchmarkHostInfoAntivirusInstallations =
         { [<JsonPropertyName("id")>] Id: string
@@ -551,7 +551,7 @@ module Records =
     /// A record representing a row in the table `benchmark_jobs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type BenchmarkJobs =
         { [<JsonPropertyName("id")>] Id: string
@@ -624,7 +624,7 @@ module Records =
     /// A record representing a row in the table `benchmark_reports`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type BenchmarkReports =
         { [<JsonPropertyName("id")>] Id: string
@@ -636,36 +636,36 @@ module Records =
           [<JsonPropertyName("gcStatsTotalOperations")>] GcStatsTotalOperations: int64
           [<JsonPropertyName("gcStatsTotalAllocatedBytes")>] GcStatsTotalAllocatedBytes: int64 option
           [<JsonPropertyName("gcStatsBytesAllocatedPerOperation")>] GcStatsBytesAllocatedPerOperation: int64 option
-          [<JsonPropertyName("resultsStatsKurtosis")>] ResultsStatsKurtosis: decimal
-          [<JsonPropertyName("resultsStatsMax")>] ResultsStatsMax: decimal
-          [<JsonPropertyName("resultsStatsMean")>] ResultsStatsMean: decimal
-          [<JsonPropertyName("resultsStatsMedian")>] ResultsStatsMedian: decimal
+          [<JsonPropertyName("resultsStatsKurtosis")>] ResultsStatsKurtosis: float
+          [<JsonPropertyName("resultsStatsMax")>] ResultsStatsMax: float
+          [<JsonPropertyName("resultsStatsMean")>] ResultsStatsMean: float
+          [<JsonPropertyName("resultsStatsMedian")>] ResultsStatsMedian: float
           [<JsonPropertyName("resultsStatsN")>] ResultsStatsN: int64
-          [<JsonPropertyName("resultsStatsQ1")>] ResultsStatsQ1: decimal option
-          [<JsonPropertyName("resultsStatsQ3")>] ResultsStatsQ3: decimal
-          [<JsonPropertyName("resultsStatsSkewness")>] ResultsStatsSkewness: decimal
-          [<JsonPropertyName("resultsStatsVariance")>] ResultsStatsVariance: decimal
-          [<JsonPropertyName("resultsStatsInterquartileRange")>] ResultsStatsInterquartileRange: decimal
-          [<JsonPropertyName("resultsStatsLowerFence")>] ResultsStatsLowerFence: decimal
-          [<JsonPropertyName("resultsStatsStandardDeviation")>] ResultsStatsStandardDeviation: decimal
-          [<JsonPropertyName("resultsStatsStandardError")>] ResultsStatsStandardError: decimal
-          [<JsonPropertyName("resultsStatsUpperFence")>] ResultsStatsUpperFence: decimal
+          [<JsonPropertyName("resultsStatsQ1")>] ResultsStatsQ1: float
+          [<JsonPropertyName("resultsStatsQ3")>] ResultsStatsQ3: float
+          [<JsonPropertyName("resultsStatsSkewness")>] ResultsStatsSkewness: float
+          [<JsonPropertyName("resultsStatsVariance")>] ResultsStatsVariance: float
+          [<JsonPropertyName("resultsStatsInterquartileRange")>] ResultsStatsInterquartileRange: float
+          [<JsonPropertyName("resultsStatsLowerFence")>] ResultsStatsLowerFence: float
+          [<JsonPropertyName("resultsStatsStandardDeviation")>] ResultsStatsStandardDeviation: float
+          [<JsonPropertyName("resultsStatsStandardError")>] ResultsStatsStandardError: float
+          [<JsonPropertyName("resultsStatsUpperFence")>] ResultsStatsUpperFence: float
           [<JsonPropertyName("resultsStatsConfidenceIntervalLevel")>] ResultsStatsConfidenceIntervalLevel: string
-          [<JsonPropertyName("resultsStatsConfidenceIntervalLower")>] ResultsStatsConfidenceIntervalLower: decimal
-          [<JsonPropertyName("resultsStatsConfidenceIntervalMargin")>] ResultsStatsConfidenceIntervalMargin: decimal
-          [<JsonPropertyName("resultsStatsConfidenceIntervalMean")>] ResultsStatsConfidenceIntervalMean: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalLower")>] ResultsStatsConfidenceIntervalLower: float
+          [<JsonPropertyName("resultsStatsConfidenceIntervalMargin")>] ResultsStatsConfidenceIntervalMargin: float
+          [<JsonPropertyName("resultsStatsConfidenceIntervalMean")>] ResultsStatsConfidenceIntervalMean: float
           [<JsonPropertyName("resultsStatsConfidenceIntervalN")>] ResultsStatsConfidenceIntervalN: int64
-          [<JsonPropertyName("resultsStatsConfidenceIntervalUpper")>] ResultsStatsConfidenceIntervalUpper: decimal option
-          [<JsonPropertyName("resultsStatsConfidenceIntervalStandardError")>] ResultsStatsConfidenceIntervalStandardError: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP0")>] ResultsStatsPercentilesP0: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP25")>] ResultsStatsPercentilesP25: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP50")>] ResultsStatsPercentilesP50: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP67")>] ResultsStatsPercentilesP67: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP80")>] ResultsStatsPercentilesP80: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP85")>] ResultsStatsPercentilesP85: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP90")>] ResultsStatsPercentilesP90: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP95")>] ResultsStatsPercentilesP95: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP100")>] ResultsStatsPercentilesP100: decimal }
+          [<JsonPropertyName("resultsStatsConfidenceIntervalUpper")>] ResultsStatsConfidenceIntervalUpper: float
+          [<JsonPropertyName("resultsStatsConfidenceIntervalStandardError")>] ResultsStatsConfidenceIntervalStandardError: float
+          [<JsonPropertyName("resultsStatsPercentilesP0")>] ResultsStatsPercentilesP0: float
+          [<JsonPropertyName("resultsStatsPercentilesP25")>] ResultsStatsPercentilesP25: float
+          [<JsonPropertyName("resultsStatsPercentilesP50")>] ResultsStatsPercentilesP50: float
+          [<JsonPropertyName("resultsStatsPercentilesP67")>] ResultsStatsPercentilesP67: float
+          [<JsonPropertyName("resultsStatsPercentilesP80")>] ResultsStatsPercentilesP80: float
+          [<JsonPropertyName("resultsStatsPercentilesP85")>] ResultsStatsPercentilesP85: float
+          [<JsonPropertyName("resultsStatsPercentilesP90")>] ResultsStatsPercentilesP90: float
+          [<JsonPropertyName("resultsStatsPercentilesP95")>] ResultsStatsPercentilesP95: float
+          [<JsonPropertyName("resultsStatsPercentilesP100")>] ResultsStatsPercentilesP100: float }
     
         static member Blank() =
             { Id = String.Empty
@@ -677,36 +677,36 @@ module Records =
               GcStatsTotalOperations = 0L
               GcStatsTotalAllocatedBytes = None
               GcStatsBytesAllocatedPerOperation = None
-              ResultsStatsKurtosis = 0m
-              ResultsStatsMax = 0m
-              ResultsStatsMean = 0m
-              ResultsStatsMedian = 0m
+              ResultsStatsKurtosis = 0.
+              ResultsStatsMax = 0.
+              ResultsStatsMean = 0.
+              ResultsStatsMedian = 0.
               ResultsStatsN = 0L
-              ResultsStatsQ1 = None
-              ResultsStatsQ3 = 0m
-              ResultsStatsSkewness = 0m
-              ResultsStatsVariance = 0m
-              ResultsStatsInterquartileRange = 0m
-              ResultsStatsLowerFence = 0m
-              ResultsStatsStandardDeviation = 0m
-              ResultsStatsStandardError = 0m
-              ResultsStatsUpperFence = 0m
+              ResultsStatsQ1 = 0.
+              ResultsStatsQ3 = 0.
+              ResultsStatsSkewness = 0.
+              ResultsStatsVariance = 0.
+              ResultsStatsInterquartileRange = 0.
+              ResultsStatsLowerFence = 0.
+              ResultsStatsStandardDeviation = 0.
+              ResultsStatsStandardError = 0.
+              ResultsStatsUpperFence = 0.
               ResultsStatsConfidenceIntervalLevel = String.Empty
-              ResultsStatsConfidenceIntervalLower = 0m
-              ResultsStatsConfidenceIntervalMargin = 0m
-              ResultsStatsConfidenceIntervalMean = 0m
+              ResultsStatsConfidenceIntervalLower = 0.
+              ResultsStatsConfidenceIntervalMargin = 0.
+              ResultsStatsConfidenceIntervalMean = 0.
               ResultsStatsConfidenceIntervalN = 0L
-              ResultsStatsConfidenceIntervalUpper = None
-              ResultsStatsConfidenceIntervalStandardError = 0m
-              ResultsStatsPercentilesP0 = 0m
-              ResultsStatsPercentilesP25 = 0m
-              ResultsStatsPercentilesP50 = 0m
-              ResultsStatsPercentilesP67 = 0m
-              ResultsStatsPercentilesP80 = 0m
-              ResultsStatsPercentilesP85 = 0m
-              ResultsStatsPercentilesP90 = 0m
-              ResultsStatsPercentilesP95 = 0m
-              ResultsStatsPercentilesP100 = 0m }
+              ResultsStatsConfidenceIntervalUpper = 0.
+              ResultsStatsConfidenceIntervalStandardError = 0.
+              ResultsStatsPercentilesP0 = 0.
+              ResultsStatsPercentilesP25 = 0.
+              ResultsStatsPercentilesP50 = 0.
+              ResultsStatsPercentilesP67 = 0.
+              ResultsStatsPercentilesP80 = 0.
+              ResultsStatsPercentilesP85 = 0.
+              ResultsStatsPercentilesP90 = 0.
+              ResultsStatsPercentilesP95 = 0.
+              ResultsStatsPercentilesP100 = 0. }
     
         static member CreateTableSql() = """
         CREATE TABLE "benchmark_reports"
@@ -718,9 +718,9 @@ module Records =
         constraint benchmark_reports_benchmark_cases_id_fk
             references benchmark_cases,
     success                                          INTEGER not null,
-    gc_stats_gen_0_collections                       INTEGER not null,
-    gc_stats_gen_1_collections                       INTEGER not null,
-    gc_stats_gen_2_collections                       INTEGER not null,
+    gc_stats_gen0_collections                        INTEGER not null,
+    gc_stats_gen1_collections                        INTEGER not null,
+    gc_stats_gen2_collections                        INTEGER not null,
     gc_stats_total_operations                        INTEGER not null,
     gc_stats_total_allocated_bytes                   INTEGER,
     gc_stats_bytes_allocated_per_operation           INTEGER,
@@ -729,7 +729,7 @@ module Records =
     results_stats_mean                               REAL    not null,
     results_stats_median                             REAL    not null,
     results_stats_n                                  INTEGER not null,
-    results_stats_q1                                 REAL,
+    results_stats_q1                                 REAL    not null,
     results_stats_q3                                 REAL    not null,
     results_stats_skewness                           REAL    not null,
     results_stats_variance                           REAL    not null,
@@ -743,7 +743,7 @@ module Records =
     results_stats_confidence_interval_margin         REAL    not null,
     results_stats_confidence_interval_mean           REAL    not null,
     results_stats_confidence_interval_n              INTEGER not null,
-    results_stats_confidence_interval_upper          REAL,
+    results_stats_confidence_interval_upper          REAL    not null,
     results_stats_confidence_interval_standard_error REAL    not null,
     results_stats_percentiles_p0                     REAL    not null,
     results_stats_percentiles_p25                    REAL    not null,
@@ -762,9 +762,9 @@ module Records =
               benchmark_reports.`id`,
               benchmark_reports.`case_id`,
               benchmark_reports.`success`,
-              benchmark_reports.`gc_stats_gen_0_collections`,
-              benchmark_reports.`gc_stats_gen_1_collections`,
-              benchmark_reports.`gc_stats_gen_2_collections`,
+              benchmark_reports.`gc_stats_gen0_collections`,
+              benchmark_reports.`gc_stats_gen1_collections`,
+              benchmark_reports.`gc_stats_gen2_collections`,
               benchmark_reports.`gc_stats_total_operations`,
               benchmark_reports.`gc_stats_total_allocated_bytes`,
               benchmark_reports.`gc_stats_bytes_allocated_per_operation`,
@@ -821,7 +821,7 @@ module Records =
     /// A record representing a row in the table `benchmarks`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type Benchmark =
         { [<JsonPropertyName("id")>] Id: string
@@ -898,20 +898,20 @@ module Records =
     /// A record representing a row in the table `build_artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type BuildArtifacts =
         { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("buildResultId")>] BuildResultId: string
-          [<JsonPropertyName("path")>] Path: string option }
+          [<JsonPropertyName("path")>] Path: string }
     
         static member Blank() =
             { Id = String.Empty
               BuildResultId = String.Empty
-              Path = None }
+              Path = String.Empty }
     
         static member CreateTableSql() = """
-        CREATE TABLE build_artifacts
+        CREATE TABLE "build_artifacts"
 (
     id              TEXT not null
         constraint build_artifacts_pk
@@ -919,7 +919,7 @@ module Records =
     build_result_id TEXT not null
         constraint build_artifacts_build_results_id_fk
             references build_results,
-    path            TEXT
+    path            TEXT not null
 )
         """
     
@@ -951,7 +951,7 @@ module Records =
     /// A record representing a row in the table `build_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type BuildResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -961,16 +961,16 @@ module Records =
           [<JsonPropertyName("isGenerateSuccess")>] IsGenerateSuccess: bool
           [<JsonPropertyName("executablePath")>] ExecutablePath: string
           [<JsonPropertyName("programName")>] ProgramName: string
-          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string
-          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string
-          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string
-          [<JsonPropertyName("packageDirectoryName")>] PackageDirectoryName: string
-          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string
-          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string
-          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string
-          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string
-          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string
-          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string }
+          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string option
+          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string option
+          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string option
+          [<JsonPropertyName("packageDirectoryName")>] PackageDirectoryName: string option
+          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string option
+          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string option
+          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string option
+          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string option
+          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string option
+          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string option }
     
         static member Blank() =
             { Id = String.Empty
@@ -980,30 +980,42 @@ module Records =
               IsGenerateSuccess = true
               ExecutablePath = String.Empty
               ProgramName = String.Empty
-              AppConfigPath = String.Empty
-              BinariesDirectoryPath = String.Empty
-              IntermediateDirectoryPath = String.Empty
-              PackageDirectoryName = String.Empty
-              ProgramCodePath = String.Empty
-              ProjectFilePath = String.Empty
-              BuildArtifactsDirectoryPath = String.Empty
-              BuildScriptFilePath = String.Empty
-              NugetConfigPath = String.Empty
-              RootArtifactsFolderPath = String.Empty }
+              AppConfigPath = None
+              BinariesDirectoryPath = None
+              IntermediateDirectoryPath = None
+              PackageDirectoryName = None
+              ProgramCodePath = None
+              ProjectFilePath = None
+              BuildArtifactsDirectoryPath = None
+              BuildScriptFilePath = None
+              NugetConfigPath = None
+              RootArtifactsFolderPath = None }
     
         static member CreateTableSql() = """
         CREATE TABLE "build_results"
 (
-    id                  TEXT    not null
+    id                             TEXT    not null
         constraint build_results_pk
             primary key,
-    report_id           TEXT    not null
+    report_id                      TEXT    not null
         constraint build_results_benchmark_results_id_fk
             references benchmark_reports,
-    error_message       TEXT,
-    is_build_success    INTEGER not null,
-    is_generate_success INTEGER not null
-, executable_path TEXT not null, program_name TEXT not null, app_config_path TEXT not null, binaries_directory_path TEXT not null, intermediate_directory_path TEXT not null, package_directory_name TEXT not null, program_code_path TEXT not null, project_file_path TEXT not null, build_artifacts_directory_path TEXT not null, build_script_file_path TEXT not null, nuget_config_path TEXT not null, root_artifacts_folder_path TEXT not null)
+    error_message                  TEXT,
+    is_build_success               INTEGER not null,
+    is_generate_success            INTEGER not null,
+    executable_path                TEXT    not null,
+    program_name                   TEXT    not null,
+    app_config_path                TEXT,
+    binaries_directory_path        TEXT,
+    intermediate_directory_path    TEXT,
+    package_directory_name         TEXT,
+    program_code_path              TEXT,
+    project_file_path              TEXT,
+    build_artifacts_directory_path TEXT,
+    build_script_file_path         TEXT,
+    nuget_config_path              TEXT,
+    root_artifacts_folder_path     TEXT
+)
         """
     
         static member SelectSql() = """
@@ -1048,7 +1060,7 @@ module Records =
     /// A record representing a row in the table `environment_gcs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type EnvironmentGcs =
         { [<JsonPropertyName("id")>] Id: string
@@ -1145,7 +1157,7 @@ module Records =
     /// A record representing a row in the table `environment_runtimes`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type EnvironmentRuntimes =
         { [<JsonPropertyName("id")>] Id: string
@@ -1210,7 +1222,7 @@ module Records =
     /// A record representing a row in the table `environmental_variables`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type EnvironmentalVariables =
         { [<JsonPropertyName("id")>] Id: string
@@ -1267,7 +1279,7 @@ module Records =
     /// A record representing a row in the table `execution_result_errors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ExecutionResultErrors =
         { [<JsonPropertyName("id")>] Id: string
@@ -1320,7 +1332,7 @@ module Records =
     /// A record representing a row in the table `execution_result_items`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ExecutionResultItems =
         { [<JsonPropertyName("id")>] Id: string
@@ -1373,11 +1385,11 @@ module Records =
     /// A record representing a row in the table `execution_result_measurements`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ExecutionResultMeasurements =
         { [<JsonPropertyName("id")>] Id: string
-          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string option
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
           [<JsonPropertyName("nanoseconds")>] Nanoseconds: float
           [<JsonPropertyName("operations")>] Operations: int64
           [<JsonPropertyName("iterationIndex")>] IterationIndex: int64
@@ -1387,7 +1399,7 @@ module Records =
     
         static member Blank() =
             { Id = String.Empty
-              ExecutionResultId = None
+              ExecutionResultId = String.Empty
               Nanoseconds = 0.
               Operations = 0L
               IterationIndex = 0L
@@ -1396,20 +1408,20 @@ module Records =
               LaunchIndex = 0L }
     
         static member CreateTableSql() = """
-        CREATE TABLE execution_result_measurements
+        CREATE TABLE "execution_result_measurements"
 (
-    id                  TEXT not null
+    id                  TEXT    not null
         constraint execution_result_measurements_pk
             primary key,
-    execution_result_id TEXT
+    execution_result_id TEXT    not null
         constraint execution_result_measurements_execution_results_id_fk
             references execution_results,
-    nanoseconds     REAL    not null,
-    operations      INTEGER not null,
-    iteration_index INTEGER not null,
-    iteration_mode  TEXT    not null,
-    iteration_stage TEXT    not null,
-    launch_index    INTEGER not null
+    nanoseconds         REAL    not null,
+    operations          INTEGER not null,
+    iteration_index     INTEGER not null,
+    iteration_mode      TEXT    not null,
+    iteration_stage     TEXT    not null,
+    launch_index        INTEGER not null
 )
         """
     
@@ -1446,7 +1458,7 @@ module Records =
     /// A record representing a row in the table `execution_result_prefixed_lines`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ExecutionResultPrefixedLines =
         { [<JsonPropertyName("id")>] Id: string
@@ -1499,22 +1511,22 @@ module Records =
     /// A record representing a row in the table `execution_result_standard_output_lines`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ExecutionResultStandardOutputLines =
-        { [<JsonPropertyName("id")>] Id: string option
+        { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
           [<JsonPropertyName("line")>] Line: string }
     
         static member Blank() =
-            { Id = None
+            { Id = String.Empty
               ExecutionResultId = String.Empty
               Line = String.Empty }
     
         static member CreateTableSql() = """
-        CREATE TABLE execution_result_standard_output_lines
+        CREATE TABLE "execution_result_standard_output_lines"
 (
-    id                  TEXT
+    id                  TEXT not null
         constraint execution_result_standard_output_lines_pk
             primary key,
     execution_result_id TEXT not null
@@ -1552,29 +1564,29 @@ module Records =
     /// A record representing a row in the table `execution_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ExecutionResults =
         { [<JsonPropertyName("id")>] Id: string
-          [<JsonPropertyName("reportId")>] ReportId: string option
+          [<JsonPropertyName("reportId")>] ReportId: string
           [<JsonPropertyName("exitCode")>] ExitCode: int64 option
           [<JsonPropertyName("isSuccess")>] IsSuccess: bool
           [<JsonPropertyName("processId")>] ProcessId: int64 option }
     
         static member Blank() =
             { Id = String.Empty
-              ReportId = None
+              ReportId = String.Empty
               ExitCode = None
               IsSuccess = true
               ProcessId = None }
     
         static member CreateTableSql() = """
-        CREATE TABLE execution_results
+        CREATE TABLE "execution_results"
 (
     id         TEXT    not null
         constraint execution_results_pk
             primary key,
-    report_id  TEXT
+    report_id  TEXT    not null
         constraint execution_results_benchmark_reports_id_fk
             references benchmark_reports,
     exit_code  INTEGER,
@@ -1613,22 +1625,22 @@ module Records =
     /// A record representing a row in the table `generate_artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type GenerateArtifacts =
-        { [<JsonPropertyName("id")>] Id: string option
+        { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("generateResultId")>] GenerateResultId: string
           [<JsonPropertyName("path")>] Path: string }
     
         static member Blank() =
-            { Id = None
+            { Id = String.Empty
               GenerateResultId = String.Empty
               Path = String.Empty }
     
         static member CreateTableSql() = """
-        CREATE TABLE generate_artifacts
+        CREATE TABLE "generate_artifacts"
 (
-    id                 TEXT
+    id                 TEXT not null
         constraint generate_artifacts_pk
             primary key,
     generate_result_id TEXT not null
@@ -1666,7 +1678,7 @@ module Records =
     /// A record representing a row in the table `generate_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type GenerateResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -1674,16 +1686,16 @@ module Records =
           [<JsonPropertyName("isGenerateSuccess")>] IsGenerateSuccess: bool
           [<JsonPropertyName("executablePath")>] ExecutablePath: string
           [<JsonPropertyName("programName")>] ProgramName: string
-          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string
-          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string
-          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string
-          [<JsonPropertyName("packagesDirectoryName")>] PackagesDirectoryName: string
-          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string
-          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string
-          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string
-          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string
-          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string
-          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string }
+          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string option
+          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string option
+          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string option
+          [<JsonPropertyName("packagesDirectoryName")>] PackagesDirectoryName: string option
+          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string option
+          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string option
+          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string option
+          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string option
+          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string option
+          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string option }
     
         static member Blank() =
             { Id = String.Empty
@@ -1691,16 +1703,16 @@ module Records =
               IsGenerateSuccess = true
               ExecutablePath = String.Empty
               ProgramName = String.Empty
-              AppConfigPath = String.Empty
-              BinariesDirectoryPath = String.Empty
-              IntermediateDirectoryPath = String.Empty
-              PackagesDirectoryName = String.Empty
-              ProgramCodePath = String.Empty
-              ProjectFilePath = String.Empty
-              BuildArtifactsDirectoryPath = String.Empty
-              BuildScriptFilePath = String.Empty
-              NugetConfigPath = String.Empty
-              RootArtifactsFolderPath = String.Empty }
+              AppConfigPath = None
+              BinariesDirectoryPath = None
+              IntermediateDirectoryPath = None
+              PackagesDirectoryName = None
+              ProgramCodePath = None
+              ProjectFilePath = None
+              BuildArtifactsDirectoryPath = None
+              BuildScriptFilePath = None
+              NugetConfigPath = None
+              RootArtifactsFolderPath = None }
     
         static member CreateTableSql() = """
         CREATE TABLE "generate_results"
@@ -1714,16 +1726,16 @@ module Records =
     is_generate_success            INTEGER not null,
     executable_path                TEXT    not null,
     program_name                   TEXT    not null,
-    app_config_path                TEXT    not null,
-    binaries_directory_path        TEXT    not null,
-    intermediate_directory_path    TEXT    not null,
-    packages_directory_name        TEXT    not null,
-    program_code_path              TEXT    not null,
-    project_file_path              TEXT    not null,
-    build_artifacts_directory_path TEXT    not null,
-    build_script_file_path         TEXT    not null,
-    nuget_config_path              TEXT    not null,
-    root_artifacts_folder_path     TEXT    not null
+    app_config_path                TEXT,
+    binaries_directory_path        TEXT,
+    intermediate_directory_path    TEXT,
+    packages_directory_name        TEXT,
+    program_code_path              TEXT,
+    project_file_path              TEXT,
+    build_artifacts_directory_path TEXT,
+    build_script_file_path         TEXT,
+    nuget_config_path              TEXT,
+    root_artifacts_folder_path     TEXT
 )
         """
     
@@ -1767,7 +1779,7 @@ module Records =
     /// A record representing a row in the table `infrastructure_arguments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type InfrastructureArguments =
         { [<JsonPropertyName("id")>] Id: string
@@ -1820,7 +1832,7 @@ module Records =
     /// A record representing a row in the table `infrastructure_nuget_references`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type InfrastructureNugetReferences =
         { [<JsonPropertyName("id")>] Id: string
@@ -1885,7 +1897,7 @@ module Records =
     /// A record representing a row in the table `job_accuracy`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type JobAccuracy =
         { [<JsonPropertyName("id")>] Id: string
@@ -1982,7 +1994,7 @@ module Records =
     /// A record representing a row in the table `job_environments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type JobEnvironments =
         { [<JsonPropertyName("id")>] Id: string
@@ -2063,32 +2075,32 @@ module Records =
     /// A record representing a row in the table `job_infrastructures`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type JobInfrastructures =
         { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("jobId")>] JobId: string
-          [<JsonPropertyName("clockFrequencyHz")>] ClockFrequencyHz: float
-          [<JsonPropertyName("clockTitle")>] ClockTitle: string
-          [<JsonPropertyName("clockIsAvailable")>] ClockIsAvailable: bool
+          [<JsonPropertyName("clockFrequencyHz")>] ClockFrequencyHz: float option
+          [<JsonPropertyName("clockTitle")>] ClockTitle: string option
+          [<JsonPropertyName("clockIsAvailable")>] ClockIsAvailable: bool option
           [<JsonPropertyName("frozen")>] Frozen: bool
           [<JsonPropertyName("infrastructureDisplayId")>] InfrastructureDisplayId: string
           [<JsonPropertyName("toolchainName")>] ToolchainName: string
           [<JsonPropertyName("toolchainIsInProcess")>] ToolchainIsInProcess: bool
-          [<JsonPropertyName("buildConfiguration")>] BuildConfiguration: string
+          [<JsonPropertyName("buildConfiguration")>] BuildConfiguration: string option
           [<JsonPropertyName("hasChanges")>] HasChanges: bool }
     
         static member Blank() =
             { Id = String.Empty
               JobId = String.Empty
-              ClockFrequencyHz = 0.
-              ClockTitle = String.Empty
-              ClockIsAvailable = true
+              ClockFrequencyHz = None
+              ClockTitle = None
+              ClockIsAvailable = None
               Frozen = true
               InfrastructureDisplayId = String.Empty
               ToolchainName = String.Empty
               ToolchainIsInProcess = true
-              BuildConfiguration = String.Empty
+              BuildConfiguration = None
               HasChanges = true }
     
         static member CreateTableSql() = """
@@ -2100,14 +2112,14 @@ module Records =
     job_id                    TEXT    not null
         constraint job_infrastructures_benchmark_jobs_id_fk
             references benchmark_jobs,
-    clock_frequency_hz        INTEGER not null,
-    clock_title               TEXT    not null,
-    clock_is_available        INTEGER not null,
+    clock_frequency_hz        INTEGER,
+    clock_title               TEXT,
+    clock_is_available        INTEGER,
     frozen                    INTEGER not null,
     infrastructure_display_id TEXT    not null,
     toolchain_name            TEXT    not null,
     toolchain_is_in_process   INTEGER not null,
-    build_configuration       TEXT    not null,
+    build_configuration       TEXT,
     has_changes               INTEGER not null
 )
         """
@@ -2148,7 +2160,7 @@ module Records =
     /// A record representing a row in the table `job_meta`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type JobMeta =
         { [<JsonPropertyName("id")>] Id: string
@@ -2221,7 +2233,7 @@ module Records =
     /// A record representing a row in the table `job_runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type JobRuns =
         { [<JsonPropertyName("id")>] Id: string
@@ -2336,7 +2348,7 @@ module Records =
     /// A record representing a row in the table `method_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type MethodInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -2383,7 +2395,7 @@ module Records =
     /// A record representing a row in the table `report_measurements`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ReportMeasurements =
         { [<JsonPropertyName("id")>] Id: string
@@ -2456,7 +2468,7 @@ module Records =
     /// A record representing a row in the table `report_metrics`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ReportMetrics =
         { [<JsonPropertyName("id")>] Id: string
@@ -2545,7 +2557,7 @@ module Records =
     /// A record representing a row in the table `report_original_values`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ReportOriginalValues =
         { [<JsonPropertyName("id")>] Id: string
@@ -2606,7 +2618,7 @@ module Records =
     /// A record representing a row in the table `resource_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ResourceMetadataItem =
         { [<JsonPropertyName("resourceId")>] ResourceId: string
@@ -2659,7 +2671,7 @@ module Records =
     /// A record representing a row in the table `resources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type Resource =
         { [<JsonPropertyName("id")>] Id: string option
@@ -2730,7 +2742,7 @@ module Records =
     /// A record representing a row in the table `run_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type RunMetadataItem =
         { [<JsonPropertyName("runId")>] RunId: string
@@ -2783,19 +2795,19 @@ module Records =
     /// A record representing a row in the table `runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type Runs =
         { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("name")>] Name: string
           [<JsonPropertyName("description")>] Description: string
-          [<JsonPropertyName("startedOn")>] StartedOn: string }
+          [<JsonPropertyName("startedOn")>] StartedOn: DateTime }
     
         static member Blank() =
             { Id = String.Empty
               Name = String.Empty
               Description = String.Empty
-              StartedOn = String.Empty }
+              StartedOn = DateTime.UtcNow }
     
         static member CreateTableSql() = """
         CREATE TABLE "runs"
@@ -2838,7 +2850,7 @@ module Records =
     /// A record representing a row in the table `source_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type SourceMetadataItem =
         { [<JsonPropertyName("sourceId")>] SourceId: string
@@ -2891,7 +2903,7 @@ module Records =
     /// A record representing a row in the table `sources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type Source =
         { [<JsonPropertyName("id")>] Id: string
@@ -2950,7 +2962,7 @@ module Records =
     /// A record representing a row in the table `units`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type Units =
         { [<JsonPropertyName("id")>] Id: string
@@ -3009,43 +3021,39 @@ module Records =
     /// A record representing a row in the table `validation_error`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type ValidationError =
         { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("caseId")>] CaseId: string
           [<JsonPropertyName("message")>] Message: string
-          [<JsonPropertyName("benchmarkId")>] BenchmarkId: string option
-          [<JsonPropertyName("benchmarkCaseDisplayId")>] BenchmarkCaseDisplayId: string
           [<JsonPropertyName("isCritical")>] IsCritical: bool }
     
         static member Blank() =
             { Id = String.Empty
+              CaseId = String.Empty
               Message = String.Empty
-              BenchmarkId = None
-              BenchmarkCaseDisplayId = String.Empty
               IsCritical = true }
     
         static member CreateTableSql() = """
-        CREATE TABLE validation_error
+        CREATE TABLE "validation_error"
 (
-    id                        TEXT    not null
+    id          TEXT    not null
         constraint validation_error_pk
             primary key,
-    message                   TEXT    not null,
-    benchmark_id              TEXT
-        constraint validation_error_benchmarks_id_fk
-            references benchmarks,
-    benchmark_case_display_id TEXT    not null,
-    is_critical               INTEGER not null
+    case_id     TEXT    not null
+        constraint validation_error_benchmark_cases_id_fk
+            references benchmark_cases,
+    message     TEXT    not null,
+    is_critical INTEGER not null
 )
         """
     
         static member SelectSql() = """
         SELECT
               validation_error.`id`,
+              validation_error.`case_id`,
               validation_error.`message`,
-              validation_error.`benchmark_id`,
-              validation_error.`benchmark_case_display_id`,
               validation_error.`is_critical`
         FROM validation_error
         """
@@ -3066,14 +3074,14 @@ module Records =
                   ValidationError.CreateTriggersSql()
                   |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
     
-/// Module generated on 22/10/2024 17:38:12 (utc) via Freql.Tools.
+/// Module generated on 22/10/2024 23:28:17 (utc) via Freql.Tools.
 [<RequireQualifiedAccess>]
 module Parameters =
     /// <summary>
     /// A record representing a new row in the table `artifact_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewArtifactMetadataItem =
         { [<JsonPropertyName("artifactId")>] ArtifactId: string
@@ -3089,7 +3097,7 @@ module Parameters =
     /// A record representing a new row in the table `artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewArtifact =
         { [<JsonPropertyName("id")>] Id: string option
@@ -3113,7 +3121,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_case_descriptors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewBenchmarkCaseDescriptors =
         { [<JsonPropertyName("id")>] Id: string
@@ -3147,7 +3155,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_cases`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewBenchmarkCases =
         { [<JsonPropertyName("id")>] Id: string
@@ -3179,7 +3187,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_host_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewBenchmarkHostInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -3245,7 +3253,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_host_info_antivirus_installations`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewBenchmarkHostInfoAntivirusInstallations =
         { [<JsonPropertyName("id")>] Id: string
@@ -3263,7 +3271,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_jobs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewBenchmarkJobs =
         { [<JsonPropertyName("id")>] Id: string
@@ -3289,7 +3297,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_reports`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewBenchmarkReports =
         { [<JsonPropertyName("id")>] Id: string
@@ -3301,36 +3309,36 @@ module Parameters =
           [<JsonPropertyName("gcStatsTotalOperations")>] GcStatsTotalOperations: int64
           [<JsonPropertyName("gcStatsTotalAllocatedBytes")>] GcStatsTotalAllocatedBytes: int64 option
           [<JsonPropertyName("gcStatsBytesAllocatedPerOperation")>] GcStatsBytesAllocatedPerOperation: int64 option
-          [<JsonPropertyName("resultsStatsKurtosis")>] ResultsStatsKurtosis: decimal
-          [<JsonPropertyName("resultsStatsMax")>] ResultsStatsMax: decimal
-          [<JsonPropertyName("resultsStatsMean")>] ResultsStatsMean: decimal
-          [<JsonPropertyName("resultsStatsMedian")>] ResultsStatsMedian: decimal
+          [<JsonPropertyName("resultsStatsKurtosis")>] ResultsStatsKurtosis: float
+          [<JsonPropertyName("resultsStatsMax")>] ResultsStatsMax: float
+          [<JsonPropertyName("resultsStatsMean")>] ResultsStatsMean: float
+          [<JsonPropertyName("resultsStatsMedian")>] ResultsStatsMedian: float
           [<JsonPropertyName("resultsStatsN")>] ResultsStatsN: int64
-          [<JsonPropertyName("resultsStatsQ1")>] ResultsStatsQ1: decimal option
-          [<JsonPropertyName("resultsStatsQ3")>] ResultsStatsQ3: decimal
-          [<JsonPropertyName("resultsStatsSkewness")>] ResultsStatsSkewness: decimal
-          [<JsonPropertyName("resultsStatsVariance")>] ResultsStatsVariance: decimal
-          [<JsonPropertyName("resultsStatsInterquartileRange")>] ResultsStatsInterquartileRange: decimal
-          [<JsonPropertyName("resultsStatsLowerFence")>] ResultsStatsLowerFence: decimal
-          [<JsonPropertyName("resultsStatsStandardDeviation")>] ResultsStatsStandardDeviation: decimal
-          [<JsonPropertyName("resultsStatsStandardError")>] ResultsStatsStandardError: decimal
-          [<JsonPropertyName("resultsStatsUpperFence")>] ResultsStatsUpperFence: decimal
+          [<JsonPropertyName("resultsStatsQ1")>] ResultsStatsQ1: float
+          [<JsonPropertyName("resultsStatsQ3")>] ResultsStatsQ3: float
+          [<JsonPropertyName("resultsStatsSkewness")>] ResultsStatsSkewness: float
+          [<JsonPropertyName("resultsStatsVariance")>] ResultsStatsVariance: float
+          [<JsonPropertyName("resultsStatsInterquartileRange")>] ResultsStatsInterquartileRange: float
+          [<JsonPropertyName("resultsStatsLowerFence")>] ResultsStatsLowerFence: float
+          [<JsonPropertyName("resultsStatsStandardDeviation")>] ResultsStatsStandardDeviation: float
+          [<JsonPropertyName("resultsStatsStandardError")>] ResultsStatsStandardError: float
+          [<JsonPropertyName("resultsStatsUpperFence")>] ResultsStatsUpperFence: float
           [<JsonPropertyName("resultsStatsConfidenceIntervalLevel")>] ResultsStatsConfidenceIntervalLevel: string
-          [<JsonPropertyName("resultsStatsConfidenceIntervalLower")>] ResultsStatsConfidenceIntervalLower: decimal
-          [<JsonPropertyName("resultsStatsConfidenceIntervalMargin")>] ResultsStatsConfidenceIntervalMargin: decimal
-          [<JsonPropertyName("resultsStatsConfidenceIntervalMean")>] ResultsStatsConfidenceIntervalMean: decimal
+          [<JsonPropertyName("resultsStatsConfidenceIntervalLower")>] ResultsStatsConfidenceIntervalLower: float
+          [<JsonPropertyName("resultsStatsConfidenceIntervalMargin")>] ResultsStatsConfidenceIntervalMargin: float
+          [<JsonPropertyName("resultsStatsConfidenceIntervalMean")>] ResultsStatsConfidenceIntervalMean: float
           [<JsonPropertyName("resultsStatsConfidenceIntervalN")>] ResultsStatsConfidenceIntervalN: int64
-          [<JsonPropertyName("resultsStatsConfidenceIntervalUpper")>] ResultsStatsConfidenceIntervalUpper: decimal option
-          [<JsonPropertyName("resultsStatsConfidenceIntervalStandardError")>] ResultsStatsConfidenceIntervalStandardError: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP0")>] ResultsStatsPercentilesP0: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP25")>] ResultsStatsPercentilesP25: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP50")>] ResultsStatsPercentilesP50: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP67")>] ResultsStatsPercentilesP67: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP80")>] ResultsStatsPercentilesP80: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP85")>] ResultsStatsPercentilesP85: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP90")>] ResultsStatsPercentilesP90: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP95")>] ResultsStatsPercentilesP95: decimal
-          [<JsonPropertyName("resultsStatsPercentilesP100")>] ResultsStatsPercentilesP100: decimal }
+          [<JsonPropertyName("resultsStatsConfidenceIntervalUpper")>] ResultsStatsConfidenceIntervalUpper: float
+          [<JsonPropertyName("resultsStatsConfidenceIntervalStandardError")>] ResultsStatsConfidenceIntervalStandardError: float
+          [<JsonPropertyName("resultsStatsPercentilesP0")>] ResultsStatsPercentilesP0: float
+          [<JsonPropertyName("resultsStatsPercentilesP25")>] ResultsStatsPercentilesP25: float
+          [<JsonPropertyName("resultsStatsPercentilesP50")>] ResultsStatsPercentilesP50: float
+          [<JsonPropertyName("resultsStatsPercentilesP67")>] ResultsStatsPercentilesP67: float
+          [<JsonPropertyName("resultsStatsPercentilesP80")>] ResultsStatsPercentilesP80: float
+          [<JsonPropertyName("resultsStatsPercentilesP85")>] ResultsStatsPercentilesP85: float
+          [<JsonPropertyName("resultsStatsPercentilesP90")>] ResultsStatsPercentilesP90: float
+          [<JsonPropertyName("resultsStatsPercentilesP95")>] ResultsStatsPercentilesP95: float
+          [<JsonPropertyName("resultsStatsPercentilesP100")>] ResultsStatsPercentilesP100: float }
     
         static member Blank() =
             { Id = String.Empty
@@ -3342,42 +3350,42 @@ module Parameters =
               GcStatsTotalOperations = 0L
               GcStatsTotalAllocatedBytes = None
               GcStatsBytesAllocatedPerOperation = None
-              ResultsStatsKurtosis = 0m
-              ResultsStatsMax = 0m
-              ResultsStatsMean = 0m
-              ResultsStatsMedian = 0m
+              ResultsStatsKurtosis = 0.
+              ResultsStatsMax = 0.
+              ResultsStatsMean = 0.
+              ResultsStatsMedian = 0.
               ResultsStatsN = 0L
-              ResultsStatsQ1 = None
-              ResultsStatsQ3 = 0m
-              ResultsStatsSkewness = 0m
-              ResultsStatsVariance = 0m
-              ResultsStatsInterquartileRange = 0m
-              ResultsStatsLowerFence = 0m
-              ResultsStatsStandardDeviation = 0m
-              ResultsStatsStandardError = 0m
-              ResultsStatsUpperFence = 0m
+              ResultsStatsQ1 = 0.
+              ResultsStatsQ3 = 0.
+              ResultsStatsSkewness = 0.
+              ResultsStatsVariance = 0.
+              ResultsStatsInterquartileRange = 0.
+              ResultsStatsLowerFence = 0.
+              ResultsStatsStandardDeviation = 0.
+              ResultsStatsStandardError = 0.
+              ResultsStatsUpperFence = 0.
               ResultsStatsConfidenceIntervalLevel = String.Empty
-              ResultsStatsConfidenceIntervalLower = 0m
-              ResultsStatsConfidenceIntervalMargin = 0m
-              ResultsStatsConfidenceIntervalMean = 0m
+              ResultsStatsConfidenceIntervalLower = 0.
+              ResultsStatsConfidenceIntervalMargin = 0.
+              ResultsStatsConfidenceIntervalMean = 0.
               ResultsStatsConfidenceIntervalN = 0L
-              ResultsStatsConfidenceIntervalUpper = None
-              ResultsStatsConfidenceIntervalStandardError = 0m
-              ResultsStatsPercentilesP0 = 0m
-              ResultsStatsPercentilesP25 = 0m
-              ResultsStatsPercentilesP50 = 0m
-              ResultsStatsPercentilesP67 = 0m
-              ResultsStatsPercentilesP80 = 0m
-              ResultsStatsPercentilesP85 = 0m
-              ResultsStatsPercentilesP90 = 0m
-              ResultsStatsPercentilesP95 = 0m
-              ResultsStatsPercentilesP100 = 0m }
+              ResultsStatsConfidenceIntervalUpper = 0.
+              ResultsStatsConfidenceIntervalStandardError = 0.
+              ResultsStatsPercentilesP0 = 0.
+              ResultsStatsPercentilesP25 = 0.
+              ResultsStatsPercentilesP50 = 0.
+              ResultsStatsPercentilesP67 = 0.
+              ResultsStatsPercentilesP80 = 0.
+              ResultsStatsPercentilesP85 = 0.
+              ResultsStatsPercentilesP90 = 0.
+              ResultsStatsPercentilesP95 = 0.
+              ResultsStatsPercentilesP100 = 0. }
     
     /// <summary>
     /// A record representing a new row in the table `benchmarks`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewBenchmark =
         { [<JsonPropertyName("id")>] Id: string
@@ -3405,23 +3413,23 @@ module Parameters =
     /// A record representing a new row in the table `build_artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewBuildArtifacts =
         { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("buildResultId")>] BuildResultId: string
-          [<JsonPropertyName("path")>] Path: string option }
+          [<JsonPropertyName("path")>] Path: string }
     
         static member Blank() =
             { Id = String.Empty
               BuildResultId = String.Empty
-              Path = None }
+              Path = String.Empty }
     
     /// <summary>
     /// A record representing a new row in the table `build_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewBuildResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -3431,16 +3439,16 @@ module Parameters =
           [<JsonPropertyName("isGenerateSuccess")>] IsGenerateSuccess: bool
           [<JsonPropertyName("executablePath")>] ExecutablePath: string
           [<JsonPropertyName("programName")>] ProgramName: string
-          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string
-          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string
-          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string
-          [<JsonPropertyName("packageDirectoryName")>] PackageDirectoryName: string
-          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string
-          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string
-          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string
-          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string
-          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string
-          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string }
+          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string option
+          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string option
+          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string option
+          [<JsonPropertyName("packageDirectoryName")>] PackageDirectoryName: string option
+          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string option
+          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string option
+          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string option
+          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string option
+          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string option
+          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string option }
     
         static member Blank() =
             { Id = String.Empty
@@ -3450,22 +3458,22 @@ module Parameters =
               IsGenerateSuccess = true
               ExecutablePath = String.Empty
               ProgramName = String.Empty
-              AppConfigPath = String.Empty
-              BinariesDirectoryPath = String.Empty
-              IntermediateDirectoryPath = String.Empty
-              PackageDirectoryName = String.Empty
-              ProgramCodePath = String.Empty
-              ProjectFilePath = String.Empty
-              BuildArtifactsDirectoryPath = String.Empty
-              BuildScriptFilePath = String.Empty
-              NugetConfigPath = String.Empty
-              RootArtifactsFolderPath = String.Empty }
+              AppConfigPath = None
+              BinariesDirectoryPath = None
+              IntermediateDirectoryPath = None
+              PackageDirectoryName = None
+              ProgramCodePath = None
+              ProjectFilePath = None
+              BuildArtifactsDirectoryPath = None
+              BuildScriptFilePath = None
+              NugetConfigPath = None
+              RootArtifactsFolderPath = None }
     
     /// <summary>
     /// A record representing a new row in the table `environment_gcs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewEnvironmentGcs =
         { [<JsonPropertyName("id")>] Id: string
@@ -3503,7 +3511,7 @@ module Parameters =
     /// A record representing a new row in the table `environment_runtimes`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewEnvironmentRuntimes =
         { [<JsonPropertyName("id")>] Id: string
@@ -3525,7 +3533,7 @@ module Parameters =
     /// A record representing a new row in the table `environmental_variables`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewEnvironmentalVariables =
         { [<JsonPropertyName("id")>] Id: string
@@ -3543,7 +3551,7 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_errors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewExecutionResultErrors =
         { [<JsonPropertyName("id")>] Id: string
@@ -3559,7 +3567,7 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_items`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewExecutionResultItems =
         { [<JsonPropertyName("id")>] Id: string
@@ -3575,11 +3583,11 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_measurements`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewExecutionResultMeasurements =
         { [<JsonPropertyName("id")>] Id: string
-          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string option
+          [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
           [<JsonPropertyName("nanoseconds")>] Nanoseconds: float
           [<JsonPropertyName("operations")>] Operations: int64
           [<JsonPropertyName("iterationIndex")>] IterationIndex: int64
@@ -3589,7 +3597,7 @@ module Parameters =
     
         static member Blank() =
             { Id = String.Empty
-              ExecutionResultId = None
+              ExecutionResultId = String.Empty
               Nanoseconds = 0.
               Operations = 0L
               IterationIndex = 0L
@@ -3601,7 +3609,7 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_prefixed_lines`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewExecutionResultPrefixedLines =
         { [<JsonPropertyName("id")>] Id: string
@@ -3617,15 +3625,15 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_standard_output_lines`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewExecutionResultStandardOutputLines =
-        { [<JsonPropertyName("id")>] Id: string option
+        { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("executionResultId")>] ExecutionResultId: string
           [<JsonPropertyName("line")>] Line: string }
     
         static member Blank() =
-            { Id = None
+            { Id = String.Empty
               ExecutionResultId = String.Empty
               Line = String.Empty }
     
@@ -3633,18 +3641,18 @@ module Parameters =
     /// A record representing a new row in the table `execution_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewExecutionResults =
         { [<JsonPropertyName("id")>] Id: string
-          [<JsonPropertyName("reportId")>] ReportId: string option
+          [<JsonPropertyName("reportId")>] ReportId: string
           [<JsonPropertyName("exitCode")>] ExitCode: int64 option
           [<JsonPropertyName("isSuccess")>] IsSuccess: bool
           [<JsonPropertyName("processId")>] ProcessId: int64 option }
     
         static member Blank() =
             { Id = String.Empty
-              ReportId = None
+              ReportId = String.Empty
               ExitCode = None
               IsSuccess = true
               ProcessId = None }
@@ -3653,15 +3661,15 @@ module Parameters =
     /// A record representing a new row in the table `generate_artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewGenerateArtifacts =
-        { [<JsonPropertyName("id")>] Id: string option
+        { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("generateResultId")>] GenerateResultId: string
           [<JsonPropertyName("path")>] Path: string }
     
         static member Blank() =
-            { Id = None
+            { Id = String.Empty
               GenerateResultId = String.Empty
               Path = String.Empty }
     
@@ -3669,7 +3677,7 @@ module Parameters =
     /// A record representing a new row in the table `generate_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewGenerateResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -3677,16 +3685,16 @@ module Parameters =
           [<JsonPropertyName("isGenerateSuccess")>] IsGenerateSuccess: bool
           [<JsonPropertyName("executablePath")>] ExecutablePath: string
           [<JsonPropertyName("programName")>] ProgramName: string
-          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string
-          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string
-          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string
-          [<JsonPropertyName("packagesDirectoryName")>] PackagesDirectoryName: string
-          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string
-          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string
-          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string
-          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string
-          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string
-          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string }
+          [<JsonPropertyName("appConfigPath")>] AppConfigPath: string option
+          [<JsonPropertyName("binariesDirectoryPath")>] BinariesDirectoryPath: string option
+          [<JsonPropertyName("intermediateDirectoryPath")>] IntermediateDirectoryPath: string option
+          [<JsonPropertyName("packagesDirectoryName")>] PackagesDirectoryName: string option
+          [<JsonPropertyName("programCodePath")>] ProgramCodePath: string option
+          [<JsonPropertyName("projectFilePath")>] ProjectFilePath: string option
+          [<JsonPropertyName("buildArtifactsDirectoryPath")>] BuildArtifactsDirectoryPath: string option
+          [<JsonPropertyName("buildScriptFilePath")>] BuildScriptFilePath: string option
+          [<JsonPropertyName("nugetConfigPath")>] NugetConfigPath: string option
+          [<JsonPropertyName("rootArtifactsFolderPath")>] RootArtifactsFolderPath: string option }
     
         static member Blank() =
             { Id = String.Empty
@@ -3694,22 +3702,22 @@ module Parameters =
               IsGenerateSuccess = true
               ExecutablePath = String.Empty
               ProgramName = String.Empty
-              AppConfigPath = String.Empty
-              BinariesDirectoryPath = String.Empty
-              IntermediateDirectoryPath = String.Empty
-              PackagesDirectoryName = String.Empty
-              ProgramCodePath = String.Empty
-              ProjectFilePath = String.Empty
-              BuildArtifactsDirectoryPath = String.Empty
-              BuildScriptFilePath = String.Empty
-              NugetConfigPath = String.Empty
-              RootArtifactsFolderPath = String.Empty }
+              AppConfigPath = None
+              BinariesDirectoryPath = None
+              IntermediateDirectoryPath = None
+              PackagesDirectoryName = None
+              ProgramCodePath = None
+              ProjectFilePath = None
+              BuildArtifactsDirectoryPath = None
+              BuildScriptFilePath = None
+              NugetConfigPath = None
+              RootArtifactsFolderPath = None }
     
     /// <summary>
     /// A record representing a new row in the table `infrastructure_arguments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewInfrastructureArguments =
         { [<JsonPropertyName("id")>] Id: string
@@ -3725,7 +3733,7 @@ module Parameters =
     /// A record representing a new row in the table `infrastructure_nuget_references`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewInfrastructureNugetReferences =
         { [<JsonPropertyName("id")>] Id: string
@@ -3747,7 +3755,7 @@ module Parameters =
     /// A record representing a new row in the table `job_accuracy`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewJobAccuracy =
         { [<JsonPropertyName("id")>] Id: string
@@ -3783,7 +3791,7 @@ module Parameters =
     /// A record representing a new row in the table `job_environments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewJobEnvironments =
         { [<JsonPropertyName("id")>] Id: string
@@ -3813,39 +3821,39 @@ module Parameters =
     /// A record representing a new row in the table `job_infrastructures`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewJobInfrastructures =
         { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("jobId")>] JobId: string
-          [<JsonPropertyName("clockFrequencyHz")>] ClockFrequencyHz: float
-          [<JsonPropertyName("clockTitle")>] ClockTitle: string
-          [<JsonPropertyName("clockIsAvailable")>] ClockIsAvailable: bool
+          [<JsonPropertyName("clockFrequencyHz")>] ClockFrequencyHz: float option
+          [<JsonPropertyName("clockTitle")>] ClockTitle: string option
+          [<JsonPropertyName("clockIsAvailable")>] ClockIsAvailable: bool option
           [<JsonPropertyName("frozen")>] Frozen: bool
           [<JsonPropertyName("infrastructureDisplayId")>] InfrastructureDisplayId: string
           [<JsonPropertyName("toolchainName")>] ToolchainName: string
           [<JsonPropertyName("toolchainIsInProcess")>] ToolchainIsInProcess: bool
-          [<JsonPropertyName("buildConfiguration")>] BuildConfiguration: string
+          [<JsonPropertyName("buildConfiguration")>] BuildConfiguration: string option
           [<JsonPropertyName("hasChanges")>] HasChanges: bool }
     
         static member Blank() =
             { Id = String.Empty
               JobId = String.Empty
-              ClockFrequencyHz = 0.
-              ClockTitle = String.Empty
-              ClockIsAvailable = true
+              ClockFrequencyHz = None
+              ClockTitle = None
+              ClockIsAvailable = None
               Frozen = true
               InfrastructureDisplayId = String.Empty
               ToolchainName = String.Empty
               ToolchainIsInProcess = true
-              BuildConfiguration = String.Empty
+              BuildConfiguration = None
               HasChanges = true }
     
     /// <summary>
     /// A record representing a new row in the table `job_meta`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewJobMeta =
         { [<JsonPropertyName("id")>] Id: string
@@ -3871,7 +3879,7 @@ module Parameters =
     /// A record representing a new row in the table `job_runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewJobRuns =
         { [<JsonPropertyName("id")>] Id: string
@@ -3917,7 +3925,7 @@ module Parameters =
     /// A record representing a new row in the table `method_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewMethodInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -3931,7 +3939,7 @@ module Parameters =
     /// A record representing a new row in the table `report_measurements`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewReportMeasurements =
         { [<JsonPropertyName("id")>] Id: string
@@ -3957,7 +3965,7 @@ module Parameters =
     /// A record representing a new row in the table `report_metrics`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewReportMetrics =
         { [<JsonPropertyName("id")>] Id: string
@@ -3991,7 +3999,7 @@ module Parameters =
     /// A record representing a new row in the table `report_original_values`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewReportOriginalValues =
         { [<JsonPropertyName("id")>] Id: string
@@ -4011,7 +4019,7 @@ module Parameters =
     /// A record representing a new row in the table `resource_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewResourceMetadataItem =
         { [<JsonPropertyName("resourceId")>] ResourceId: string
@@ -4027,7 +4035,7 @@ module Parameters =
     /// A record representing a new row in the table `resources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewResource =
         { [<JsonPropertyName("id")>] Id: string option
@@ -4051,7 +4059,7 @@ module Parameters =
     /// A record representing a new row in the table `run_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewRunMetadataItem =
         { [<JsonPropertyName("runId")>] RunId: string
@@ -4067,25 +4075,25 @@ module Parameters =
     /// A record representing a new row in the table `runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewRuns =
         { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("name")>] Name: string
           [<JsonPropertyName("description")>] Description: string
-          [<JsonPropertyName("startedOn")>] StartedOn: string }
+          [<JsonPropertyName("startedOn")>] StartedOn: DateTime }
     
         static member Blank() =
             { Id = String.Empty
               Name = String.Empty
               Description = String.Empty
-              StartedOn = String.Empty }
+              StartedOn = DateTime.UtcNow }
     
     /// <summary>
     /// A record representing a new row in the table `source_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewSourceMetadataItem =
         { [<JsonPropertyName("sourceId")>] SourceId: string
@@ -4101,7 +4109,7 @@ module Parameters =
     /// A record representing a new row in the table `sources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewSource =
         { [<JsonPropertyName("id")>] Id: string
@@ -4119,7 +4127,7 @@ module Parameters =
     /// A record representing a new row in the table `units`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewUnits =
         { [<JsonPropertyName("id")>] Id: string
@@ -4139,23 +4147,21 @@ module Parameters =
     /// A record representing a new row in the table `validation_error`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     type NewValidationError =
         { [<JsonPropertyName("id")>] Id: string
+          [<JsonPropertyName("caseId")>] CaseId: string
           [<JsonPropertyName("message")>] Message: string
-          [<JsonPropertyName("benchmarkId")>] BenchmarkId: string option
-          [<JsonPropertyName("benchmarkCaseDisplayId")>] BenchmarkCaseDisplayId: string
           [<JsonPropertyName("isCritical")>] IsCritical: bool }
     
         static member Blank() =
             { Id = String.Empty
+              CaseId = String.Empty
               Message = String.Empty
-              BenchmarkId = None
-              BenchmarkCaseDisplayId = String.Empty
               IsCritical = true }
     
-/// Module generated on 22/10/2024 17:38:12 (utc) via Freql.Tools.
+/// Module generated on 22/10/2024 23:28:17 (utc) via Freql.Tools.
 [<RequireQualifiedAccess>]
 module Operations =
 
@@ -4170,7 +4176,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4189,7 +4195,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4212,7 +4218,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4231,7 +4237,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4254,7 +4260,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4273,7 +4279,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4296,7 +4302,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4315,7 +4321,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4338,7 +4344,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4357,7 +4363,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4380,7 +4386,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4399,7 +4405,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4422,7 +4428,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4441,7 +4447,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4464,7 +4470,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4483,7 +4489,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4506,7 +4512,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4525,7 +4531,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4548,7 +4554,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4567,7 +4573,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4590,7 +4596,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4609,7 +4615,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4632,7 +4638,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4651,7 +4657,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4674,7 +4680,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4693,7 +4699,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4716,7 +4722,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4735,7 +4741,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4758,7 +4764,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4777,7 +4783,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4800,7 +4806,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4819,7 +4825,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4842,7 +4848,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4861,7 +4867,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4884,7 +4890,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4903,7 +4909,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4926,7 +4932,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4945,7 +4951,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4968,7 +4974,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -4987,7 +4993,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5010,7 +5016,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5029,7 +5035,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5052,7 +5058,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5071,7 +5077,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5094,7 +5100,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5113,7 +5119,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5136,7 +5142,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5155,7 +5161,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5178,7 +5184,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5197,7 +5203,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5220,7 +5226,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5239,7 +5245,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5262,7 +5268,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5281,7 +5287,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5304,7 +5310,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5323,7 +5329,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5346,7 +5352,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5365,7 +5371,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5388,7 +5394,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5407,7 +5413,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5430,7 +5436,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5449,7 +5455,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5472,7 +5478,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5491,7 +5497,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5514,7 +5520,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5533,7 +5539,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5556,7 +5562,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5575,7 +5581,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5598,7 +5604,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5617,7 +5623,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5640,7 +5646,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5659,7 +5665,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5682,7 +5688,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5701,7 +5707,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5724,7 +5730,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5743,7 +5749,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5766,7 +5772,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5785,7 +5791,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5808,7 +5814,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5827,7 +5833,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5850,7 +5856,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
@@ -5869,7 +5875,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 17:38:12
+    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
     /// </remarks>
     /// <example>
     /// <code>
