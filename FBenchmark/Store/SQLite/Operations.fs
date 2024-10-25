@@ -1,16 +1,22 @@
 namespace FBenchmark.Store.SQLite
 
 open System
+open System.Collections.Generic
 open System.Reflection
+open BenchmarkDotNet.Engines
 open BenchmarkDotNet.Environments
 open BenchmarkDotNet.Jobs
 open BenchmarkDotNet.Portability
 open BenchmarkDotNet.Reports
 open BenchmarkDotNet.Running
+open BenchmarkDotNet.Toolchains.Results
+open BenchmarkDotNet.Validators
+open FBenchmark.Core.Configuration
 open FBenchmark.Store.SQLite.Persistence
 open Freql.Sqlite
 open FsToolbox.Core
 open FsToolbox.Core.Strings
+open FsToolbox.Extensions.Strings
 open Perfolizer.Horology
 open Perfolizer.Mathematics.OutlierDetection
 open Perfolizer.Metrology
@@ -18,6 +24,45 @@ open Perfolizer.Metrology
 module Operations =
 
     let createId () = Guid.NewGuid().ToString("n")
+
+    let insertRun (ctx: SqliteContext) (name: string) (description: string) (startedOn: DateTime) =
+        let id = createId ()
+
+        ({ Id = id
+           Name = name
+           Description = description
+           StartedOn = startedOn }
+        : Parameters.NewRuns)
+        |> Operations.insertRuns ctx
+
+        id
+
+    let insertSource (ctx: SqliteContext) (runId: string) (name: string) (sourceType: SourceType) =
+        let id = createId ()
+
+        ({ Id = id
+           RunId = runId
+           Name = name
+           SourceType = sourceType.GetName() }
+        : Parameters.NewSource)
+        |> Operations.insertSource ctx
+
+        id
+
+
+    let insertOrGetUnit (ctx: SqliteContext) (unit: MeasurementUnit) =
+        match Operations.selectUnitsRecord ctx [ "WHERE id = @0" ] [ unit.FullName ] with
+        | Some u -> u.Id
+        | None ->
+            ({ Id = unit.FullName
+               Abbreviation = unit.Abbreviation
+               AbbreviationAscii = unit.AbbreviationAscii
+               BaseUnits = unit.BaseUnits
+               FullName = unit.FullName }
+            : Parameters.NewUnits)
+            |> Operations.insertUnits ctx
+
+            unit.FullName
 
     let insertBenchmark (ctx: SqliteContext) (sourceId: string) (summary: Summary) =
 
@@ -47,25 +92,22 @@ module Operations =
            Configuration = hostEnvironmentInfo.Configuration
            ChronometerFrequency = hostEnvironmentInfo.ChronometerFrequency.Hertz
            ChronometerResolutionNanoseconds = hostEnvironmentInfo.ChronometerResolution.Nanoseconds
-           ChronometerResolutionUnitId = hostEnvironmentInfo.ChronometerResolution.Unit.FullName
+           ChronometerResolutionUnitId = insertOrGetUnit ctx hostEnvironmentInfo.ChronometerResolution.Unit
            InDocker = hostEnvironmentInfo.InDocker
            JitInfo = hostEnvironmentInfo.JitInfo
            OsVersion = hostEnvironmentInfo.OsVersion.Value
            RuntimeVersion = hostEnvironmentInfo.RuntimeVersion
            HardwareIntrinsicsShort = hostEnvironmentInfo.HardwareIntrinsicsShort
            HardwareTimerKind =
-             match hostEnvironmentInfo.HardwareTimerKind with
-             | HardwareTimerKind.System -> "system"
-             | HardwareTimerKind.Tsc -> "tsc"
-             | HardwareTimerKind.Acpi -> "acpi"
-             | HardwareTimerKind.Hpet -> "hpet"
-             | HardwareTimerKind.Unknown -> "unknown"
-             | _ -> "unknown"
+             hostEnvironmentInfo.HardwareTimerKind
+             |> Enum.GetName
+             |> slugify SlugifySettings.Default
+
            HasRyuJit = hostEnvironmentInfo.HasRyuJit
            IsMonoInstalled = hostEnvironmentInfo.IsMonoInstalled.Value
-           VirtualMachineHypervisor = hostEnvironmentInfo.VirtualMachineHypervisor.Value.Name
+           VirtualMachineHypervisor = "" //hostEnvironmentInfo.VirtualMachineHypervisor.Value.Name
            BenchmarkDotNetVersion = hostEnvironmentInfo.BenchmarkDotNetVersion
-           DotNetSdkVersion = hostEnvironmentInfo.DotNetSdkVersion.Value
+           DotNetSdkVersion = "" //hostEnvironmentInfo.DotNetSdkVersion.Value
            GcAllocationQuantum = hostEnvironmentInfo.GCAllocationQuantum
            IsConcurrentGc = hostEnvironmentInfo.IsConcurrentGC
            IsServerGc = hostEnvironmentInfo.IsServerGC
@@ -186,20 +228,6 @@ module Operations =
 
         id
 
-    let insertOrGetUnit (ctx: SqliteContext) (unit: MeasurementUnit) =
-        match Operations.selectUnitsRecord ctx [ "WHERE id = @0" ] [ unit.FullName ] with
-        | Some u -> u.Id
-        | None ->
-            ({ Id = unit.FullName
-               Abbreviation = unit.Abbreviation
-               AbbreviationAscii = unit.AbbreviationAscii
-               BaseUnits = unit.BaseUnits
-               FullName = unit.FullName }
-            : Parameters.NewUnits)
-            |> Operations.insertUnits ctx
-
-            unit.FullName
-
     let insertJobAccuracy (ctx: SqliteContext) (jobId: string) (accuracy: AccuracyMode) =
         let id = createId ()
 
@@ -301,17 +329,17 @@ module Operations =
         |> Operations.insertEnvironmentRuntimes ctx
 
         id
-        
+
     let insertEnvironmentalVariable (ctx: SqliteContext) (environmentId: string) (variable: EnvironmentVariable) =
         let id = createId ()
-        
-        ({  Id = id
-            EnvironmentalId = environmentId
-            VariableKey = variable.Key
-            VariableValue = variable.Value
-        }: Parameters.NewEnvironmentalVariables)
+
+        ({ Id = id
+           EnvironmentalId = environmentId
+           VariableKey = variable.Key
+           VariableValue = variable.Value }
+        : Parameters.NewEnvironmentalVariables)
         |> Operations.insertEnvironmentalVariables ctx
-        
+
         id
 
     let insertJobMeta (ctx: SqliteContext) (jobId: string) (meta: MetaMode) =
@@ -330,33 +358,345 @@ module Operations =
 
         id
 
+    let insertJobInfrastructure (ctx: SqliteContext) (jobId: string) (infrastructure: InfrastructureMode) =
+        let id = createId ()
+
+        ({ Id = id
+           JobId = jobId
+           ClockFrequencyHz = infrastructure.Clock |> Option.ofObj |> Option.map _.Frequency.Hertz
+           ClockTitle = infrastructure.Clock |> Option.ofObj |> Option.map _.Title
+           ClockIsAvailable = infrastructure.Clock |> Option.ofObj |> Option.map _.IsAvailable
+           Frozen = infrastructure.Frozen
+           InfrastructureDisplayId = infrastructure.Id
+           ToolchainName = infrastructure.Toolchain.Name
+           ToolchainIsInProcess = infrastructure.Toolchain.IsInProcess
+           BuildConfiguration = infrastructure.BuildConfiguration.ToOption()
+           HasChanges = infrastructure.HasChanges }
+        : Parameters.NewJobInfrastructures)
+        |> Operations.insertJobInfrastructures ctx
+
+        id
+
+    let insertInfrastructureArgument (ctx: SqliteContext) (infrastructureId: string) (argument: Argument) =
+        let id = createId ()
+
+        ({ Id = id
+           InfrastructureId = infrastructureId
+           TextRepresentation = argument.TextRepresentation }
+        : Parameters.NewInfrastructureArguments)
+        |> Operations.insertInfrastructureArguments ctx
+
+        id
+
+    let insertInfrastructureNugetReference (ctx: SqliteContext) (infrastructureId: string) (reference: NuGetReference) =
+        let id = createId ()
+
+        ({ Id = id
+           InfrastructureId = infrastructureId
+           Prerelease = reference.Prerelease
+           PackageName = reference.PackageName
+           PackageSource = reference.PackageSource.ToString()
+           PackageVersion = reference.PackageVersion }
+        : Parameters.NewInfrastructureNugetReferences)
+        |> Operations.insertInfrastructureNugetReferences ctx
+
+        id
+
     let insertJobRun (ctx: SqliteContext) (jobId: string) (runMode: RunMode) =
         let id = createId ()
-        
-        ({
-            Id = id
-            JobId = failwith "todo"
-            Frozen = failwith "todo"
-            JobRunId = failwith "todo"
-            HasChanges = failwith "todo"
-            InvocationCount = failwith "todo"
-            IterationCount = failwith "todo"
-            IterationTimeNanoSeconds = failwith "todo"
-            IterationTimeUnit = failwith "todo"
-            LaunchCount = failwith "todo"
-            MemoryRandomization = failwith "todo"
-            RunStrategy = failwith "todo"
-            UnrollFactor = failwith "todo"
-            WarmupCount = failwith "todo"
-            MaxIterationCount = failwith "todo"
-            MinIterationCount = failwith "todo"
-            MaxWarmupIterationCount = failwith "todo"
-            MinWarmupIterationCount = failwith "todo"
-        }: Parameters.NewJobRuns)
-        |> Operations.insertJobRuns ctx 
-        
+
+        ({ Id = id
+           JobId = jobId
+           Frozen = runMode.Frozen
+           RunDisplayId = runMode.Id
+           HasChanges = runMode.HasChanges
+           InvocationCount = runMode.InvocationCount
+           IterationCount = runMode.IterationCount
+           IterationTimeNanoseconds = runMode.IterationTime.Nanoseconds
+           IterationTimeUnitId = insertOrGetUnit ctx runMode.IterationTime.Unit
+           LaunchCount = runMode.LaunchCount
+           MemoryRandomization = runMode.MemoryRandomization
+           RunStrategy =
+             match runMode.RunStrategy with
+             | RunStrategy.Throughput -> "throughput"
+             | RunStrategy.ColdStart -> "cold-start"
+             | RunStrategy.Monitoring -> "monitoring"
+             | _ -> "unknown"
+           UnrollFactor = runMode.UnrollFactor
+           WarmupCount = runMode.WarmupCount
+           MaxIterationCount = runMode.MaxIterationCount
+           MinIterationCount = runMode.MinIterationCount
+           MaxWarmupIterationCount = runMode.MaxWarmupIterationCount
+           MinWarmupIterationCount = runMode.MinWarmupIterationCount }
+        : Parameters.NewJobRuns)
+        |> Operations.insertJobRuns ctx
+
         id
-    
+
+    let insertBenchmarkReport (ctx: SqliteContext) (caseId: string) (report: BenchmarkReport) =
+        let id = createId ()
+
+        ({ Id = id
+           CaseId = caseId
+           Success = report.Success
+           GcStatsGen0Collections = report.GcStats.Gen0Collections
+           GcStatsGen1Collections = report.GcStats.Gen1Collections
+           GcStatsGen2Collections = report.GcStats.Gen2Collections
+           GcStatsTotalOperations = report.GcStats.TotalOperations
+           GcStatsTotalAllocatedBytes = report.GcStats.GetTotalAllocatedBytes(false) |> Option.ofNullable
+           GcStatsBytesAllocatedPerOperation =
+             report.GcStats.GetBytesAllocatedPerOperation(report.BenchmarkCase)
+             |> Option.ofNullable
+           ResultsStatsKurtosis = report.ResultStatistics.Kurtosis
+           ResultsStatsMax = report.ResultStatistics.Max
+           ResultsStatsMean = report.ResultStatistics.Mean
+           ResultsStatsMedian = report.ResultStatistics.Median
+           ResultsStatsN = report.ResultStatistics.N
+           ResultsStatsQ1 = report.ResultStatistics.Q1
+           ResultsStatsQ3 = report.ResultStatistics.Q3
+           ResultsStatsSkewness = report.ResultStatistics.Skewness
+           ResultsStatsVariance = report.ResultStatistics.Variance
+           ResultsStatsInterquartileRange = report.ResultStatistics.InterquartileRange
+           ResultsStatsLowerFence = report.ResultStatistics.LowerFence
+           ResultsStatsStandardDeviation = report.ResultStatistics.StandardDeviation
+           ResultsStatsStandardError = report.ResultStatistics.StandardError
+           ResultsStatsUpperFence = report.ResultStatistics.UpperFence
+           ResultsStatsConfidenceIntervalLevel =
+             report.ResultStatistics.ConfidenceInterval.Level
+             |> Enum.GetName
+             |> Strings.slugify SlugifySettings.Default
+           ResultsStatsConfidenceIntervalLower = report.ResultStatistics.ConfidenceInterval.Lower
+           ResultsStatsConfidenceIntervalMargin = report.ResultStatistics.ConfidenceInterval.Margin
+           ResultsStatsConfidenceIntervalMean = report.ResultStatistics.ConfidenceInterval.Mean
+           ResultsStatsConfidenceIntervalN = report.ResultStatistics.ConfidenceInterval.N
+           ResultsStatsConfidenceIntervalUpper = report.ResultStatistics.ConfidenceInterval.Upper
+           ResultsStatsConfidenceIntervalStandardError = report.ResultStatistics.ConfidenceInterval.StandardError
+           ResultsStatsPercentilesP0 = report.ResultStatistics.Percentiles.P0
+           ResultsStatsPercentilesP25 = report.ResultStatistics.Percentiles.P25
+           ResultsStatsPercentilesP50 = report.ResultStatistics.Percentiles.P50
+           ResultsStatsPercentilesP67 = report.ResultStatistics.Percentiles.P67
+           ResultsStatsPercentilesP80 = report.ResultStatistics.Percentiles.P80
+           ResultsStatsPercentilesP85 = report.ResultStatistics.Percentiles.P85
+           ResultsStatsPercentilesP90 = report.ResultStatistics.Percentiles.P90
+           ResultsStatsPercentilesP95 = report.ResultStatistics.Percentiles.P95
+           ResultsStatsPercentilesP100 = report.ResultStatistics.Percentiles.P100 }
+        : Parameters.NewBenchmarkReports)
+        |> Operations.insertBenchmarkReports ctx
+
+        id
+
+    let insertReportMetric (ctx: SqliteContext) (reportId: string) (metric: KeyValuePair<string, Metric>) =
+        let id = createId ()
+
+        ({ Id = id
+           ReportId = failwith "todo"
+           MetricKey = failwith "todo"
+           MetricValue = failwith "todo"
+           MetricId = failwith "todo"
+           Legend = failwith "todo"
+           Unit = failwith "todo"
+           DisplayName = failwith "todo"
+           NumberFormat = failwith "todo"
+           UnitType = failwith "todo"
+           PriorityInCategory = failwith "todo"
+           TheGreaterTheBetter = failwith "todo" }
+        : Parameters.NewReportMetrics)
+        |> Operations.insertReportMetrics ctx
+
+        id
+
+    let insertReportMeasurement (ctx: SqliteContext) (reportId: string) (measurement: Measurement) =
+        let id = createId ()
+
+        ({ Id = id
+           ReportId = reportId
+           Nanoseconds = measurement.Nanoseconds
+           Operations = measurement.Operations
+           IterationIndex = measurement.IterationIndex
+           IterationMode = measurement.IterationMode |> Enum.GetName |> slugify SlugifySettings.Default
+           IterationStage = measurement.IterationStage |> Enum.GetName |> slugify SlugifySettings.Default
+           LaunchIndex = measurement.LaunchIndex }
+        : Parameters.NewReportMeasurements)
+        |> Operations.insertReportMeasurements ctx
+
+        id
+
+    let insertReportOriginalValue
+        (ctx: SqliteContext)
+        (reportId: string)
+        (value: float)
+        (isUpperOutlier: bool)
+        (isLowerOutlier: bool)
+        =
+        let id = createId ()
+
+        ({ Id = id
+           ReportId = reportId
+           ResultValue = value
+           IsUpperOutlier = isUpperOutlier
+           IsLowerOutlier = isLowerOutlier }
+        : Parameters.NewReportOriginalValues)
+        |> Operations.insertReportOriginalValues ctx
+
+        id
+
+    let insertBuildResult (ctx: SqliteContext) (reportId: string) (buildResult: BuildResult) =
+        let id = createId ()
+
+        ({ Id = id
+           ReportId = reportId
+           ErrorMessage = buildResult.ErrorMessage.ToOption()
+           IsBuildSuccess = buildResult.IsBuildSuccess
+           IsGenerateSuccess = buildResult.IsGenerateSuccess
+           ExecutablePath = buildResult.ArtifactsPaths.ExecutablePath
+           ProgramName = buildResult.ArtifactsPaths.ProgramName
+           AppConfigPath = buildResult.ArtifactsPaths.AppConfigPath.ToOption()
+           BinariesDirectoryPath = buildResult.ArtifactsPaths.BinariesDirectoryPath.ToOption()
+           IntermediateDirectoryPath = buildResult.ArtifactsPaths.IntermediateDirectoryPath.ToOption()
+           PackageDirectoryName = buildResult.ArtifactsPaths.PackagesDirectoryName.ToOption()
+           ProgramCodePath = buildResult.ArtifactsPaths.ProgramCodePath.ToOption()
+           ProjectFilePath = buildResult.ArtifactsPaths.ProjectFilePath.ToOption()
+           BuildArtifactsDirectoryPath = buildResult.ArtifactsPaths.BuildArtifactsDirectoryPath.ToOption()
+           BuildScriptFilePath = buildResult.ArtifactsPaths.BuildScriptFilePath.ToOption()
+           NugetConfigPath = buildResult.ArtifactsPaths.NuGetConfigPath.ToOption()
+           RootArtifactsFolderPath = buildResult.ArtifactsPaths.RootArtifactsFolderPath.ToOption() }
+        : Parameters.NewBuildResults)
+        |> Operations.insertBuildResults ctx
+
+        id
+
+    let insertBuildArtifact (ctx: SqliteContext) (buildResultId: string) (path: string) =
+        let id = createId ()
+
+        ({ Id = id
+           BuildResultId = buildResultId
+           Path = path }
+        : Parameters.NewBuildArtifacts)
+        |> Operations.insertBuildArtifacts ctx
+
+        id
+
+    let insertExecuteResult (ctx: SqliteContext) (reportId: string) (executeResult: ExecuteResult) =
+        let id = createId ()
+
+        ({ Id = id
+           ReportId = reportId
+           ExitCode = executeResult.ExitCode |> Option.ofNullable |> Option.map int64
+           IsSuccess = executeResult.IsSuccess
+           ProcessId = executeResult.ProcessId |> Option.ofNullable |> Option.map int64 }
+        : Parameters.NewExecutionResults)
+        |> Operations.insertExecutionResults ctx
+
+        id
+
+    let insertExecuteResultError (ctx: SqliteContext) (executeResultId: string) (error: string) =
+        let id = createId ()
+
+        ({ Id = id
+           ExecutionResultId = executeResultId
+           Error = error }
+        : Parameters.NewExecutionResultErrors)
+        |> Operations.insertExecutionResultErrors ctx
+
+        id
+
+    let insertExecutionResultMeasurement (ctx: SqliteContext) (executionResultId: string) (measurement: Measurement) =
+        let id = createId ()
+
+        ({ Id = id
+           ExecutionResultId = executionResultId
+           Nanoseconds = measurement.Nanoseconds
+           Operations = measurement.Operations
+           IterationIndex = measurement.IterationIndex
+           IterationMode = measurement.IterationMode |> Enum.GetName |> slugify SlugifySettings.Default
+           IterationStage = measurement.IterationStage |> Enum.GetName |> slugify SlugifySettings.Default
+           LaunchIndex = measurement.LaunchIndex }
+        : Parameters.NewExecutionResultMeasurements)
+        |> Operations.insertExecutionResultMeasurements ctx
+
+        id
+
+    let insertExecutionResultItem (ctx: SqliteContext) (executionResultId: string) (value: string) =
+        let id = createId ()
+
+        ({ Id = id
+           ExecutionResultId = executionResultId
+           Value = value }
+        : Parameters.NewExecutionResultItems)
+        |> Operations.insertExecutionResultItems ctx
+
+        id
+
+    let insertExecutionResultPrefixedLine (ctx: SqliteContext) (executionResultId: string) (prefixedLine: string) =
+        let id = createId ()
+
+        ({ Id = id
+           ExecutionResultId = executionResultId
+           PrefixedLine = prefixedLine }
+        : Parameters.NewExecutionResultPrefixedLines)
+        |> Operations.insertExecutionResultPrefixedLines ctx
+
+        id
+
+    let insertExecutionResultStandardOutputLine (ctx: SqliteContext) (executionResultId: string) (line: string) =
+        let id = createId ()
+
+        ({ Id = id
+           ExecutionResultId = executionResultId
+           Line = line }
+        : Parameters.NewExecutionResultStandardOutputLines)
+        |> Operations.insertExecutionResultStandardOutputLines ctx
+
+        id
+
+    let insertGenerateResult (ctx: SqliteContext) (reportId: string) (result: GenerateResult) =
+        let id = createId ()
+
+        ({ Id = id
+           ReportId = reportId
+           IsGenerateSuccess = result.IsGenerateSuccess
+           ExecutablePath = result.ArtifactsPaths.ExecutablePath
+           ProgramName = result.ArtifactsPaths.ProgramName
+           AppConfigPath = result.ArtifactsPaths.AppConfigPath.ToOption()
+           BinariesDirectoryPath = result.ArtifactsPaths.BinariesDirectoryPath.ToOption()
+           IntermediateDirectoryPath = result.ArtifactsPaths.IntermediateDirectoryPath.ToOption()
+           PackagesDirectoryName = result.ArtifactsPaths.PackagesDirectoryName.ToOption()
+           ProgramCodePath = result.ArtifactsPaths.ProgramCodePath.ToOption()
+           ProjectFilePath = result.ArtifactsPaths.ProjectFilePath.ToOption()
+           BuildArtifactsDirectoryPath = result.ArtifactsPaths.BuildArtifactsDirectoryPath.ToOption()
+           BuildScriptFilePath = result.ArtifactsPaths.BuildScriptFilePath.ToOption()
+           NugetConfigPath = result.ArtifactsPaths.NuGetConfigPath.ToOption()
+           RootArtifactsFolderPath = result.ArtifactsPaths.RootArtifactsFolderPath.ToOption() }
+        : Parameters.NewGenerateResults)
+        |> Operations.insertGenerateResults ctx
+
+        id
+
+    let insertGenerateArtifact (ctx: SqliteContext) (generateResultId: string) (path: string) =
+        let id = createId ()
+
+        ({ Id = id
+           GenerateResultId = generateResultId
+           Path = path }
+        : Parameters.NewGenerateArtifacts)
+        |> Operations.insertGenerateArtifacts ctx
+
+        id
+
+    let insertValidationError (ctx: SqliteContext) (caseId: string) (validationError: ValidationError) =
+        let id = createId ()
+
+        ({ Id = id
+           CaseId = caseId
+           Message = validationError.Message
+           IsCritical = validationError.IsCritical }
+        : Parameters.NewValidationError)
+        |> Operations.insertValidationError ctx
+
+        id
+
+    let initialize (ctx: SqliteContext) = Initialization.run true ctx
+
     let saveSummary (ctx: SqliteContext) (sourceId: string) (summary: Summary) =
 
         let benchmarkId = insertBenchmark ctx sourceId summary
@@ -367,10 +707,16 @@ module Operations =
         |> Seq.iter (insertHostInfoAntiVirus ctx hostInfoId >> ignore)
 
 
+        //printfn $"************ Reports: {summary.Reports.Length}"
+
         summary.Reports
         |> Seq.iter (fun report ->
 
             let caseId = insertBenchmarkCase ctx benchmarkId report.BenchmarkCase
+
+            summary.ValidationErrors
+            |> Seq.filter (fun ve -> ve.BenchmarkCase = report.BenchmarkCase)
+            |> Seq.iter (insertValidationError ctx caseId >> ignore)
 
             insertBenchmarkCaseDescriptor ctx caseId report.BenchmarkCase.Descriptor
             |> ignore
@@ -385,17 +731,74 @@ module Operations =
             insertEnvironmentGc ctx environmentId report.BenchmarkCase.Job.Environment.Gc
             |> ignore
 
-            insertEnvironmentRuntime ctx environmentId report.BenchmarkCase.Job.Environment.Runtime
-            |> ignore
-            
-            report.BenchmarkCase.Job.Environment.EnvironmentVariables
-            |> Seq.iter (insertEnvironmentalVariable ctx environmentId >> ignore)
+            report.BenchmarkCase.Job.Environment.Runtime
+            |> Option.ofObj
+            |> Option.iter (insertEnvironmentRuntime ctx environmentId >> ignore)
+
+            if report.BenchmarkCase.Job.Environment.EnvironmentVariables <> null then
+                report.BenchmarkCase.Job.Environment.EnvironmentVariables
+                |> Seq.iter (insertEnvironmentalVariable ctx environmentId >> ignore)
+
+            let infrastructureId =
+                insertJobInfrastructure ctx jobId report.BenchmarkCase.Job.Infrastructure
+
+            if report.BenchmarkCase.Job.Infrastructure.Arguments <> null then
+                report.BenchmarkCase.Job.Infrastructure.Arguments
+                |> Seq.iter (insertInfrastructureArgument ctx infrastructureId >> ignore)
+
+            if report.BenchmarkCase.Job.Infrastructure.NuGetReferences <> null then
+                report.BenchmarkCase.Job.Infrastructure.NuGetReferences
+                |> Seq.iter (insertInfrastructureNugetReference ctx infrastructureId >> ignore)
 
             insertJobMeta ctx jobId report.BenchmarkCase.Job.Meta |> ignore
-            
-            report.BenchmarkCase.Job.Run
+
+            insertJobRun ctx jobId report.BenchmarkCase.Job.Run |> ignore
 
 
+            //report.Metrics |> Seq.iter (fun i -> i)
+
+            //report.BenchmarkCase.Job.Infrastructure.
+            let reportId = insertBenchmarkReport ctx caseId report
 
 
-        )
+            report.ResultStatistics.OriginalValues
+            |> Seq.iter (fun ov ->
+                insertReportOriginalValue
+                    ctx
+                    reportId
+                    ov
+                    (report.ResultStatistics.IsUpperOutlier(ov))
+                    (report.ResultStatistics.IsLowerOutlier(ov))
+                |> ignore)
+
+            report.Metrics |> Seq.iter (insertReportMetric ctx reportId >> ignore)
+
+            report.AllMeasurements
+            |> Seq.iter (insertReportMeasurement ctx reportId >> ignore)
+
+            let buildReportId = insertBuildResult ctx reportId report.BuildResult
+
+            report.BuildResult.ArtifactsToCleanup
+            |> Seq.iter (insertBuildArtifact ctx buildReportId >> ignore)
+
+            report.ExecuteResults
+            |> Seq.iter (fun er ->
+                let executeId = insertExecuteResult ctx reportId er
+
+                er.Errors |> Seq.iter (insertExecuteResultError ctx executeId >> ignore)
+
+                er.Measurements
+                |> Seq.iter (insertExecutionResultMeasurement ctx executeId >> ignore)
+
+                er.Results |> Seq.iter (insertExecutionResultItem ctx executeId >> ignore)
+
+                er.PrefixedLines
+                |> Seq.iter (insertExecutionResultPrefixedLine ctx executeId >> ignore)
+
+                er.StandardOutput
+                |> Seq.iter (insertExecutionResultStandardOutputLine ctx executeId >> ignore))
+
+            let generateResultId = insertGenerateResult ctx reportId report.GenerateResult
+
+            report.GenerateResult.ArtifactsToCleanup
+            |> Seq.iter (insertGenerateArtifact ctx generateResultId >> ignore))
