@@ -4,7 +4,6 @@ open BenchmarkDotNet.Attributes
 
 type ExampleBenchmarks1() =
 
-
     [<Benchmark>]
     member _.ListTest() =
 
