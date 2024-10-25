@@ -27,6 +27,8 @@ module Benchmarks =
             | true -> SqliteContext.Open(runCfg.StorePath)
             | false -> SqliteContext.Create(runCfg.StorePath)
 
+        Operations.initialize ctx
+        
         let runId = Operations.insertRun ctx runCfg.Name runCfg.Description DateTime.UtcNow
 
         let runRootPath = Path.Combine(runCfg.RootPath, runId)
@@ -40,7 +42,6 @@ module Benchmarks =
 
             Path.Combine(runCfg.RootPath, runId, "sources", sourceId, "build", fileName)
 
-        Operations.initialize ctx
 
         runCfg.Benchmarks
         |> Seq.map (fun benchmark ->
@@ -81,7 +82,7 @@ module Benchmarks =
             |> ActionResult.bind (fun _ -> buildResult ())
             |> ActionResult.map (fun _ ->
                 { SourceId = sourceId
-                  Args = benchmark.Args 
+                  Args = benchmark.Args
                   Assemblies = benchmark.Assemblies |> List.map (createAssemblyPath sourceId) }))
         |> Seq.iter (fun queuedPipelineResult ->
 
@@ -96,9 +97,11 @@ module Benchmarks =
 
                 queuedBenchmark.Assemblies
                 |> Seq.iter (fun assemblyPath ->
+                    printfn $"*** {assemblyPath}"
+                    queuedBenchmark.Args |> Array.ofList |> Array.iter (fun l -> printfn $"*** {l}")
                     BenchmarkSwitcher
                         .FromAssembly(Assembly.LoadFile assemblyPath)
-                        .Run(queuedBenchmark.Args |> Array.ofList |> Array.append [|""|], customConfig)
+                        .Run(queuedBenchmark.Args |> Array.ofList |> Array.append [| "" |], customConfig)
                     |> ignore)
             | ActionResult.Failure failureResult -> failwith "todo")
 
@@ -111,24 +114,22 @@ module Benchmarks =
 
         ()
 
-let generalSettings = ({ GitPath = ""; DotNetPath = "" }: FBenchGeneralSettings)
+let generalSettings = ({ GitPath = "/usr/bin/git"; DotNetPath = "/home/max/.dotnet/dotnet" }: FBenchGeneralSettings)
 
 let runCfg =
-    ({ StorePath = ""
-       RootPath = Path.Combine()
+    ({ StorePath = "/home/max/Data/benchmarks/dotnet/example/test/store.db"
+       RootPath = Path.Combine("/home/max/Data/benchmarks/dotnet/example/test")
        Name = "Test"
        Description = "Test run"
        Benchmarks =
-           [
-               {
-                   Name = failwith "todo"
-                   Source = SourceType.Git ""
-                   ProjectName = ""
-                   Assemblies = [  ]
-                   Args =  [ "-f"; "\"*\""; "--cli"; "/home/max/.dotnet/dotnet" ]
-               }
-           ]}
+         [ { Name = "Test"
+             Source = SourceType.Git "https://github.com/mc738/FBenchmark.git"
+             ProjectName = "FBenchmark.Example"
+             Assemblies = [ "FBenchmark.Example.dll" ]
+             Args = [ "-f"; "*"; "--cli"; "/home/max/.dotnet/dotnet" ] } ] }
     : FBenchRunConfiguration)
+
+Benchmarks.run generalSettings runCfg
 
 
 let basePath =
@@ -144,7 +145,7 @@ Operations.initialize ctx
 
 let runId = Operations.insertRun ctx "test" "This is a test" DateTime.UtcNow
 
-let sourceId = Operations.insertSource ctx runId "source" (SourceType.File "")
+let sourceId = Operations.insertSource ctx runId "source" (SourceType.Local "")
 
 let customConfig =
     DefaultConfig.Instance
@@ -152,7 +153,13 @@ let customConfig =
         .AddExporter(SQLiteExporter(ctx, runId, sourceId))
 
 let assemblyPath =
-    "/home/max/Projects/dotnet/FBenchmark/FBenchmark.Example/bin/Release/net8.0/FBenchmark.Example.dll"
+    "/home/max/Data/benchmarks/dotnet/example/test/d375dd24683643ecb560d5964bc383c8/sources/dcb8f78249a74e60ad4bb0c62463749b/build/FBenchmark.Example.dll"
+
+let args = Environment.GetCommandLineArgs()
+
+args |> Array.iter (fun l -> printfn $"*** {l}")
+
+//printfn $"{Environment.GetCommandLineArgs()}"
 
 let r =
     BenchmarkSwitcher
