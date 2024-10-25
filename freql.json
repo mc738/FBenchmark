@@ -37,7 +37,7 @@
                         "replacementInitValue": "true"
                     },
                     {
-                        "matchValue": "frequency$|nanoseconds$|_hz$|^max_relative_error$|^results_stats_(.*)(?<!_n|interval_level)$",
+                        "matchValue": "frequency$|nanoseconds$|_hz$|^max_relative_error$|^results_stats_(.*)(?<!_n|interval_level)$|^result_value$",
                         "matchType": "regex",
                         "replacementValue": "float",
                         "replacementInitValue": "0."
