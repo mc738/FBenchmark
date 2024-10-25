@@ -30,7 +30,7 @@ module private Utils =
 /// Records representing database bindings for `records`.
 /// </summary>
 /// <remarks>
-/// Module generated on 22/10/2024 23:28:17 (utc) via Freql.Tools.
+/// Module generated on 23/10/2024 19:56:14 (utc) via Freql.Tools.
 /// </remarks>
 [<RequireQualifiedAccess>]
 module Records =
@@ -38,7 +38,7 @@ module Records =
     /// A record representing a row in the table `artifact_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ArtifactMetadataItem =
         { [<JsonPropertyName("artifactId")>] ArtifactId: string
@@ -91,7 +91,7 @@ module Records =
     /// A record representing a row in the table `artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type Artifact =
         { [<JsonPropertyName("id")>] Id: string option
@@ -162,7 +162,7 @@ module Records =
     /// A record representing a row in the table `benchmark_case_descriptors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type BenchmarkCaseDescriptors =
         { [<JsonPropertyName("id")>] Id: string
@@ -259,7 +259,7 @@ module Records =
     /// A record representing a row in the table `benchmark_cases`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type BenchmarkCases =
         { [<JsonPropertyName("id")>] Id: string
@@ -339,7 +339,7 @@ module Records =
     /// A record representing a row in the table `benchmark_host_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type BenchmarkHostInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -494,7 +494,7 @@ module Records =
     /// A record representing a row in the table `benchmark_host_info_antivirus_installations`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type BenchmarkHostInfoAntivirusInstallations =
         { [<JsonPropertyName("id")>] Id: string
@@ -551,7 +551,7 @@ module Records =
     /// A record representing a row in the table `benchmark_jobs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type BenchmarkJobs =
         { [<JsonPropertyName("id")>] Id: string
@@ -624,7 +624,7 @@ module Records =
     /// A record representing a row in the table `benchmark_reports`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type BenchmarkReports =
         { [<JsonPropertyName("id")>] Id: string
@@ -821,7 +821,7 @@ module Records =
     /// A record representing a row in the table `benchmarks`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type Benchmark =
         { [<JsonPropertyName("id")>] Id: string
@@ -898,7 +898,7 @@ module Records =
     /// A record representing a row in the table `build_artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type BuildArtifacts =
         { [<JsonPropertyName("id")>] Id: string
@@ -951,7 +951,7 @@ module Records =
     /// A record representing a row in the table `build_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type BuildResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -1060,7 +1060,7 @@ module Records =
     /// A record representing a row in the table `environment_gcs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type EnvironmentGcs =
         { [<JsonPropertyName("id")>] Id: string
@@ -1157,7 +1157,7 @@ module Records =
     /// A record representing a row in the table `environment_runtimes`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type EnvironmentRuntimes =
         { [<JsonPropertyName("id")>] Id: string
@@ -1222,7 +1222,7 @@ module Records =
     /// A record representing a row in the table `environmental_variables`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type EnvironmentalVariables =
         { [<JsonPropertyName("id")>] Id: string
@@ -1279,7 +1279,7 @@ module Records =
     /// A record representing a row in the table `execution_result_errors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ExecutionResultErrors =
         { [<JsonPropertyName("id")>] Id: string
@@ -1332,7 +1332,7 @@ module Records =
     /// A record representing a row in the table `execution_result_items`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ExecutionResultItems =
         { [<JsonPropertyName("id")>] Id: string
@@ -1385,7 +1385,7 @@ module Records =
     /// A record representing a row in the table `execution_result_measurements`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ExecutionResultMeasurements =
         { [<JsonPropertyName("id")>] Id: string
@@ -1458,7 +1458,7 @@ module Records =
     /// A record representing a row in the table `execution_result_prefixed_lines`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ExecutionResultPrefixedLines =
         { [<JsonPropertyName("id")>] Id: string
@@ -1511,7 +1511,7 @@ module Records =
     /// A record representing a row in the table `execution_result_standard_output_lines`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ExecutionResultStandardOutputLines =
         { [<JsonPropertyName("id")>] Id: string
@@ -1564,7 +1564,7 @@ module Records =
     /// A record representing a row in the table `execution_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ExecutionResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -1625,7 +1625,7 @@ module Records =
     /// A record representing a row in the table `generate_artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type GenerateArtifacts =
         { [<JsonPropertyName("id")>] Id: string
@@ -1678,7 +1678,7 @@ module Records =
     /// A record representing a row in the table `generate_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type GenerateResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -1779,7 +1779,7 @@ module Records =
     /// A record representing a row in the table `infrastructure_arguments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type InfrastructureArguments =
         { [<JsonPropertyName("id")>] Id: string
@@ -1832,7 +1832,7 @@ module Records =
     /// A record representing a row in the table `infrastructure_nuget_references`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type InfrastructureNugetReferences =
         { [<JsonPropertyName("id")>] Id: string
@@ -1897,7 +1897,7 @@ module Records =
     /// A record representing a row in the table `job_accuracy`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type JobAccuracy =
         { [<JsonPropertyName("id")>] Id: string
@@ -1994,7 +1994,7 @@ module Records =
     /// A record representing a row in the table `job_environments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type JobEnvironments =
         { [<JsonPropertyName("id")>] Id: string
@@ -2075,7 +2075,7 @@ module Records =
     /// A record representing a row in the table `job_infrastructures`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type JobInfrastructures =
         { [<JsonPropertyName("id")>] Id: string
@@ -2160,7 +2160,7 @@ module Records =
     /// A record representing a row in the table `job_meta`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type JobMeta =
         { [<JsonPropertyName("id")>] Id: string
@@ -2233,7 +2233,7 @@ module Records =
     /// A record representing a row in the table `job_runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type JobRuns =
         { [<JsonPropertyName("id")>] Id: string
@@ -2348,7 +2348,7 @@ module Records =
     /// A record representing a row in the table `method_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type MethodInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -2395,7 +2395,7 @@ module Records =
     /// A record representing a row in the table `report_measurements`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ReportMeasurements =
         { [<JsonPropertyName("id")>] Id: string
@@ -2468,7 +2468,7 @@ module Records =
     /// A record representing a row in the table `report_metrics`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ReportMetrics =
         { [<JsonPropertyName("id")>] Id: string
@@ -2557,24 +2557,24 @@ module Records =
     /// A record representing a row in the table `report_original_values`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ReportOriginalValues =
         { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("reportId")>] ReportId: string
-          [<JsonPropertyName("value")>] Value: decimal option
+          [<JsonPropertyName("resultValue")>] ResultValue: float
           [<JsonPropertyName("isUpperOutlier")>] IsUpperOutlier: bool
           [<JsonPropertyName("isLowerOutlier")>] IsLowerOutlier: bool }
     
         static member Blank() =
             { Id = String.Empty
               ReportId = String.Empty
-              Value = None
+              ResultValue = 0.
               IsUpperOutlier = true
               IsLowerOutlier = true }
     
         static member CreateTableSql() = """
-        CREATE TABLE report_original_values
+        CREATE TABLE "report_original_values"
 (
     id               TEXT    not null
         constraint report_original_values_pk
@@ -2582,7 +2582,7 @@ module Records =
     report_id        TEXT    not null
         constraint result_original_values_benchmark_results_id_fk
             references benchmark_reports,
-    value            REAL,
+    result_value     REAL    not null,
     is_upper_outlier INTEGER not null,
     is_lower_outlier INTEGER not null
 )
@@ -2592,7 +2592,7 @@ module Records =
         SELECT
               report_original_values.`id`,
               report_original_values.`report_id`,
-              report_original_values.`value`,
+              report_original_values.`result_value`,
               report_original_values.`is_upper_outlier`,
               report_original_values.`is_lower_outlier`
         FROM report_original_values
@@ -2618,7 +2618,7 @@ module Records =
     /// A record representing a row in the table `resource_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ResourceMetadataItem =
         { [<JsonPropertyName("resourceId")>] ResourceId: string
@@ -2671,7 +2671,7 @@ module Records =
     /// A record representing a row in the table `resources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type Resource =
         { [<JsonPropertyName("id")>] Id: string option
@@ -2742,7 +2742,7 @@ module Records =
     /// A record representing a row in the table `run_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type RunMetadataItem =
         { [<JsonPropertyName("runId")>] RunId: string
@@ -2795,7 +2795,7 @@ module Records =
     /// A record representing a row in the table `runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type Runs =
         { [<JsonPropertyName("id")>] Id: string
@@ -2850,7 +2850,7 @@ module Records =
     /// A record representing a row in the table `source_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type SourceMetadataItem =
         { [<JsonPropertyName("sourceId")>] SourceId: string
@@ -2903,7 +2903,7 @@ module Records =
     /// A record representing a row in the table `sources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type Source =
         { [<JsonPropertyName("id")>] Id: string
@@ -2962,7 +2962,7 @@ module Records =
     /// A record representing a row in the table `units`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type Units =
         { [<JsonPropertyName("id")>] Id: string
@@ -3021,7 +3021,7 @@ module Records =
     /// A record representing a row in the table `validation_error`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type ValidationError =
         { [<JsonPropertyName("id")>] Id: string
@@ -3074,14 +3074,14 @@ module Records =
                   ValidationError.CreateTriggersSql()
                   |> List.map (Utils.updateCheckIfExists checkIfExists "TRIGGER")  ]
     
-/// Module generated on 22/10/2024 23:28:17 (utc) via Freql.Tools.
+/// Module generated on 23/10/2024 19:56:14 (utc) via Freql.Tools.
 [<RequireQualifiedAccess>]
 module Parameters =
     /// <summary>
     /// A record representing a new row in the table `artifact_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewArtifactMetadataItem =
         { [<JsonPropertyName("artifactId")>] ArtifactId: string
@@ -3097,7 +3097,7 @@ module Parameters =
     /// A record representing a new row in the table `artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewArtifact =
         { [<JsonPropertyName("id")>] Id: string option
@@ -3121,7 +3121,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_case_descriptors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewBenchmarkCaseDescriptors =
         { [<JsonPropertyName("id")>] Id: string
@@ -3155,7 +3155,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_cases`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewBenchmarkCases =
         { [<JsonPropertyName("id")>] Id: string
@@ -3187,7 +3187,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_host_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewBenchmarkHostInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -3253,7 +3253,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_host_info_antivirus_installations`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewBenchmarkHostInfoAntivirusInstallations =
         { [<JsonPropertyName("id")>] Id: string
@@ -3271,7 +3271,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_jobs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewBenchmarkJobs =
         { [<JsonPropertyName("id")>] Id: string
@@ -3297,7 +3297,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmark_reports`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewBenchmarkReports =
         { [<JsonPropertyName("id")>] Id: string
@@ -3385,7 +3385,7 @@ module Parameters =
     /// A record representing a new row in the table `benchmarks`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewBenchmark =
         { [<JsonPropertyName("id")>] Id: string
@@ -3413,7 +3413,7 @@ module Parameters =
     /// A record representing a new row in the table `build_artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewBuildArtifacts =
         { [<JsonPropertyName("id")>] Id: string
@@ -3429,7 +3429,7 @@ module Parameters =
     /// A record representing a new row in the table `build_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewBuildResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -3473,7 +3473,7 @@ module Parameters =
     /// A record representing a new row in the table `environment_gcs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewEnvironmentGcs =
         { [<JsonPropertyName("id")>] Id: string
@@ -3511,7 +3511,7 @@ module Parameters =
     /// A record representing a new row in the table `environment_runtimes`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewEnvironmentRuntimes =
         { [<JsonPropertyName("id")>] Id: string
@@ -3533,7 +3533,7 @@ module Parameters =
     /// A record representing a new row in the table `environmental_variables`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewEnvironmentalVariables =
         { [<JsonPropertyName("id")>] Id: string
@@ -3551,7 +3551,7 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_errors`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewExecutionResultErrors =
         { [<JsonPropertyName("id")>] Id: string
@@ -3567,7 +3567,7 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_items`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewExecutionResultItems =
         { [<JsonPropertyName("id")>] Id: string
@@ -3583,7 +3583,7 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_measurements`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewExecutionResultMeasurements =
         { [<JsonPropertyName("id")>] Id: string
@@ -3609,7 +3609,7 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_prefixed_lines`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewExecutionResultPrefixedLines =
         { [<JsonPropertyName("id")>] Id: string
@@ -3625,7 +3625,7 @@ module Parameters =
     /// A record representing a new row in the table `execution_result_standard_output_lines`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewExecutionResultStandardOutputLines =
         { [<JsonPropertyName("id")>] Id: string
@@ -3641,7 +3641,7 @@ module Parameters =
     /// A record representing a new row in the table `execution_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewExecutionResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -3661,7 +3661,7 @@ module Parameters =
     /// A record representing a new row in the table `generate_artifacts`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewGenerateArtifacts =
         { [<JsonPropertyName("id")>] Id: string
@@ -3677,7 +3677,7 @@ module Parameters =
     /// A record representing a new row in the table `generate_results`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewGenerateResults =
         { [<JsonPropertyName("id")>] Id: string
@@ -3717,7 +3717,7 @@ module Parameters =
     /// A record representing a new row in the table `infrastructure_arguments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewInfrastructureArguments =
         { [<JsonPropertyName("id")>] Id: string
@@ -3733,7 +3733,7 @@ module Parameters =
     /// A record representing a new row in the table `infrastructure_nuget_references`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewInfrastructureNugetReferences =
         { [<JsonPropertyName("id")>] Id: string
@@ -3755,7 +3755,7 @@ module Parameters =
     /// A record representing a new row in the table `job_accuracy`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewJobAccuracy =
         { [<JsonPropertyName("id")>] Id: string
@@ -3791,7 +3791,7 @@ module Parameters =
     /// A record representing a new row in the table `job_environments`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewJobEnvironments =
         { [<JsonPropertyName("id")>] Id: string
@@ -3821,7 +3821,7 @@ module Parameters =
     /// A record representing a new row in the table `job_infrastructures`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewJobInfrastructures =
         { [<JsonPropertyName("id")>] Id: string
@@ -3853,7 +3853,7 @@ module Parameters =
     /// A record representing a new row in the table `job_meta`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewJobMeta =
         { [<JsonPropertyName("id")>] Id: string
@@ -3879,7 +3879,7 @@ module Parameters =
     /// A record representing a new row in the table `job_runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewJobRuns =
         { [<JsonPropertyName("id")>] Id: string
@@ -3925,7 +3925,7 @@ module Parameters =
     /// A record representing a new row in the table `method_info`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewMethodInfo =
         { [<JsonPropertyName("id")>] Id: string
@@ -3939,7 +3939,7 @@ module Parameters =
     /// A record representing a new row in the table `report_measurements`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewReportMeasurements =
         { [<JsonPropertyName("id")>] Id: string
@@ -3965,7 +3965,7 @@ module Parameters =
     /// A record representing a new row in the table `report_metrics`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewReportMetrics =
         { [<JsonPropertyName("id")>] Id: string
@@ -3999,19 +3999,19 @@ module Parameters =
     /// A record representing a new row in the table `report_original_values`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewReportOriginalValues =
         { [<JsonPropertyName("id")>] Id: string
           [<JsonPropertyName("reportId")>] ReportId: string
-          [<JsonPropertyName("value")>] Value: decimal option
+          [<JsonPropertyName("resultValue")>] ResultValue: float
           [<JsonPropertyName("isUpperOutlier")>] IsUpperOutlier: bool
           [<JsonPropertyName("isLowerOutlier")>] IsLowerOutlier: bool }
     
         static member Blank() =
             { Id = String.Empty
               ReportId = String.Empty
-              Value = None
+              ResultValue = 0.
               IsUpperOutlier = true
               IsLowerOutlier = true }
     
@@ -4019,7 +4019,7 @@ module Parameters =
     /// A record representing a new row in the table `resource_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewResourceMetadataItem =
         { [<JsonPropertyName("resourceId")>] ResourceId: string
@@ -4035,7 +4035,7 @@ module Parameters =
     /// A record representing a new row in the table `resources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewResource =
         { [<JsonPropertyName("id")>] Id: string option
@@ -4059,7 +4059,7 @@ module Parameters =
     /// A record representing a new row in the table `run_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewRunMetadataItem =
         { [<JsonPropertyName("runId")>] RunId: string
@@ -4075,7 +4075,7 @@ module Parameters =
     /// A record representing a new row in the table `runs`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewRuns =
         { [<JsonPropertyName("id")>] Id: string
@@ -4093,7 +4093,7 @@ module Parameters =
     /// A record representing a new row in the table `source_metadata`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewSourceMetadataItem =
         { [<JsonPropertyName("sourceId")>] SourceId: string
@@ -4109,7 +4109,7 @@ module Parameters =
     /// A record representing a new row in the table `sources`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewSource =
         { [<JsonPropertyName("id")>] Id: string
@@ -4127,7 +4127,7 @@ module Parameters =
     /// A record representing a new row in the table `units`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewUnits =
         { [<JsonPropertyName("id")>] Id: string
@@ -4147,7 +4147,7 @@ module Parameters =
     /// A record representing a new row in the table `validation_error`.
     /// </summary>
     /// <remarks>
-    /// This record was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This record was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     type NewValidationError =
         { [<JsonPropertyName("id")>] Id: string
@@ -4161,7 +4161,7 @@ module Parameters =
               Message = String.Empty
               IsCritical = true }
     
-/// Module generated on 22/10/2024 23:28:17 (utc) via Freql.Tools.
+/// Module generated on 23/10/2024 19:56:14 (utc) via Freql.Tools.
 [<RequireQualifiedAccess>]
 module Operations =
 
@@ -4176,7 +4176,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4195,7 +4195,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4218,7 +4218,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4237,7 +4237,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4260,7 +4260,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4279,7 +4279,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4302,7 +4302,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4321,7 +4321,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4344,7 +4344,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4363,7 +4363,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4386,7 +4386,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4405,7 +4405,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4428,7 +4428,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4447,7 +4447,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4470,7 +4470,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4489,7 +4489,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4512,7 +4512,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4531,7 +4531,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4554,7 +4554,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4573,7 +4573,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4596,7 +4596,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4615,7 +4615,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4638,7 +4638,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4657,7 +4657,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4680,7 +4680,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4699,7 +4699,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4722,7 +4722,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4741,7 +4741,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4764,7 +4764,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4783,7 +4783,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4806,7 +4806,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4825,7 +4825,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4848,7 +4848,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4867,7 +4867,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4890,7 +4890,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4909,7 +4909,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4932,7 +4932,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4951,7 +4951,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4974,7 +4974,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -4993,7 +4993,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5016,7 +5016,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5035,7 +5035,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5058,7 +5058,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5077,7 +5077,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5100,7 +5100,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5119,7 +5119,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5142,7 +5142,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5161,7 +5161,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5184,7 +5184,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5203,7 +5203,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5226,7 +5226,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5245,7 +5245,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5268,7 +5268,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5287,7 +5287,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5310,7 +5310,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5329,7 +5329,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5352,7 +5352,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5371,7 +5371,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5394,7 +5394,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5413,7 +5413,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5436,7 +5436,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5455,7 +5455,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5478,7 +5478,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5497,7 +5497,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5520,7 +5520,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5539,7 +5539,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5562,7 +5562,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5581,7 +5581,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5604,7 +5604,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5623,7 +5623,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5646,7 +5646,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5665,7 +5665,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5688,7 +5688,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5707,7 +5707,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5730,7 +5730,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5749,7 +5749,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5772,7 +5772,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5791,7 +5791,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5814,7 +5814,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5833,7 +5833,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5856,7 +5856,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
@@ -5875,7 +5875,7 @@ module Operations =
     /// Parameters are assigned names based on their order in 0 indexed array. For example: @0,@1,@2...
     /// </summary>
     /// <remarks>
-    /// This function was generated via Freql.Tools on 22/10/2024 23:28:17
+    /// This function was generated via Freql.Tools on 23/10/2024 19:56:14
     /// </remarks>
     /// <example>
     /// <code>
